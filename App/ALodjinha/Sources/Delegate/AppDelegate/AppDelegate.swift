@@ -9,10 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let tabController = TabBarController()
-        tabController.selectedIndex = 0
-        self.window?.rootViewController = tabController
-        window?.makeKeyAndVisible()
+        WindowFactory.make(with: window)
         
         return true
     }
