@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141CD13A278F831900613A4A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CD139278F831900613A4A /* TabBarController.swift */; };
 		14FAAA36278F279F00904807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAAA35278F279F00904807 /* AppDelegate.swift */; };
 		14FAAA38278F279F00904807 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAAA37278F279F00904807 /* SceneDelegate.swift */; };
 		14FAAA3A278F279F00904807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAAA39278F279F00904807 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		141CD139278F831900613A4A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		14FAAA32278F279F00904807 /* ALodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALodjinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FAAA35278F279F00904807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14FAAA37278F279F00904807 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,10 +78,19 @@
 		141CD137278F7C3000613A4A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				141CD138278F82E100613A4A /* TabBarController */,
 				14FAAA39278F279F00904807 /* ViewController.swift */,
 				14FAAA3B278F279F00904807 /* Main.storyboard */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		141CD138278F82E100613A4A /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				141CD139278F831900613A4A /* TabBarController.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		14FAAA29278F279F00904807 = {
@@ -179,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14FAAA3A278F279F00904807 /* ViewController.swift in Sources */,
+				141CD13A278F831900613A4A /* TabBarController.swift in Sources */,
 				14FAAA36278F279F00904807 /* AppDelegate.swift in Sources */,
 				14FAAA38278F279F00904807 /* SceneDelegate.swift in Sources */,
 			);
