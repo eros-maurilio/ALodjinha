@@ -37,6 +37,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		141CD132278F7B0000613A4A /* SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				14FAAA37278F279F00904807 /* SceneDelegate.swift */,
+			);
+			path = SceneDelegate;
+			sourceTree = "<group>";
+		};
+		141CD133278F7B2300613A4A /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				14FAAA35278F279F00904807 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		141CD135278F7B4600613A4A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				141CD132278F7B0000613A4A /* SceneDelegate */,
+				141CD133278F7B2300613A4A /* AppDelegate */,
+				141CD137278F7C3000613A4A /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		141CD136278F7B6900613A4A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14FAAA3E278F27A100904807 /* Assets.xcassets */,
+				14FAAA40278F27A100904807 /* LaunchScreen.storyboard */,
+				14FAAA43278F27A100904807 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		141CD137278F7C3000613A4A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				14FAAA39278F279F00904807 /* ViewController.swift */,
+				14FAAA3B278F279F00904807 /* Main.storyboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		14FAAA29278F279F00904807 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +101,8 @@
 		14FAAA34278F279F00904807 /* ALodjinha */ = {
 			isa = PBXGroup;
 			children = (
-				14FAAA35278F279F00904807 /* AppDelegate.swift */,
-				14FAAA37278F279F00904807 /* SceneDelegate.swift */,
-				14FAAA39278F279F00904807 /* ViewController.swift */,
-				14FAAA3B278F279F00904807 /* Main.storyboard */,
-				14FAAA3E278F27A100904807 /* Assets.xcassets */,
-				14FAAA40278F27A100904807 /* LaunchScreen.storyboard */,
-				14FAAA43278F27A100904807 /* Info.plist */,
+				141CD136278F7B6900613A4A /* Resources */,
+				141CD135278F7B4600613A4A /* Sources */,
 			);
 			path = ALodjinha;
 			sourceTree = "<group>";
@@ -291,7 +331,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4957F54262;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ALodjinha/Info.plist;
+				INFOPLIST_FILE = ALodjinha/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -320,7 +360,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4957F54262;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ALodjinha/Info.plist;
+				INFOPLIST_FILE = ALodjinha/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
