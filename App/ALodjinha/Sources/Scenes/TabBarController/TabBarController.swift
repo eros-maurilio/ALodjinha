@@ -1,29 +1,31 @@
-//
-//  TabBarController.swift
-//  ALodjinha
-//
-//  Created by Eros Maurilio on 12/01/22.
-//
-
 import UIKit
 
 class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .yellow
+        setupViewController()
+     
+    }
+}
 
-        // Do any additional setup after loading the view.
+private extension TabBarController {
+    func setupViewController() {
+        viewControllers = [
+            createNavigationController(for: ViewController(), title: "Home"),
+            createNavigationController(for: AboutController(), title: "About")
+        ]
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func createNavigationController(for rootViewController: UIViewController, title: String) -> UIViewController {
+        let navigationControler = UINavigationController(rootViewController: rootViewController)
+        
+        navigationControler.tabBarItem.title = title
+//        navigationControler.tabBarItem.image = icon
+        rootViewController.navigationItem.title = title
+        
+        return navigationControler
     }
-    */
-
 }
