@@ -16,13 +16,13 @@ class TabBarController: UITabBarController {
 private extension TabBarController {
     
     func setupTabBarAppearance() {
-        UITabBar.appearance().barTintColor = UIColor(red: 245/255, green: 245/255, blue: 244/255, alpha: 255/255)
-        tabBar.tintColor = UIColor(red: 99/255, green: 66/255, blue: 140/255, alpha: 255/255)
+        UITabBar.appearance().barTintColor = UIColor.purple
+        tabBar.tintColor =  UIColor.beige
         
         if #available(iOS 13.0, *) {
             let tabBarAppearance = UITabBarAppearance()
             tabBarAppearance.configureWithDefaultBackground()
-            tabBarAppearance.backgroundColor = UIColor(named: "TabBar")
+            tabBarAppearance.backgroundColor = UIColor.beige
             UITabBar.appearance().standardAppearance = tabBarAppearance
             
             if #available(iOS 15.0, *) {
