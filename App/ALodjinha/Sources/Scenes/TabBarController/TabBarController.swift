@@ -43,7 +43,6 @@ private extension TabBarController {
         
         navigationControler.tabBarItem.title = tab.title
         navigationControler.tabBarItem.image = tab.icon
-        tab.view.navigationItem.title = tab.title
         
         return navigationControler
     }
