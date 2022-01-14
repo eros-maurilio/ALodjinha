@@ -39,11 +39,24 @@ private extension TabBarController {
     }
     
     func createNavigationController(for tab: TabControllerType) -> UIViewController {
-        let navigationControler = UINavigationController(rootViewController: tab.view)
+        let navigationController = UINavigationController(rootViewController: tab.view)
         
-        navigationControler.tabBarItem.title = tab.title
-        navigationControler.tabBarItem.image = tab.icon
+        navigationController.tabBarItem.title = tab.title
+        navigationController.tabBarItem.image = tab.icon
+        navigationController.navigationBar.barTintColor = .purple
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        return navigationControler
+        if #available(iOS 13.0, *) {
+            let navigationBarAppearance = UINavigationBarAppearance()
+            navigationBarAppearance.configureWithDefaultBackground()
+            navigationBarAppearance.backgroundColor = .purple
+            navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            
+            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+            UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        }
+        
+        return navigationController
     }
 }
