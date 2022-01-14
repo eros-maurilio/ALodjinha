@@ -1,13 +1,15 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    @IBOutlet private weak var bannerCollection: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
         
         
         setupNavBar()
+        registerCell(for: bannerCollection)
 
     }
 }
@@ -21,5 +23,26 @@ private extension HomeViewController {
         
         navigationItem.titleView = imageView
     }
+    
+    func registerCell(for: UICollectionView) {
+        bannerCollection.dataSource = self
+        bannerCollection.register(BannerViewCell.self)
+    }
+    
+    func collectionCell(_ collectionView: UICollectionView, at indexPath: IndexPath, forACellDTO aCellDTO: BannerCellDTO) -> BannerViewCell {
+        let cell = collectionView.dequeueCell(BannerViewCell.self, indexPath)
+        cell.fillCell(dto: aCellDTO)
+        
+        return cell
+    }
 }
 
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        collectionCell(collectionView, at: indexPath, forACellDTO: BannerCellDTO(image: UIImage(named: "axlPlaceHolder")!))
+    }
+}
