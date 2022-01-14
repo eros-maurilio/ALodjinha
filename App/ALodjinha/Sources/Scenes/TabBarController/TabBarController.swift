@@ -46,8 +46,6 @@ private extension TabBarController {
         navigationController.navigationBar.barTintColor = .purple
         navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        UINavigationBar.appearance().tintColor = .white
-        
         if #available(iOS 13.0, *) {
             let navigationBarAppearance = UINavigationBarAppearance()
             navigationBarAppearance.configureWithDefaultBackground()
@@ -58,7 +56,6 @@ private extension TabBarController {
             UINavigationBar.appearance().compactAppearance = navigationBarAppearance
             UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         }
-        
         
         return navigationController
     }
