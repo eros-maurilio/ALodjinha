@@ -16,8 +16,8 @@ class TabBarController: UITabBarController {
 private extension TabBarController {
     
     func setupTabBarAppearance() {
-        UITabBar.appearance().barTintColor = UIColor.purple
-        tabBar.tintColor =  UIColor.beige
+        UITabBar.appearance().barTintColor = UIColor.beige
+        tabBar.tintColor =  UIColor.purple
         
         if #available(iOS 13.0, *) {
             let tabBarAppearance = UITabBarAppearance()
@@ -33,17 +33,17 @@ private extension TabBarController {
     
     func setupViewController() {
         viewControllers = [
-            createNavigationController(for: HomeViewController(), title: "Home", icon: UIImage(named: "home")!),
-            createNavigationController(for: AboutViewController(), title: "About", icon: UIImage(named: "tag")!)
+            createNavigationController(for: .home),
+            createNavigationController(for: .about)
         ]
     }
     
-    func createNavigationController(for rootViewController: UIViewController, title: String, icon: UIImage) -> UIViewController {
-        let navigationControler = UINavigationController(rootViewController: rootViewController)
+    func createNavigationController(for tab: TabControllerType) -> UIViewController {
+        let navigationControler = UINavigationController(rootViewController: tab.view)
         
-        navigationControler.tabBarItem.title = title
-        navigationControler.tabBarItem.image = icon
-        rootViewController.navigationItem.title = title
+        navigationControler.tabBarItem.title = tab.title
+        navigationControler.tabBarItem.image = tab.icon
+        tab.view.navigationItem.title = tab.title
         
         return navigationControler
     }
