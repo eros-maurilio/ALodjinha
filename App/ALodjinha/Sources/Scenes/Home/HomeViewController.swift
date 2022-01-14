@@ -2,6 +2,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     @IBOutlet private weak var bannerCollection: UICollectionView!
+    @IBOutlet weak var layout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -10,6 +11,7 @@ class HomeViewController: UIViewController {
         
         setupNavBar()
         registerCell(for: bannerCollection)
+        configureView()
 
     }
 }
@@ -34,6 +36,10 @@ private extension HomeViewController {
         cell.fillCell(dto: aCellDTO)
         
         return cell
+    }
+    
+    func configureView() {
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
     }
 }
 
