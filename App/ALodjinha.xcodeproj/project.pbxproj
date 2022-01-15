@@ -15,6 +15,10 @@
 		141CD13A278F831900613A4A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CD139278F831900613A4A /* TabBarController.swift */; };
 		141CD13C278F86FD00613A4A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CD13B278F86FD00613A4A /* AboutViewController.swift */; };
 		141CD13F278F88D200613A4A /* WindowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CD13E278F88D200613A4A /* WindowFactory.swift */; };
+		1431F22E27934FFF00201858 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431F22D27934FFF00201858 /* UIView+Extension.swift */; };
+		1431F2312793592800201858 /* NibWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431F2302793592800201858 /* NibWrapperView.swift */; };
+		1431F23727935F1E00201858 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1431F23627935F1E00201858 /* BannerView.xib */; };
+		1431F23927935F6D00201858 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431F23827935F6D00201858 /* BannerView.swift */; };
 		1473DA3B2790BD8600F268BB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1473DA3A2790BD8600F268BB /* UIColor+Extension.swift */; };
 		1473DA3D2791092500F268BB /* TabControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1473DA3C2791092500F268BB /* TabControllerType.swift */; };
 		14FAAA36278F279F00904807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAAA35278F279F00904807 /* AppDelegate.swift */; };
@@ -32,6 +36,10 @@
 		141CD139278F831900613A4A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		141CD13B278F86FD00613A4A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		141CD13E278F88D200613A4A /* WindowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowFactory.swift; sourceTree = "<group>"; };
+		1431F22D27934FFF00201858 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		1431F2302793592800201858 /* NibWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibWrapperView.swift; sourceTree = "<group>"; };
+		1431F23627935F1E00201858 /* BannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
+		1431F23827935F6D00201858 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		1473DA3A2790BD8600F268BB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1473DA3C2791092500F268BB /* TabControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControllerType.swift; sourceTree = "<group>"; };
 		14FAAA32278F279F00904807 /* ALodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALodjinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +76,8 @@
 			children = (
 				141C994E2791FF8900B90284 /* BannerViewCell.swift */,
 				141C994F2791FF8900B90284 /* BannerViewCell.xib */,
+				1431F23627935F1E00201858 /* BannerView.xib */,
+				1431F23827935F6D00201858 /* BannerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -93,6 +103,7 @@
 			children = (
 				1473DA392790BD7300F268BB /* Extensions */,
 				141CD13D278F88AE00613A4A /* Delegate */,
+				1431F22F2793590D00201858 /* Common */,
 				141CD137278F7C3000613A4A /* Scenes */,
 			);
 			path = Sources;
@@ -137,11 +148,20 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
+		1431F22F2793590D00201858 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1431F2302793592800201858 /* NibWrapperView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		1473DA392790BD7300F268BB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				1473DA3A2790BD8600F268BB /* UIColor+Extension.swift */,
 				141C99522792038800B90284 /* UICollectionView+Extension.swift */,
+				1431F22D27934FFF00201858 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1431F23727935F1E00201858 /* BannerView.xib in Resources */,
 				14FAAA42278F27A100904807 /* LaunchScreen.storyboard in Resources */,
 				141C99512791FF8900B90284 /* BannerViewCell.xib in Resources */,
 				14FAAA3F278F27A100904807 /* Assets.xcassets in Resources */,
@@ -249,9 +270,12 @@
 				141CD13A278F831900613A4A /* TabBarController.swift in Sources */,
 				14FAAA36278F279F00904807 /* AppDelegate.swift in Sources */,
 				141C995E27922F6F00B90284 /* HomeViewController.swift in Sources */,
+				1431F22E27934FFF00201858 /* UIView+Extension.swift in Sources */,
 				141C99532792038800B90284 /* UICollectionView+Extension.swift in Sources */,
 				14FAAA38278F279F00904807 /* SceneDelegate.swift in Sources */,
+				1431F2312793592800201858 /* NibWrapperView.swift in Sources */,
 				1473DA3D2791092500F268BB /* TabControllerType.swift in Sources */,
+				1431F23927935F6D00201858 /* BannerView.swift in Sources */,
 				141C99502791FF8900B90284 /* BannerViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

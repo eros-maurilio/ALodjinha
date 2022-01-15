@@ -4,6 +4,7 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var bannerCollection: UICollectionView!
     @IBOutlet private weak var layout: UICollectionViewFlowLayout!
     @IBOutlet private weak var pageControl: UIPageControl!
+    @IBOutlet weak var bannerView: UIView!
     
     private let numOfItems = 3
     
@@ -11,7 +12,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .blue
         
-        
+        (bannerView as? BannerViewWrapper)?.contentView.image = "axlPlaceHolder"
         setupNavBar()
         registerCell(for: bannerCollection)
         configureView()
