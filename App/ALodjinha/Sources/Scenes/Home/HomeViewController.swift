@@ -12,12 +12,17 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .blue
         
-        (bannerView as? BannerViewWrapper)?.contentView.image = "axlPlaceHolder"
+        (bannerView as? BannerViewWrapper)?.contentView.isViewCreated = true
+        
         setupNavBar()
         registerCell(for: bannerCollection)
         configureView()
-
+        
+        
     }
+    //    override func viewDidLayoutSubviews() {
+    //        BannerView().setupView()
+    //    }
 }
 
 private extension HomeViewController {

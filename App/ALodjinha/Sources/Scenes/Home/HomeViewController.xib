@@ -40,10 +40,10 @@
                     <rect key="frame" x="149" y="218" width="116" height="26"/>
                 </pageControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0C-eW-D5h" customClass="BannerViewWrapper" customModule="ALodjinha" customModuleProvider="target">
-                    <rect key="frame" x="87" y="298" width="240" height="128"/>
+                    <rect key="frame" x="0.0" y="298" width="414" height="200"/>
                     <color key="backgroundColor" systemColor="systemBrownColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="128" id="5lO-kD-yJd"/>
+                        <constraint firstAttribute="height" constant="200" id="5lO-kD-yJd"/>
                     </constraints>
                 </view>
             </subviews>
@@ -54,10 +54,10 @@
                 <constraint firstItem="Qyo-OV-qSf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DeO-52-zPF"/>
                 <constraint firstItem="HkH-Un-sYJ" firstAttribute="centerX" secondItem="Qyo-OV-qSf" secondAttribute="centerX" id="UW3-Jq-t8W"/>
                 <constraint firstItem="f0C-eW-D5h" firstAttribute="top" secondItem="Qyo-OV-qSf" secondAttribute="bottom" constant="54" id="XBS-aN-d06"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f0C-eW-D5h" secondAttribute="trailing" constant="87" id="cKM-Li-UnX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f0C-eW-D5h" secondAttribute="trailing" id="cKM-Li-UnX"/>
                 <constraint firstItem="Qyo-OV-qSf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gsg-Sk-eoz"/>
                 <constraint firstItem="Qyo-OV-qSf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="k8w-40-mEC"/>
-                <constraint firstItem="f0C-eW-D5h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="lNn-RX-09d"/>
+                <constraint firstItem="f0C-eW-D5h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lNn-RX-09d"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="150.66964285714286"/>
         </view>
