@@ -3,23 +3,22 @@ import UIKit
 @IBDesignable class BannerViewWrapper: NibWrapperView<BannerView> { }
 
 class BannerView: UIView {
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var layout: UICollectionViewFlowLayout!
     
-    var isViewCreated = false {
-        didSet {
-            if isViewCreated && collectionView != nil {
-                setupView()
-            }
-        }
-    }
+    // MARK: - IBOutlets
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var pageControl: UIPageControl!
+    @IBOutlet private weak var layout: UICollectionViewFlowLayout!
+    
+    // MARK: - Public Method
     
     func setupView() {
         registerCell(for: collectionView)
-        configureView()
+        setupViewComponents()
     }
 }
+
+    // MARK: - Private Methods
 
 private extension BannerView {
     
@@ -36,7 +35,7 @@ private extension BannerView {
         return cell
     }
     
-    func configureView() {
+    func setupViewComponents() {
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
         pageControl.numberOfPages = 3
     }
@@ -52,17 +51,23 @@ private extension BannerView {
     }
 }
 
+    // MARK: - UICollectionViewDataSource
+
 extension BannerView: UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        collectionCell(collectionView, at: indexPath, forACellDTO: BannerCellDTO(image: UIImage(named: "axlPlaceHolder")!))
+        return collectionCell(collectionView, at: indexPath, forACellDTO: BannerCellDTO(image: UIImage(named: "axlPlaceHolder")!))
     }
 }
 
+    // MARK: - UICollectionViewDelegate
+
 extension BannerView: UICollectionViewDelegate {
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageControl.currentPage = getCurrentCellIndex()
     }

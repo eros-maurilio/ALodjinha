@@ -9,10 +9,11 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .blue
         
-        (bannerView as? BannerViewWrapper)?.contentView.isViewCreated = true
+//        (bannerView as? BannerViewWrapper)?.contentView.isViewCreated = true
+        (bannerView as? BannerViewWrapper)?.contentView.setupView()
+        
         
         setupNavBar()
-        
     }
 }
 
