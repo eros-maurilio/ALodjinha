@@ -11,10 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ALodjinha" customModuleProvider="target">
             <connections>
-                <outlet property="bannerCollection" destination="Qyo-OV-qSf" id="bJ2-wk-WbX"/>
                 <outlet property="bannerView" destination="f0C-eW-D5h" id="izy-E9-GC8"/>
-                <outlet property="layout" destination="Zo1-Ne-dQd" id="XDn-1T-1ah"/>
-                <outlet property="pageControl" destination="HkH-Un-sYJ" id="and-2B-TKo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,24 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Qyo-OV-qSf">
-                    <rect key="frame" x="0.0" y="44" width="414" height="200"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="200" id="rhw-UN-E1z"/>
-                    </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Zo1-Ne-dQd">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="HkH-Un-sYJ">
-                    <rect key="frame" x="149" y="218" width="116" height="26"/>
-                </pageControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0C-eW-D5h" customClass="BannerViewWrapper" customModule="ALodjinha" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="298" width="414" height="200"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="200"/>
                     <color key="backgroundColor" systemColor="systemBrownColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="5lO-kD-yJd"/>
@@ -50,13 +31,8 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="HkH-Un-sYJ" firstAttribute="bottom" secondItem="Qyo-OV-qSf" secondAttribute="bottom" id="47W-z2-cYg"/>
-                <constraint firstItem="Qyo-OV-qSf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DeO-52-zPF"/>
-                <constraint firstItem="HkH-Un-sYJ" firstAttribute="centerX" secondItem="Qyo-OV-qSf" secondAttribute="centerX" id="UW3-Jq-t8W"/>
-                <constraint firstItem="f0C-eW-D5h" firstAttribute="top" secondItem="Qyo-OV-qSf" secondAttribute="bottom" constant="54" id="XBS-aN-d06"/>
+                <constraint firstItem="f0C-eW-D5h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Fum-S2-ep5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f0C-eW-D5h" secondAttribute="trailing" id="cKM-Li-UnX"/>
-                <constraint firstItem="Qyo-OV-qSf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gsg-Sk-eoz"/>
-                <constraint firstItem="Qyo-OV-qSf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="k8w-40-mEC"/>
                 <constraint firstItem="f0C-eW-D5h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lNn-RX-09d"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="150.66964285714286"/>

@@ -1,9 +1,6 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    @IBOutlet private weak var bannerCollection: UICollectionView!
-    @IBOutlet private weak var layout: UICollectionViewFlowLayout!
-    @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet weak var bannerView: UIView!
     
     private let numOfItems = 3
@@ -15,14 +12,8 @@ class HomeViewController: UIViewController {
         (bannerView as? BannerViewWrapper)?.contentView.isViewCreated = true
         
         setupNavBar()
-        registerCell(for: bannerCollection)
-        configureView()
-        
         
     }
-    //    override func viewDidLayoutSubviews() {
-    //        BannerView().setupView()
-    //    }
 }
 
 private extension HomeViewController {
@@ -33,57 +24,5 @@ private extension HomeViewController {
         imageView.frame = frame
         
         navigationItem.titleView = imageView
-    }
-    
-    func registerCell(for: UICollectionView) {
-        bannerCollection.dataSource = self
-        bannerCollection.delegate = self
-        bannerCollection.register(BannerViewCell.self)
-    }
-    
-    func collectionCell(_ collectionView: UICollectionView, at indexPath: IndexPath, forACellDTO aCellDTO: BannerCellDTO) -> BannerViewCell {
-        let cell = collectionView.dequeueCell(BannerViewCell.self, indexPath)
-        cell.fillCell(dto: aCellDTO)
-        
-        return cell
-    }
-    
-    func configureView() {
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: bannerCollection.bounds.size.height)
-        pageControl.numberOfPages = numOfItems
-    }
-    
-    func getCurrentCellIndex() -> Int {
-        let visibleRect = CGRect(origin: bannerCollection.contentOffset, size: bannerCollection.bounds.size)
-        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-        if let visibleIndexPath = bannerCollection.indexPathForItem(at: visiblePoint) {
-            return visibleIndexPath.row
-        }
-        
-        return pageControl.currentPage
-    }
-}
-
-extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        numOfItems
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        collectionCell(collectionView, at: indexPath, forACellDTO: BannerCellDTO(image: UIImage(named: "axlPlaceHolder")!))
-    }
-}
-
-extension HomeViewController: UICollectionViewDelegate {
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        pageControl.currentPage = getCurrentCellIndex()
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        pageControl.currentPage = getCurrentCellIndex()
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = getCurrentCellIndex()
     }
 }
