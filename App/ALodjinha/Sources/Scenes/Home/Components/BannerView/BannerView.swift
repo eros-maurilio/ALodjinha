@@ -36,7 +36,7 @@ private extension BannerView {
     }
     
     func setupViewComponents() {
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 150)
         pageControl.numberOfPages = 3
     }
     
