@@ -1,23 +1,36 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    @IBOutlet weak var bannerView: UIView!
     
-    private let numOfItems = 3
+    // MARK: - NibsWrapped
+    
+    @NibWrapped(BannerView.self)
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet private var bannerViewHolder: UIView!
+        
+    // MARK: View's LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
-        
-//        (bannerView as? BannerViewWrapper)?.contentView.isViewCreated = true
-        (bannerView as? BannerViewWrapper)?.contentView.setupView()
-        
-        
+
         setupNavBar()
+        setupSubviewComponents()
     }
 }
 
+    // MARK: - Private Methods
+
 private extension HomeViewController {
+    
+    func setupSubviewComponents() {
+        let bannerView = _bannerViewHolder.unwrapped
+        
+        bannerView.setup()
+    }
+    
     func setupNavBar() {
         let logo = UIImage(named: "NavBar")
         let frame = CGRect(x: 0, y: 0, width: 125, height: 33)

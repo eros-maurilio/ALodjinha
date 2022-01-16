@@ -12,7 +12,7 @@ class BannerView: UIView {
     
     // MARK: - Public Method
     
-    func setupView() {
+    func setup() {
         registerCell(for: collectionView)
         setupViewComponents()
     }
