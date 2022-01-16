@@ -13,7 +13,7 @@ class BannerView: UIView {
     // MARK: - Public Method
     
     func setup() {
-        registerCell(for: collectionView)
+        registerCell()
         setupViewComponents()
     }
 }
@@ -22,7 +22,7 @@ class BannerView: UIView {
 
 private extension BannerView {
     
-    func registerCell(for: UICollectionView) {
+    func registerCell() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(BannerViewCell.self)
