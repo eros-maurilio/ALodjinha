@@ -10,6 +10,9 @@ class HomeViewController: UIViewController {
     @NibWrapped(CategoriesView.self)
     @IBOutlet private var categoriesViewHolder: UIView!
     
+    @NibWrapped(TopSellersView.self)
+    @IBOutlet private var topSellersViewHolder: UIView!
+    
     // MARK: View's LifeCycle
     
     override func viewDidLoad() {
@@ -28,9 +31,11 @@ private extension HomeViewController {
     func setupSubviewComponents() {
         let bannerView = _bannerViewHolder.unwrapped
         let categoriesView = _categoriesViewHolder.unwrapped
+        let topSellersView = _topSellersViewHolder.unwrapped
         
         bannerView.setup()
         categoriesView.setup()
+        topSellersView.setup()
     }
     
     func setupNavBar() {
