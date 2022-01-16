@@ -23,6 +23,9 @@
 		1473DA3D2791092500F268BB /* TabControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1473DA3C2791092500F268BB /* TabControllerType.swift */; };
 		14826C3127945D94003714CB /* TopSellersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14826C2F27945D94003714CB /* TopSellersView.swift */; };
 		14826C3227945D94003714CB /* TopSellersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14826C3027945D94003714CB /* TopSellersView.xib */; };
+		14826C362794619C003714CB /* TopSellerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14826C342794619C003714CB /* TopSellerViewCell.swift */; };
+		14826C372794619C003714CB /* TopSellerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14826C352794619C003714CB /* TopSellerViewCell.xib */; };
+		14826C3927946881003714CB /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14826C3827946881003714CB /* UITableView+Extension.swift */; };
 		14B56B3C279393360018720C /* NibWrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B3B279393360018720C /* NibWrapped.swift */; };
 		14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B422793A6D60018720C /* CategoryViewCell.swift */; };
 		14B56B452793A6D60018720C /* CategoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B56B432793A6D60018720C /* CategoryViewCell.xib */; };
@@ -51,6 +54,9 @@
 		1473DA3C2791092500F268BB /* TabControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControllerType.swift; sourceTree = "<group>"; };
 		14826C2F27945D94003714CB /* TopSellersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSellersView.swift; sourceTree = "<group>"; };
 		14826C3027945D94003714CB /* TopSellersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopSellersView.xib; sourceTree = "<group>"; };
+		14826C342794619C003714CB /* TopSellerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSellerViewCell.swift; sourceTree = "<group>"; };
+		14826C352794619C003714CB /* TopSellerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopSellerViewCell.xib; sourceTree = "<group>"; };
+		14826C3827946881003714CB /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		14B56B3B279393360018720C /* NibWrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibWrapped.swift; sourceTree = "<group>"; };
 		14B56B422793A6D60018720C /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		14B56B432793A6D60018720C /* CategoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryViewCell.xib; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 			children = (
 				1473DA3A2790BD8600F268BB /* UIColor+Extension.swift */,
 				141C99522792038800B90284 /* UICollectionView+Extension.swift */,
+				14826C3827946881003714CB /* UITableView+Extension.swift */,
 				1431F22D27934FFF00201858 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
@@ -182,10 +189,20 @@
 		14826C2E27945D52003714CB /* TopSellersView */ = {
 			isa = PBXGroup;
 			children = (
+				14826C332794616F003714CB /* TopSellersCell */,
 				14826C2F27945D94003714CB /* TopSellersView.swift */,
 				14826C3027945D94003714CB /* TopSellersView.xib */,
 			);
 			path = TopSellersView;
+			sourceTree = "<group>";
+		};
+		14826C332794616F003714CB /* TopSellersCell */ = {
+			isa = PBXGroup;
+			children = (
+				14826C342794619C003714CB /* TopSellerViewCell.swift */,
+				14826C352794619C003714CB /* TopSellerViewCell.xib */,
+			);
+			path = TopSellersCell;
 			sourceTree = "<group>";
 		};
 		14B56B3D2793994E0018720C /* NibWrapp */ = {
@@ -322,6 +339,7 @@
 				14B56B452793A6D60018720C /* CategoryViewCell.xib in Resources */,
 				1431F23727935F1E00201858 /* BannerView.xib in Resources */,
 				14826C3227945D94003714CB /* TopSellersView.xib in Resources */,
+				14826C372794619C003714CB /* TopSellerViewCell.xib in Resources */,
 				14FAAA42278F27A100904807 /* LaunchScreen.storyboard in Resources */,
 				141C99512791FF8900B90284 /* BannerViewCell.xib in Resources */,
 				14FAAA3F278F27A100904807 /* Assets.xcassets in Resources */,
@@ -338,6 +356,7 @@
 			files = (
 				1473DA3B2790BD8600F268BB /* UIColor+Extension.swift in Sources */,
 				141CD13F278F88D200613A4A /* WindowFactory.swift in Sources */,
+				14826C3927946881003714CB /* UITableView+Extension.swift in Sources */,
 				141CD13C278F86FD00613A4A /* AboutViewController.swift in Sources */,
 				141CD13A278F831900613A4A /* TabBarController.swift in Sources */,
 				14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */,
@@ -351,6 +370,7 @@
 				1431F2312793592800201858 /* NibWrapperView.swift in Sources */,
 				1473DA3D2791092500F268BB /* TabControllerType.swift in Sources */,
 				1431F23927935F6D00201858 /* BannerView.swift in Sources */,
+				14826C362794619C003714CB /* TopSellerViewCell.swift in Sources */,
 				141C99502791FF8900B90284 /* BannerViewCell.swift in Sources */,
 				14826C3127945D94003714CB /* TopSellersView.swift in Sources */,
 			);

@@ -31,9 +31,11 @@ private extension HomeViewController {
     func setupSubviewComponents() {
         let bannerView = _bannerViewHolder.unwrapped
         let categoriesView = _categoriesViewHolder.unwrapped
+        let topSellersView = _topSellersViewHolder.unwrapped
         
         bannerView.setup()
         categoriesView.setup()
+        topSellersView.setup()
     }
     
     func setupNavBar() {
