@@ -1,6 +1,7 @@
 import UIKit
 
 class NibWrapperView<T: UIView>: UIView {
+    
     var contentView: T
 
     required init?(coder: NSCoder) {
