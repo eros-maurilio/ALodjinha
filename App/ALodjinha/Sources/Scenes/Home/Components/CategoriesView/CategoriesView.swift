@@ -3,8 +3,13 @@ import UIKit
 @IBDesignable class CategoriesViewWrapper: NibWrapperView<CategoriesView> { }
 
 class CategoriesView: UIView {
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var layout: UICollectionViewFlowLayout!
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var layout: UICollectionViewFlowLayout!
+    
+    // MARK: - Public Method
     
     func setup() {
         register()
@@ -12,7 +17,10 @@ class CategoriesView: UIView {
     }
 }
 
+    // MARK: - Private Methods
+
 private extension CategoriesView {
+
     func register() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -31,7 +39,11 @@ private extension CategoriesView {
     }
 }
 
+    // MARK: - UICollectionViewDelegate
+
 extension CategoriesView: UICollectionViewDelegate { }
+
+    // MARK: - UICollectionViewDataSource
 
 extension CategoriesView: UICollectionViewDataSource {
     

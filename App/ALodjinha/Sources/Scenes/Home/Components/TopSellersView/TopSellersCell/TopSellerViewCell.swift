@@ -8,10 +8,15 @@ struct TopSellersDTO {
 }
 
 class TopSellerViewCell: UITableViewCell {
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var oldPrice: UILabel!
     @IBOutlet weak var newPrice: UILabel!
+    
+    // MARK: - Public Method
     
     func fill(dto: TopSellersDTO) {
         productImage.image = dto.image

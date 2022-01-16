@@ -3,13 +3,20 @@ import UIKit
 @IBDesignable class TopSellersViewWrapper: NibWrapperView<TopSellersView> { }
 
 class TopSellersView: UIView {
+
+    // MARK: - IBOutlet
+
     @IBOutlet private weak var tableView: UITableView!
- 
+
+    // MARK: - Public Method
+    
     func setup() {
         registerCell()
         rowSetup()
     }
 }
+
+    // MARK: - Private Methods
 
 private extension TopSellersView {
     func registerCell() {
@@ -30,6 +37,8 @@ private extension TopSellersView {
     }
 }
 
+    // MARK: - UITableViewDataSource
+
 extension TopSellersView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         1
@@ -45,9 +54,8 @@ extension TopSellersView: UITableViewDataSource {
                                                                   oldPrice: "De: 12345,55",
                                                                   newPrice: "Por 5555,55"))
     }
-    
 }
 
-extension TopSellersView: UITableViewDelegate {
-    
-}
+    // MARK: - UITableViewDelegate
+
+extension TopSellersView: UITableViewDelegate { }
