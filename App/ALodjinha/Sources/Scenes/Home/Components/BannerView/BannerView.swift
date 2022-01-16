@@ -13,7 +13,7 @@ class BannerView: UIView {
     // MARK: - Public Method
     
     func setup() {
-        registerCell(for: collectionView)
+        registerCell()
         setupViewComponents()
     }
 }
@@ -22,7 +22,7 @@ class BannerView: UIView {
 
 private extension BannerView {
     
-    func registerCell(for: UICollectionView) {
+    func registerCell() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(BannerViewCell.self)
@@ -36,7 +36,7 @@ private extension BannerView {
     }
     
     func setupViewComponents() {
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 150)
         pageControl.numberOfPages = 3
     }
     

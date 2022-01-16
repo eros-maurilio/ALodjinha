@@ -2,14 +2,14 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    // MARK: - NibsWrapped
+    // MARK: - NibsWrapped / IBOutlets pairs
     
     @NibWrapped(BannerView.self)
-    
-    // MARK: - IBOutlets
-    
     @IBOutlet private var bannerViewHolder: UIView!
-        
+    
+    @NibWrapped(CategoriesView.self)
+    @IBOutlet private var categoriesViewHolder: UIView!
+    
     // MARK: View's LifeCycle
     
     override func viewDidLoad() {
@@ -27,8 +27,10 @@ private extension HomeViewController {
     
     func setupSubviewComponents() {
         let bannerView = _bannerViewHolder.unwrapped
+        let categoriesView = _categoriesViewHolder.unwrapped
         
         bannerView.setup()
+        categoriesView.setup()
     }
     
     func setupNavBar() {

@@ -22,6 +22,10 @@
 		1473DA3B2790BD8600F268BB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1473DA3A2790BD8600F268BB /* UIColor+Extension.swift */; };
 		1473DA3D2791092500F268BB /* TabControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1473DA3C2791092500F268BB /* TabControllerType.swift */; };
 		14B56B3C279393360018720C /* NibWrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B3B279393360018720C /* NibWrapped.swift */; };
+		14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B422793A6D60018720C /* CategoryViewCell.swift */; };
+		14B56B452793A6D60018720C /* CategoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B56B432793A6D60018720C /* CategoryViewCell.xib */; };
+		14B56B492793AAEB0018720C /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B472793AAEB0018720C /* CategoriesView.swift */; };
+		14B56B4A2793AAEB0018720C /* CategoriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B56B482793AAEB0018720C /* CategoriesView.xib */; };
 		14FAAA36278F279F00904807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAAA35278F279F00904807 /* AppDelegate.swift */; };
 		14FAAA38278F279F00904807 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAAA37278F279F00904807 /* SceneDelegate.swift */; };
 		14FAAA3F278F27A100904807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FAAA3E278F27A100904807 /* Assets.xcassets */; };
@@ -44,6 +48,10 @@
 		1473DA3A2790BD8600F268BB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1473DA3C2791092500F268BB /* TabControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControllerType.swift; sourceTree = "<group>"; };
 		14B56B3B279393360018720C /* NibWrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibWrapped.swift; sourceTree = "<group>"; };
+		14B56B422793A6D60018720C /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
+		14B56B432793A6D60018720C /* CategoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryViewCell.xib; sourceTree = "<group>"; };
+		14B56B472793AAEB0018720C /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		14B56B482793AAEB0018720C /* CategoriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesView.xib; sourceTree = "<group>"; };
 		14FAAA32278F279F00904807 /* ALodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALodjinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FAAA35278F279F00904807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14FAAA37278F279F00904807 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +84,7 @@
 		141C99432791FC1C00B90284 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				14B56B412793A6A50018720C /* CategoriesView */,
 				14B56B3F279399AC0018720C /* BannerView */,
 			);
 			path = Components;
@@ -193,6 +202,25 @@
 			path = BannerView;
 			sourceTree = "<group>";
 		};
+		14B56B412793A6A50018720C /* CategoriesView */ = {
+			isa = PBXGroup;
+			children = (
+				14B56B462793AAB80018720C /* CategoryCell */,
+				14B56B472793AAEB0018720C /* CategoriesView.swift */,
+				14B56B482793AAEB0018720C /* CategoriesView.xib */,
+			);
+			path = CategoriesView;
+			sourceTree = "<group>";
+		};
+		14B56B462793AAB80018720C /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				14B56B422793A6D60018720C /* CategoryViewCell.swift */,
+				14B56B432793A6D60018720C /* CategoryViewCell.xib */,
+			);
+			path = CategoryCell;
+			sourceTree = "<group>";
+		};
 		14FAAA29278F279F00904807 = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +304,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B56B4A2793AAEB0018720C /* CategoriesView.xib in Resources */,
+				14B56B452793A6D60018720C /* CategoryViewCell.xib in Resources */,
 				1431F23727935F1E00201858 /* BannerView.xib in Resources */,
 				14FAAA42278F27A100904807 /* LaunchScreen.storyboard in Resources */,
 				141C99512791FF8900B90284 /* BannerViewCell.xib in Resources */,
@@ -295,7 +325,9 @@
 				141CD13F278F88D200613A4A /* WindowFactory.swift in Sources */,
 				141CD13C278F86FD00613A4A /* AboutViewController.swift in Sources */,
 				141CD13A278F831900613A4A /* TabBarController.swift in Sources */,
+				14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */,
 				14FAAA36278F279F00904807 /* AppDelegate.swift in Sources */,
+				14B56B492793AAEB0018720C /* CategoriesView.swift in Sources */,
 				141C995E27922F6F00B90284 /* HomeViewController.swift in Sources */,
 				1431F22E27934FFF00201858 /* UIView+Extension.swift in Sources */,
 				14B56B3C279393360018720C /* NibWrapped.swift in Sources */,
