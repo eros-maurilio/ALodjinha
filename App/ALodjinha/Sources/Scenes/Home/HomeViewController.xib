@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="bannerViewHolder" destination="f0C-eW-D5h" id="izy-E9-GC8"/>
                 <outlet property="categoriesViewHolder" destination="Ugq-58-l5F" id="LTp-C1-ib1"/>
+                <outlet property="topSellersViewHolder" destination="6qJ-D7-HrB" id="C6D-zz-i34"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,6 +42,16 @@
                         <constraint firstAttribute="height" constant="125" id="Z1R-r4-keZ"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mais vendidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFi-KP-O4g">
+                    <rect key="frame" x="20" y="378" width="135" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="0.1843137255" green="0.20000000000000001" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qJ-D7-HrB" customClass="TopSellersViewWrapper" customModule="ALodjinha" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="407" width="414" height="455"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -48,11 +59,17 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ugq-58-l5F" secondAttribute="trailing" id="2IA-Or-KAS"/>
                 <constraint firstItem="f0C-eW-D5h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Fum-S2-ep5"/>
                 <constraint firstItem="Vt0-Wj-fyt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="H9o-rm-Ayc"/>
+                <constraint firstItem="6qJ-D7-HrB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LXa-fZ-dp9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6qJ-D7-HrB" secondAttribute="bottom" id="VWh-lK-FwA"/>
                 <constraint firstItem="Vt0-Wj-fyt" firstAttribute="top" secondItem="f0C-eW-D5h" secondAttribute="bottom" constant="15" id="b3K-c2-NQk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f0C-eW-D5h" secondAttribute="trailing" id="cKM-Li-UnX"/>
                 <constraint firstItem="Ugq-58-l5F" firstAttribute="top" secondItem="Vt0-Wj-fyt" secondAttribute="bottom" constant="5" id="dIU-EB-pHP"/>
+                <constraint firstItem="EFi-KP-O4g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="l5q-ja-kEA"/>
                 <constraint firstItem="f0C-eW-D5h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lNn-RX-09d"/>
                 <constraint firstItem="Ugq-58-l5F" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="n0I-zf-jrH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6qJ-D7-HrB" secondAttribute="trailing" id="q6n-gT-Xc3"/>
+                <constraint firstItem="6qJ-D7-HrB" firstAttribute="top" secondItem="EFi-KP-O4g" secondAttribute="bottom" constant="5" id="txb-EC-gn6"/>
+                <constraint firstItem="EFi-KP-O4g" firstAttribute="top" secondItem="Ugq-58-l5F" secondAttribute="bottom" constant="15" id="uhL-4d-21K"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="150.66964285714286"/>
         </view>

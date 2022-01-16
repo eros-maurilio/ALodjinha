@@ -10,6 +10,9 @@ class HomeViewController: UIViewController {
     @NibWrapped(CategoriesView.self)
     @IBOutlet private var categoriesViewHolder: UIView!
     
+    @NibWrapped(TopSellersView.self)
+    @IBOutlet private var topSellersViewHolder: UIView!
+    
     // MARK: View's LifeCycle
     
     override func viewDidLoad() {
