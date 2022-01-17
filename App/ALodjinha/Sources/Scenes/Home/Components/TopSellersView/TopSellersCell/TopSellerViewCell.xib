@@ -25,7 +25,7 @@
                             <constraint firstAttribute="width" constant="80" id="rn8-7d-0Pb"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do produto com uma descrição grandona" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vjs-fU-s2r">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do produto com uma descrição grandona" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjs-fU-s2r">
                         <rect key="frame" x="110" y="10" width="207" height="45"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                         <color key="textColor" red="0.1843137255" green="0.20000000000000001" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,16 +38,16 @@
                             <constraint firstAttribute="height" constant="21" id="hVM-2Q-wD0"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tJc-jP-OOp">
+                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tJc-jP-OOp">
                         <rect key="frame" x="110" y="65" width="207" height="23"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De: 9999,99" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kw9-SK-5wg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De: 9999,99" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kw9-SK-5wg">
                                 <rect key="frame" x="0.0" y="0.0" width="78" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por: 9999,98" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KMG-jS-kqI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por: 9999,98" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMG-jS-kqI">
                                 <rect key="frame" x="86" y="0.0" width="121" height="23"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" red="0.9907817765562501" green="0.36078431370000003" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,7 +55,6 @@
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="KMG-jS-kqI" firstAttribute="leading" secondItem="kw9-SK-5wg" secondAttribute="trailing" constant="8" symbolic="YES" id="Jbu-Ap-gTT"/>
                             <constraint firstItem="kw9-SK-5wg" firstAttribute="centerY" secondItem="tJc-jP-OOp" secondAttribute="centerY" id="TH8-Gh-QtN"/>
                         </constraints>
                     </stackView>
