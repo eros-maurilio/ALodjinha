@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aA-Sz-zWj">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="643"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="663"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6A-L0-Vx7" customClass="BannerViewWrapper" customModule="ALodjinha" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -43,38 +43,57 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57i-mO-5gk" customClass="CategoriesViewWrapper" customModule="ALodjinha" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="196" width="414" height="100"/>
+                                    <rect key="frame" x="0.0" y="196" width="414" height="120"/>
                                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="100" id="iPM-Us-5yS"/>
+                                        <constraint firstAttribute="height" constant="120" id="iPM-Us-5yS"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xab-Eu-efy" userLabel="Separator">
+                                    <rect key="frame" x="0.0" y="196" width="414" height="0.5"/>
+                                    <color key="backgroundColor" systemColor="separatorColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="0.5" id="ywQ-9c-Oiq"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPa-LD-BQg" userLabel="Separator">
+                                    <rect key="frame" x="0.0" y="315.5" width="414" height="0.5"/>
+                                    <color key="backgroundColor" systemColor="separatorColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="0.5" id="UYA-BI-NDF"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mais vendidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLq-9X-1i2">
-                                    <rect key="frame" x="20" y="316" width="120" height="22"/>
+                                    <rect key="frame" x="20" y="336" width="120" height="22"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                     <color key="textColor" red="0.1843137255" green="0.20000000000000001" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAA-M3-M8n" customClass="TopSellersViewWrapper" customModule="ALodjinha" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="343" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="363" width="414" height="200"/>
                                     <color key="backgroundColor" systemColor="systemBrownColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="200" id="k6d-6n-eBq"/>
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.87450980389999999" green="0.36078431370000003" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="nPa-LD-BQg" secondAttribute="trailing" id="Bux-Ee-NTR"/>
+                                <constraint firstAttribute="trailing" secondItem="Xab-Eu-efy" secondAttribute="trailing" id="Cd3-0y-h1o"/>
                                 <constraint firstItem="TLq-9X-1i2" firstAttribute="leading" secondItem="2aA-Sz-zWj" secondAttribute="leading" constant="20" id="J24-UG-8B5"/>
                                 <constraint firstItem="TLq-9X-1i2" firstAttribute="top" secondItem="57i-mO-5gk" secondAttribute="bottom" constant="20" id="M8p-nF-0PT"/>
                                 <constraint firstItem="57i-mO-5gk" firstAttribute="top" secondItem="2Td-Ax-VhU" secondAttribute="bottom" constant="5" id="Nun-cH-5B6"/>
                                 <constraint firstItem="c6A-L0-Vx7" firstAttribute="leading" secondItem="2aA-Sz-zWj" secondAttribute="leading" id="Osd-Bi-QZ9"/>
+                                <constraint firstItem="nPa-LD-BQg" firstAttribute="bottom" secondItem="57i-mO-5gk" secondAttribute="bottom" id="P4H-dY-Kpa"/>
+                                <constraint firstItem="Xab-Eu-efy" firstAttribute="leading" secondItem="2aA-Sz-zWj" secondAttribute="leading" id="WMk-hL-NSu"/>
                                 <constraint firstItem="c6A-L0-Vx7" firstAttribute="top" secondItem="2aA-Sz-zWj" secondAttribute="top" id="dBc-N9-MSG"/>
                                 <constraint firstItem="57i-mO-5gk" firstAttribute="leading" secondItem="c6A-L0-Vx7" secondAttribute="leading" id="eVo-Fg-enX"/>
+                                <constraint firstItem="Xab-Eu-efy" firstAttribute="top" secondItem="57i-mO-5gk" secondAttribute="top" id="eja-sR-10t"/>
                                 <constraint firstItem="wAA-M3-M8n" firstAttribute="top" secondItem="TLq-9X-1i2" secondAttribute="bottom" constant="5" id="f2Z-Gu-6Ds"/>
                                 <constraint firstAttribute="bottom" secondItem="wAA-M3-M8n" secondAttribute="bottom" constant="100" id="fyB-fb-hm3"/>
                                 <constraint firstItem="2Td-Ax-VhU" firstAttribute="leading" secondItem="2aA-Sz-zWj" secondAttribute="leading" constant="20" id="iBj-1m-lHy"/>
                                 <constraint firstAttribute="trailing" secondItem="57i-mO-5gk" secondAttribute="trailing" id="klx-Ja-WiE"/>
+                                <constraint firstItem="nPa-LD-BQg" firstAttribute="leading" secondItem="2aA-Sz-zWj" secondAttribute="leading" id="lup-8M-CCZ"/>
                                 <constraint firstAttribute="trailing" secondItem="wAA-M3-M8n" secondAttribute="trailing" id="mbV-rX-ojL"/>
                                 <constraint firstItem="2Td-Ax-VhU" firstAttribute="top" secondItem="c6A-L0-Vx7" secondAttribute="bottom" constant="20" id="pyw-II-sW8"/>
                                 <constraint firstAttribute="trailing" secondItem="c6A-L0-Vx7" secondAttribute="trailing" id="r3i-bA-YJH"/>
@@ -103,6 +122,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

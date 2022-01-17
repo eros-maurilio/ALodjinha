@@ -11,7 +11,7 @@ class TopSellersView: UIView {
     
 }
 
-// MARK: - Public Method
+    // MARK: - Public Method
 
 extension TopSellersView {
     
