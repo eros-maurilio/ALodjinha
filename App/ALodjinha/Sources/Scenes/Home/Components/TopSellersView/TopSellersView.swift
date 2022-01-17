@@ -7,12 +7,24 @@ class TopSellersView: UIView {
     // MARK: - IBOutlet
 
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var tableViewHeight: NSLayoutConstraint!
+    
+}
 
-    // MARK: - Public Method
+// MARK: - Public Method
+
+extension TopSellersView {
     
     func setup() {
         registerCell()
         rowSetup()
+    }
+    
+    func updateTableViewHeight() -> CGFloat {
+        tableView.layoutIfNeeded()
+        tableViewHeight.constant = tableView.contentSize.height
+        
+        return tableViewHeight.constant
     }
 }
 
@@ -23,6 +35,7 @@ private extension TopSellersView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TopSellerViewCell.self)
+        tableView.tableFooterView = UIView()
     }
     
     func cell(_ tableView: UITableView, at indexPath: IndexPath, forACellDTO ACellDTO: TopSellersDTO) -> TopSellerViewCell {
@@ -34,6 +47,7 @@ private extension TopSellersView {
     
     func rowSetup() {
         tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableView.automaticDimension
     }
 }
 
@@ -45,7 +59,7 @@ extension TopSellersView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
