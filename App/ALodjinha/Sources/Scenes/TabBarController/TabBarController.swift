@@ -40,9 +40,16 @@ private extension TabBarController {
     
     func createNavigationController(for tab: TabControllerType) -> UIViewController {
         let navigationController = UINavigationController(rootViewController: tab.view)
+        let icon = tab.icon
+        let size = CGSize(width: 24, height: 21)
+        
+        if #available(iOS 10.0, *) {
+            navigationController.tabBarItem.image = icon.upscale(targetSize: size)
+        } else {
+            navigationController.tabBarItem.image = tab.icon
+        }
         
         navigationController.tabBarItem.title = tab.title
-        navigationController.tabBarItem.image = tab.icon
         navigationController.navigationBar.barTintColor = .purple
         navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         

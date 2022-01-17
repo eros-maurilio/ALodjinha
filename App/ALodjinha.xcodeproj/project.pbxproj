@@ -15,6 +15,7 @@
 		141CD13A278F831900613A4A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CD139278F831900613A4A /* TabBarController.swift */; };
 		141CD13C278F86FD00613A4A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CD13B278F86FD00613A4A /* AboutViewController.swift */; };
 		141CD13F278F88D200613A4A /* WindowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CD13E278F88D200613A4A /* WindowFactory.swift */; };
+		14270C5C2795F76500F8C25A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14270C5B2795F76500F8C25A /* UIImage+Extension.swift */; };
 		1431F22E27934FFF00201858 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431F22D27934FFF00201858 /* UIView+Extension.swift */; };
 		1431F2312793592800201858 /* NibWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431F2302793592800201858 /* NibWrapperView.swift */; };
 		1431F23727935F1E00201858 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1431F23627935F1E00201858 /* BannerView.xib */; };
@@ -46,6 +47,7 @@
 		141CD139278F831900613A4A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		141CD13B278F86FD00613A4A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		141CD13E278F88D200613A4A /* WindowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowFactory.swift; sourceTree = "<group>"; };
+		14270C5B2795F76500F8C25A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		1431F22D27934FFF00201858 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1431F2302793592800201858 /* NibWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibWrapperView.swift; sourceTree = "<group>"; };
 		1431F23627935F1E00201858 /* BannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				141C99522792038800B90284 /* UICollectionView+Extension.swift */,
 				14826C3827946881003714CB /* UITableView+Extension.swift */,
 				1431F22D27934FFF00201858 /* UIView+Extension.swift */,
+				14270C5B2795F76500F8C25A /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				141CD13A278F831900613A4A /* TabBarController.swift in Sources */,
 				14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */,
 				14FAAA36278F279F00904807 /* AppDelegate.swift in Sources */,
+				14270C5C2795F76500F8C25A /* UIImage+Extension.swift in Sources */,
 				14B56B492793AAEB0018720C /* CategoriesView.swift in Sources */,
 				141C995E27922F6F00B90284 /* HomeViewController.swift in Sources */,
 				1431F22E27934FFF00201858 /* UIView+Extension.swift in Sources */,
