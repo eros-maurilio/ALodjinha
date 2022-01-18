@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="296" height="159"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="axlPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="pGt-so-HfL">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="axlPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="pGt-so-HfL" customClass="ImageCacher" customModule="ALodjinha" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="296" height="159"/>
                     </imageView>
                 </subviews>
