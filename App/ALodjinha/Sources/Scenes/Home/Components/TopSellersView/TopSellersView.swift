@@ -63,7 +63,7 @@ extension TopSellersView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        cell(tableView, at: indexPath, forACellDTO: TopSellersDTO(image: UIImage(named: "axlPlaceHolder")!,
+        cell(tableView, at: indexPath, forACellDTO: TopSellersDTO(image: UIImage(named: "Placeholder")!,
                                                                   name: "Nome do produto com uma descrição bem grandona",
                                                                   oldPrice: "De: 12345,55",
                                                                   newPrice: "Por 5555,55"))
