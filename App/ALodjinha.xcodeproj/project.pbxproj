@@ -20,6 +20,9 @@
 		14270C622796017200F8C25A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14270C612796017200F8C25A /* String+Extension.swift */; };
 		14270C64279602C500F8C25A /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14270C63279602C500F8C25A /* DataLoader.swift */; };
 		14270C662796056200F8C25A /* BannerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14270C652796056200F8C25A /* BannerResponse.swift */; };
+		14270C6A2796186B00F8C25A /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14270C692796186B00F8C25A /* BannerViewModel.swift */; };
+		14270C6C279618B500F8C25A /* BannerViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14270C6B279618B500F8C25A /* BannerViewModelProtocol.swift */; };
+		14270C702796231800F8C25A /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14270C6F2796231800F8C25A /* ImageCacher.swift */; };
 		1431F22E27934FFF00201858 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431F22D27934FFF00201858 /* UIView+Extension.swift */; };
 		1431F2312793592800201858 /* NibWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431F2302793592800201858 /* NibWrapperView.swift */; };
 		1431F23727935F1E00201858 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1431F23627935F1E00201858 /* BannerView.xib */; };
@@ -56,6 +59,9 @@
 		14270C612796017200F8C25A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		14270C63279602C500F8C25A /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		14270C652796056200F8C25A /* BannerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerResponse.swift; sourceTree = "<group>"; };
+		14270C692796186B00F8C25A /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
+		14270C6B279618B500F8C25A /* BannerViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModelProtocol.swift; sourceTree = "<group>"; };
+		14270C6F2796231800F8C25A /* ImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
 		1431F22D27934FFF00201858 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1431F2302793592800201858 /* NibWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibWrapperView.swift; sourceTree = "<group>"; };
 		1431F23627935F1E00201858 /* BannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
@@ -183,14 +189,39 @@
 			children = (
 				14270C5F2795FF6300F8C25A /* EndPoint.swift */,
 				14270C63279602C500F8C25A /* DataLoader.swift */,
-				14270C652796056200F8C25A /* BannerResponse.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		14270C672796183100F8C25A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				14270C692796186B00F8C25A /* BannerViewModel.swift */,
+				14270C6B279618B500F8C25A /* BannerViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14270C682796183800F8C25A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14270C652796056200F8C25A /* BannerResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14270C6D279622E700F8C25A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				14270C6F2796231800F8C25A /* ImageCacher.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		1431F22F2793590D00201858 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				14270C6D279622E700F8C25A /* UI */,
 				14B56B3D2793994E0018720C /* NibWrapp */,
 			);
 			path = Common;
@@ -249,6 +280,8 @@
 		14B56B3F279399AC0018720C /* BannerView */ = {
 			isa = PBXGroup;
 			children = (
+				14270C682796183800F8C25A /* Model */,
+				14270C672796183100F8C25A /* ViewModel */,
 				14B56B3E279399940018720C /* BannerCell */,
 				1431F23827935F6D00201858 /* BannerView.swift */,
 				1431F23627935F1E00201858 /* BannerView.xib */,
@@ -381,9 +414,11 @@
 				141CD13F278F88D200613A4A /* WindowFactory.swift in Sources */,
 				14270C64279602C500F8C25A /* DataLoader.swift in Sources */,
 				14270C662796056200F8C25A /* BannerResponse.swift in Sources */,
+				14270C6C279618B500F8C25A /* BannerViewModelProtocol.swift in Sources */,
 				14826C3927946881003714CB /* UITableView+Extension.swift in Sources */,
 				141CD13C278F86FD00613A4A /* AboutViewController.swift in Sources */,
 				141CD13A278F831900613A4A /* TabBarController.swift in Sources */,
+				14270C6A2796186B00F8C25A /* BannerViewModel.swift in Sources */,
 				14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */,
 				14FAAA36278F279F00904807 /* AppDelegate.swift in Sources */,
 				14270C5C2795F76500F8C25A /* UIImage+Extension.swift in Sources */,
@@ -391,6 +426,7 @@
 				141C995E27922F6F00B90284 /* HomeViewController.swift in Sources */,
 				1431F22E27934FFF00201858 /* UIView+Extension.swift in Sources */,
 				14B56B3C279393360018720C /* NibWrapped.swift in Sources */,
+				14270C702796231800F8C25A /* ImageCacher.swift in Sources */,
 				14270C622796017200F8C25A /* String+Extension.swift in Sources */,
 				14270C602795FF6300F8C25A /* EndPoint.swift in Sources */,
 				141C99532792038800B90284 /* UICollectionView+Extension.swift in Sources */,
