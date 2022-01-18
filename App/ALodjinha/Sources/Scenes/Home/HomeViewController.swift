@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     
     @NibWrapped(TopSellersView.self)
     @IBOutlet private var topSellersViewHolder: UIView!
-    @IBOutlet weak var topSellersHeight: NSLayoutConstraint!
+    
     
     // MARK: View's LifeCycle
     
@@ -36,7 +36,7 @@ private extension HomeViewController {
         bannerView.setup()
         categoriesView.setup()
         topSellersView.setup()
-        topSellersHeight.constant = topSellersView.updateTableViewHeight()
+
     }
     
     func setupNavBar() {

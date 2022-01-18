@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="610"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1I6-l8-Cfq">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1I6-l8-Cfq" customClass="TopSellersTableView" customModule="ALodjinha" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="610"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <inset key="scrollIndicatorInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -24,15 +24,14 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="1I6-l8-Cfq" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="YrC-BG-o9I"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1I6-l8-Cfq" secondAttribute="trailing" id="crw-4O-lBO"/>
                 <constraint firstItem="1I6-l8-Cfq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dmp-zT-CYk"/>
                 <constraint firstItem="1I6-l8-Cfq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mLr-ng-dFC"/>
-                <constraint firstItem="1I6-l8-Cfq" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="qAE-91-C3d"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="tableView" destination="1I6-l8-Cfq" id="G0c-Wq-eF5"/>
-                <outlet property="tableViewHeight" destination="qAE-91-C3d" id="bdw-uN-sc9"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="54.910714285714285"/>
         </view>

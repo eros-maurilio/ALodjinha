@@ -37,6 +37,8 @@
 		149EFED827972A33004DF61E /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFED727972A33004DF61E /* CategoriesViewModel.swift */; };
 		149EFEDC27972A95004DF61E /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEDB27972A95004DF61E /* ViewModelProtocol.swift */; };
 		149EFEDE27972BCE004DF61E /* TableCollectionViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEDD27972BCE004DF61E /* TableCollectionViewModelProtocol.swift */; };
+		149EFEE127974251004DF61E /* TopSellersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEE027974251004DF61E /* TopSellersViewModel.swift */; };
+		149EFEE327977A3E004DF61E /* TopSellersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEE227977A3E004DF61E /* TopSellersTableView.swift */; };
 		14B56B3C279393360018720C /* NibWrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B3B279393360018720C /* NibWrapped.swift */; };
 		14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B422793A6D60018720C /* CategoryViewCell.swift */; };
 		14B56B452793A6D60018720C /* CategoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B56B432793A6D60018720C /* CategoryViewCell.xib */; };
@@ -79,6 +81,8 @@
 		149EFED727972A33004DF61E /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		149EFEDB27972A95004DF61E /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		149EFEDD27972BCE004DF61E /* TableCollectionViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionViewModelProtocol.swift; sourceTree = "<group>"; };
+		149EFEE027974251004DF61E /* TopSellersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSellersViewModel.swift; sourceTree = "<group>"; };
+		149EFEE227977A3E004DF61E /* TopSellersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSellersTableView.swift; sourceTree = "<group>"; };
 		14B56B3B279393360018720C /* NibWrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibWrapped.swift; sourceTree = "<group>"; };
 		14B56B422793A6D60018720C /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		14B56B432793A6D60018720C /* CategoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryViewCell.xib; sourceTree = "<group>"; };
@@ -250,7 +254,9 @@
 		14826C2E27945D52003714CB /* TopSellersView */ = {
 			isa = PBXGroup;
 			children = (
+				149EFEDF2797423B004DF61E /* ViewModel */,
 				14826C332794616F003714CB /* TopSellersCell */,
+				149EFEE227977A3E004DF61E /* TopSellersTableView.swift */,
 				14826C2F27945D94003714CB /* TopSellersView.swift */,
 				14826C3027945D94003714CB /* TopSellersView.xib */,
 			);
@@ -287,6 +293,14 @@
 			children = (
 				149EFEDD27972BCE004DF61E /* TableCollectionViewModelProtocol.swift */,
 				149EFEDB27972A95004DF61E /* ViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		149EFEDF2797423B004DF61E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				149EFEE027974251004DF61E /* TopSellersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -447,6 +461,7 @@
 				141CD13F278F88D200613A4A /* WindowFactory.swift in Sources */,
 				14270C64279602C500F8C25A /* DataLoader.swift in Sources */,
 				14270C662796056200F8C25A /* BannerResponse.swift in Sources */,
+				149EFEE327977A3E004DF61E /* TopSellersTableView.swift in Sources */,
 				14826C3927946881003714CB /* UITableView+Extension.swift in Sources */,
 				149EFED827972A33004DF61E /* CategoriesViewModel.swift in Sources */,
 				141CD13C278F86FD00613A4A /* AboutViewController.swift in Sources */,
@@ -465,6 +480,7 @@
 				141C99532792038800B90284 /* UICollectionView+Extension.swift in Sources */,
 				14FAAA38278F279F00904807 /* SceneDelegate.swift in Sources */,
 				149EFED6279729B7004DF61E /* DataModel.swift in Sources */,
+				149EFEE127974251004DF61E /* TopSellersViewModel.swift in Sources */,
 				1431F2312793592800201858 /* NibWrapperView.swift in Sources */,
 				1473DA3D2791092500F268BB /* TabControllerType.swift in Sources */,
 				1431F23927935F6D00201858 /* BannerView.swift in Sources */,
