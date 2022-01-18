@@ -23,11 +23,25 @@ final class DataLoader {
             }
             
             do {
-                let parsedData = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(parsedData))
-            } catch {
-                return completion(.failure(NSError(domain: "", code: 000, userInfo: ["Message": "There's no information avaliable or could not be found"])))
-            }
+                 let parsedData = try JSONDecoder().decode(T.self, from: data)
+                 completion(.success(parsedData))
+                 return
+
+             } catch DecodingError.keyNotFound(let key, let context) {
+                 Swift.debugPrint("could not find key \(key) in JSON: \(context.debugDescription)")
+
+             } catch DecodingError.valueNotFound(let type, let context) {
+                 Swift.debugPrint("could not find type \(type) in JSON: \(context.debugDescription)")
+
+             } catch DecodingError.typeMismatch(let type, let context) {
+                 Swift.debugPrint("type mismatch for type \(type) in JSON: \(context.debugDescription)")
+
+             } catch DecodingError.dataCorrupted(let context) {
+                 Swift.debugPrint("data found to be corrupted in JSON: \(context.debugDescription)")
+
+             } catch let error as NSError {
+                 NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
+             }
         }
         task.resume()
     }

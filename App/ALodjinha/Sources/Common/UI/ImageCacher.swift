@@ -16,7 +16,7 @@ class ImageCacher: UIImageView {
         URLSession.shared.dataTask(with: url) { data, _, error in
             
             if let error = error {
-                print(error)
+                debugPrint(error)
                 return
             }
             
