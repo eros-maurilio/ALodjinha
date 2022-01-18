@@ -1,17 +1,17 @@
 import UIKit
 
 struct TopSellersDTO {
-    let image: UIImage
+    let imageURL: String
     let name: String
-    let oldPrice: String
-    let newPrice: String
+    let oldPrice: Float
+    let newPrice: Float
 }
 
 class TopSellerViewCell: UITableViewCell {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productImage: ImageCacher!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var oldPrice: UILabel!
     @IBOutlet weak var newPrice: UILabel!
@@ -19,9 +19,13 @@ class TopSellerViewCell: UITableViewCell {
     // MARK: - Public Method
     
     func fill(dto: TopSellersDTO) {
-        productImage.image = dto.image
+        productImage.downloadImage(withURL: dto.imageURL)
+        
+        if productImage.image == nil {
+            productImage.image = UIImage(named: "Placeholder")
+        }
         name.text = dto.name
-        oldPrice.text = dto.oldPrice
-        newPrice.text = dto.newPrice
+        oldPrice.text = "De: \(String(dto.oldPrice))"
+        newPrice.text = "Por \(String(dto.newPrice))"
     }
 }
