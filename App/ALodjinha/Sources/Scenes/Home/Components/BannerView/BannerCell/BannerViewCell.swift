@@ -1,19 +1,20 @@
 import UIKit
 
 struct BannerCellDTO {
-    let image: UIImage
+    let imageURL: String
 }
 
 class BannerViewCell: UICollectionViewCell {
    
     // MARK: - IBOutlets
     
-    @IBOutlet private weak var bannerImage: UIImageView!
+    @IBOutlet private weak var bannerImage: ImageCacher!
     
     // MARK: - Public Method
     
     func fillCell(dto: BannerCellDTO) {
-        bannerImage.image = dto.image
+        bannerImage.downloadImage(withURL: dto.imageURL)
+        
     }
 }
 
