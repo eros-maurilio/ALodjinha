@@ -12,7 +12,7 @@ extension UICollectionView {
     
     func register<T: UICollectionViewCell>(_ : T.Type) {
         let identifier = String(describing: T.self)
-        
+        register(T.self, forCellWithReuseIdentifier: identifier)
         register(UINib(nibName: identifier, bundle: nil), forCellWithReuseIdentifier: identifier)
     }
 }
