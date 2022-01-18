@@ -10,11 +10,13 @@ class BannerView: UIView {
     @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet private weak var layout: UICollectionViewFlowLayout!
     
+    private lazy var viewModel: BannerViewModelProtocol = BannerViewModel(delegate: self)
+    
     // MARK: - Public Method
     
     func setup() {
         registerCell()
-        setupViewComponents()
+        viewModel.loadBanner()
     }
 }
 
@@ -37,7 +39,7 @@ private extension BannerView {
     
     func setupViewComponents() {
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 150)
-        pageControl.numberOfPages = 3
+        pageControl.numberOfPages = viewModel.numberOfItems()
     }
     
     func getCurrentCellIndex() -> Int {
@@ -55,12 +57,16 @@ private extension BannerView {
 
 extension BannerView: UICollectionViewDataSource {
 
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel.numberOfSections()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return viewModel.numberOfItems()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionCell(collectionView, at: indexPath, forACellDTO: BannerCellDTO(image: UIImage(named: "axlPlaceHolder")!))
+        return collectionCell(collectionView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath))
     }
 }
 
@@ -78,5 +84,21 @@ extension BannerView: UICollectionViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = getCurrentCellIndex()
+    }
+}
+
+extension BannerView: LoadContentable {
+    
+    func didLoad() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.collectionView.reloadData()
+            self.setupViewComponents()
+
+        }
+    }
+    
+    func showMore() {
+        
     }
 }
