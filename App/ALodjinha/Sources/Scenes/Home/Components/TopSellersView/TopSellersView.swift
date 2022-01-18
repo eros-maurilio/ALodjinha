@@ -7,7 +7,8 @@ class TopSellersView: UIView {
     // MARK: - IBOutlet
 
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var tableViewHeight: NSLayoutConstraint!
+    
+    private lazy var viewModel: TableCollectionViewModelProtocol = TopSellersViewModel(delegate: self)
     
 }
 
@@ -17,14 +18,7 @@ extension TopSellersView {
     
     func setup() {
         registerCell()
-        rowSetup()
-    }
-    
-    func updateTableViewHeight() -> CGFloat {
-        tableView.layoutIfNeeded()
-        tableViewHeight.constant = tableView.contentSize.height
-        
-        return tableViewHeight.constant
+        viewModel.loadFromAPI()
     }
 }
 
@@ -55,21 +49,34 @@ private extension TopSellersView {
 
 extension TopSellersView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        viewModel.numberOfItems()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        cell(tableView, at: indexPath, forACellDTO: TopSellersDTO(image: UIImage(named: "axlPlaceHolder")!,
-                                                                  name: "Nome do produto com uma descrição bem grandona",
-                                                                  oldPrice: "De: 12345,55",
-                                                                  newPrice: "Por 5555,55"))
+        cell(tableView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath) as! TopSellersDTO)
     }
 }
 
     // MARK: - UITableViewDelegate
 
 extension TopSellersView: UITableViewDelegate { }
+
+extension TopSellersView: LoadContentable {
+    func didLoad() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            self.tableView.reloadData()
+            self.rowSetup()
+        }
+        
+    }
+    
+    func showMore() {
+        
+    }
+}

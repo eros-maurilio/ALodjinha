@@ -13,7 +13,6 @@
             <connections>
                 <outlet property="bannerViewHolder" destination="c6A-L0-Vx7" id="AuQ-Wk-gVK"/>
                 <outlet property="categoriesViewHolder" destination="57i-mO-5gk" id="e1b-Me-aad"/>
-                <outlet property="topSellersHeight" destination="k6d-6n-eBq" id="vtP-Jg-FVc"/>
                 <outlet property="topSellersViewHolder" destination="wAA-M3-M8n" id="EIv-du-WhO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,7 +26,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aA-Sz-zWj">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="973"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6A-L0-Vx7" customClass="BannerViewWrapper" customModule="ALodjinha" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -70,11 +69,8 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAA-M3-M8n" customClass="TopSellersViewWrapper" customModule="ALodjinha" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="363" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="363" width="414" height="610"/>
                                     <color key="backgroundColor" systemColor="systemBrownColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="200" id="k6d-6n-eBq"/>
-                                    </constraints>
                                 </view>
                             </subviews>
                             <constraints>
@@ -90,7 +86,7 @@
                                 <constraint firstItem="57i-mO-5gk" firstAttribute="leading" secondItem="c6A-L0-Vx7" secondAttribute="leading" id="eVo-Fg-enX"/>
                                 <constraint firstItem="Xab-Eu-efy" firstAttribute="top" secondItem="57i-mO-5gk" secondAttribute="top" id="eja-sR-10t"/>
                                 <constraint firstItem="wAA-M3-M8n" firstAttribute="top" secondItem="TLq-9X-1i2" secondAttribute="bottom" constant="5" id="f2Z-Gu-6Ds"/>
-                                <constraint firstAttribute="bottom" secondItem="wAA-M3-M8n" secondAttribute="bottom" constant="100" id="fyB-fb-hm3"/>
+                                <constraint firstAttribute="bottom" secondItem="wAA-M3-M8n" secondAttribute="bottom" id="fyB-fb-hm3"/>
                                 <constraint firstItem="2Td-Ax-VhU" firstAttribute="leading" secondItem="2aA-Sz-zWj" secondAttribute="leading" constant="20" id="iBj-1m-lHy"/>
                                 <constraint firstAttribute="trailing" secondItem="57i-mO-5gk" secondAttribute="trailing" id="klx-Ja-WiE"/>
                                 <constraint firstItem="nPa-LD-BQg" firstAttribute="leading" secondItem="2aA-Sz-zWj" secondAttribute="leading" id="lup-8M-CCZ"/>
@@ -104,7 +100,7 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="2aA-Sz-zWj" secondAttribute="trailing" id="Hyj-91-eS1"/>
                         <constraint firstItem="2aA-Sz-zWj" firstAttribute="top" secondItem="IAt-KB-9cc" secondAttribute="top" id="OcS-fS-RKT"/>
-                        <constraint firstAttribute="bottom" secondItem="2aA-Sz-zWj" secondAttribute="bottom" constant="80" id="XLG-35-Stb"/>
+                        <constraint firstAttribute="bottom" secondItem="2aA-Sz-zWj" secondAttribute="bottom" id="XLG-35-Stb"/>
                         <constraint firstItem="2aA-Sz-zWj" firstAttribute="leading" secondItem="IAt-KB-9cc" secondAttribute="leading" id="cd8-7K-R5d"/>
                         <constraint firstItem="2aA-Sz-zWj" firstAttribute="width" secondItem="IAt-KB-9cc" secondAttribute="width" id="nkc-61-7gM"/>
                     </constraints>

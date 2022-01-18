@@ -1,7 +1,7 @@
 import UIKit
 
-struct categoryCellDTO {
-    let image: UIImage
+struct CategoryCellDTO {
+    let imageURL: String
     let name: String
 }
 
@@ -9,13 +9,17 @@ class CategoryViewCell: UICollectionViewCell {
     
     // MARK: - IBOutlets
     
-    @IBOutlet private weak var categoryImage: UIImageView!
+    @IBOutlet private weak var categoryImage: ImageCacher!
     @IBOutlet private weak var categoryName: UILabel!
 
     // MARK: - Public Method
     
-    func fill(dto: categoryCellDTO) {
-        categoryImage.image = dto.image
+    func fill(dto: CategoryCellDTO) {
+        categoryImage.downloadImage(withURL: dto.imageURL)
+        
+        if categoryImage.image == nil {
+            categoryImage.image = UIImage(named: "Placeholder")
+        }
         categoryName.text = dto.name
     }
 }

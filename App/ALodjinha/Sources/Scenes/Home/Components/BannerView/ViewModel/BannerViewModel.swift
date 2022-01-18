@@ -2,7 +2,7 @@ import UIKit
 
 typealias BannerResult = Result<BannerResponse, NSError>
 
-final class BannerViewModel: BannerViewModelProtocol {
+final class BannerViewModel: TableCollectionViewModelProtocol {
     
     private var bannerData: [DataModel]?
     private weak var delegate: LoadContentable?
@@ -12,7 +12,7 @@ final class BannerViewModel: BannerViewModelProtocol {
         self.delegate = delegate
     }
     
-    func loadBanner() {
+    func loadFromAPI() {
         dataLoader.request(.getRequestURL(["banner"])) { [weak self] (result: BannerResult) in
             
             guard let self = self else { return }
@@ -37,10 +37,9 @@ final class BannerViewModel: BannerViewModelProtocol {
         return bannerCount
     }
     
-    func dtoForItems(indexPath: IndexPath) -> BannerCellDTO {
+    func dtoForItems(indexPath: IndexPath) -> Any {
         let itemAtIndexPath = bannerData![indexPath.item]
         let imageURL = itemAtIndexPath.urlImagem
-        let id = itemAtIndexPath.id
         
         return BannerCellDTO(imageURL: imageURL)
     }
