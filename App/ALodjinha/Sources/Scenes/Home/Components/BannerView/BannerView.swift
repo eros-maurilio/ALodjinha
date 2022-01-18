@@ -10,13 +10,13 @@ class BannerView: UIView {
     @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet private weak var layout: UICollectionViewFlowLayout!
     
-    private lazy var viewModel: BannerViewModelProtocol = BannerViewModel(delegate: self)
+    private lazy var viewModel: TableCollectionViewModelProtocol = BannerViewModel(delegate: self)
     
     // MARK: - Public Method
     
     func setup() {
         registerCell()
-        viewModel.loadBanner()
+        viewModel.loadFromAPI()
     }
 }
 
@@ -66,7 +66,7 @@ extension BannerView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionCell(collectionView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath))
+        return collectionCell(collectionView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath) as! BannerCellDTO)
     }
 }
 
