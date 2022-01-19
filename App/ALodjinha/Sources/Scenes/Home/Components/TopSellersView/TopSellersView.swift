@@ -11,6 +11,7 @@ class TopSellersView: UIView {
     // MARK: - Properties
     
     private lazy var viewModel: TopSellersViewModelProtocol = TopSellersViewModel(delegate: self)
+    weak var delegate: ViewDelegate?
     
 }
 
@@ -45,6 +46,10 @@ private extension TopSellersView {
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
     }
+    
+    func sendView(_ view: UIViewController) {
+        delegate?.didPush(view: view)
+    }
 }
 
     // MARK: - UITableViewDataSource
@@ -66,7 +71,12 @@ extension TopSellersView: UITableViewDataSource {
 
     // MARK: - UITableViewDelegate
 
-extension TopSellersView: UITableViewDelegate { }
+extension TopSellersView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.show(id: viewModel.transporter(indexPath))
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
 
     // MARK: - ViewDelegate
 
@@ -82,6 +92,8 @@ extension TopSellersView: LoadContentable {
     }
     
     func showMore(id: String) {
-        
+        let viewControler = ProductDetailsView()
+        viewControler.setupView(id: id)
+        sendView(viewControler)
     }
 }

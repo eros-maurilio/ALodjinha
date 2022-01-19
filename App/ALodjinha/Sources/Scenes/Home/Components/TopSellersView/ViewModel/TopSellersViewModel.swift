@@ -50,10 +50,10 @@ final class TopSellersViewModel: TopSellersViewModelProtocol {
     }
     
     func show(id: String) {
-        
+        delegate?.showMore(id: id)
     }
     
     func transporter(_ indexPath: IndexPath) -> String {
-       return ""
+        return String(topSellersData[indexPath.row].id)
     }
 }
