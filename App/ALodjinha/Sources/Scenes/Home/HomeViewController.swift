@@ -36,6 +36,7 @@ private extension HomeViewController {
         bannerView.setup()
         categoriesView.setup()
         topSellersView.setup()
+        categoriesView.delegate = self
 
     }
     
@@ -46,5 +47,11 @@ private extension HomeViewController {
         imageView.frame = frame
         
         navigationItem.titleView = imageView
+    }
+}
+
+extension HomeViewController: ViewDelegate {
+    func didPush(view: UIViewController) {
+        navigationController?.pushViewController(view, animated: true)
     }
 }

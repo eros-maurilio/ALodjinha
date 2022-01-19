@@ -43,8 +43,12 @@ final class CategoriesViewModel: TableCollectionViewModelProtocol {
         return CategoryCellDTO(imageURL: imageURL, name: categorieName ?? "")
     }
     
+    func show(id: String) {
+        delegate?.showMore(id: id)
+    }
+    
     func transporter(_ indexPath: IndexPath) -> String {
-        ""
+        return String(categoriesData![indexPath.row].id)
     }
     
 }

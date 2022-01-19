@@ -44,6 +44,10 @@ final class BannerViewModel: TableCollectionViewModelProtocol {
         return BannerCellDTO(imageURL: imageURL)
     }
     
+    func show(id: String) {
+        
+    }
+    
     func transporter(_ indexPath: IndexPath) -> String {
         return ""
     }

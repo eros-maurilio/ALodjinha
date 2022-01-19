@@ -4,5 +4,5 @@ protocol ViewModelProtocol: AnyObject {
 
 protocol LoadContentable: AnyObject {
     func didLoad()
-    func showMore()
+    func showMore(id: String)
 }
