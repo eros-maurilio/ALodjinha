@@ -1,19 +1,23 @@
 import Foundation
 
-typealias TopSellersResult = Result<BannerResponse, NSError>
-
-final class TopSellersViewModel: TableCollectionViewModelProtocol {
+final class TopSellersViewModel: TopSellersViewModelProtocol {
+    
+    // MARK: - Attributes
     
     private weak var delegate: LoadContentable?
-    private var topSellersData: [DataModel]?
+    private var topSellersData = [DataModel]()
     private var dataLoader = DataLoader()
+    
+    // MARK: - Dependencies
     
     init(delegate: LoadContentable) {
         self.delegate = delegate
     }
 
+    // MARK: - Public Methods
+
     func loadFromAPI() {
-        dataLoader.request(.getRequestURL(["produto", "maisvendidos"])) { [weak self] (result: TopSellersResult) in
+        dataLoader.request(.getURLRequestWithPath(["produto", "maisvendidos"])) { [weak self] (result: APIResult) in
             guard let self = self else { return }
             
             switch result {
@@ -32,19 +36,17 @@ final class TopSellersViewModel: TableCollectionViewModelProtocol {
     }
     
     func numberOfItems() -> Int {
-        guard let topSellersCount = topSellersData?.count else { return 0 }
-    
-        return topSellersCount
+        return topSellersData.count
     }
     
-    func dtoForItems(indexPath: IndexPath) -> Any {
-        let itemAtIndexPath = topSellersData![indexPath.row]
-        let imageURL = itemAtIndexPath.urlImagem
-        let title = itemAtIndexPath.nome
-        let oldPrice = itemAtIndexPath.precoDe
-        let newPrice = itemAtIndexPath.precoPor
+    func dtoForItems(indexPath: IndexPath) -> CategoryTableCellDTO {
+        let itemAtIndexPath = topSellersData[indexPath.row]
+        let imageURL = itemAtIndexPath.urlImage
+        let title = itemAtIndexPath.productName
+        let oldPrice = itemAtIndexPath.oldPrice
+        let newPrice = itemAtIndexPath.newPrice
         
-        return TopSellersDTO(imageURL: imageURL, name: title ?? "", oldPrice: oldPrice ?? 0.0, newPrice: newPrice ?? 0.0)
+        return CategoryTableCellDTO(imageURL: imageURL, name: title ?? "", oldPrice: oldPrice ?? 0.0, newPrice: newPrice ?? 0.0)
     }
     
     func show(id: String) {

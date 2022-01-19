@@ -36,8 +36,13 @@ private extension HomeViewController {
         bannerView.setup()
         categoriesView.setup()
         topSellersView.setup()
-        categoriesView.delegate = self
+        
+        setupSubviewsDelegate()
 
+    }
+    
+    func setupSubviewsDelegate() {
+        _categoriesViewHolder.unwrapped.delegate = self
     }
     
     func setupNavBar() {
@@ -50,8 +55,12 @@ private extension HomeViewController {
     }
 }
 
+    // MARK: - ViewDelegate
+
 extension HomeViewController: ViewDelegate {
+    
     func didPush(view: UIViewController) {
+        view.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(view, animated: true)
     }
 }

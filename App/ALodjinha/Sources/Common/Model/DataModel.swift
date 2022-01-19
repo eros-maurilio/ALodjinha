@@ -1,16 +1,23 @@
 struct DataModel: Decodable {
     let id: Int
-    let nome: String?
-    let urlImagem: String
-    let descricao: String?
-    let precoDe: Float?
-    let precoPor: Float?
-    let categoria: Categoria?
+    let productName: String?
+    let urlImage: String
+    let productDescription: String?
+    let oldPrice: Float?
+    let newPrice: Float?
+    let category: CategoryModel?
     let linkUrl: String?
 }
 
-struct Categoria: Decodable {
-    let id: Int
-    let descricao: String
-    let urlImagem: String
+private extension DataModel {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case productName = "nome"
+        case urlImage = "urlImagem"
+        case productDescription = "descricao"
+        case oldPrice = "precoDe"
+        case newPrice = "precoPor"
+        case category = "categoria"
+        case linkUrl
+    }
 }

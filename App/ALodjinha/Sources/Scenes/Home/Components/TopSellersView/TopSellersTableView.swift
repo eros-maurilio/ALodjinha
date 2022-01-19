@@ -1,6 +1,9 @@
 import UIKit
 
 class TopSellersTableView: UITableView {
+    
+    // MARK: - Overrides
+    
     override var intrinsicContentSize: CGSize {
         self.layoutIfNeeded()
         return self.contentSize

@@ -6,7 +6,6 @@ extension UICollectionView {
         guard let cell = dequeueReusableCell(withReuseIdentifier: String(describing: T.self), for: indexPath) as? T else {
             return T()
         }
-        
         return cell
     }
     

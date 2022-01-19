@@ -1,19 +1,23 @@
 import UIKit
 
-typealias BannerResult = Result<BannerResponse, NSError>
-
-final class BannerViewModel: TableCollectionViewModelProtocol {
+final class BannerViewModel: BannerViewModelProtocol {
     
-    private var bannerData: [DataModel]?
-    private weak var delegate: LoadContentable?
+    // MARK: - Private Attributes
+    
+    private var bannerData = [DataModel]()
     private var dataLoader = DataLoader()
+    private weak var delegate: LoadContentable?
+    
+    // MARK: - Dependencies
     
     init(delegate: LoadContentable) {
         self.delegate = delegate
     }
     
+    // MARK: - Public Methods
+    
     func loadFromAPI() {
-        dataLoader.request(.getRequestURL(["banner"])) { [weak self] (result: BannerResult) in
+        dataLoader.request(.getURLRequestWithPath(["banner"])) { [weak self] (result: APIResult) in
             
             guard let self = self else { return }
             
@@ -33,15 +37,14 @@ final class BannerViewModel: TableCollectionViewModelProtocol {
     }
     
     func numberOfItems() -> Int {
-        guard let bannerCount = bannerData?.count else { return 0 }
-        return bannerCount
+        return bannerData.count
     }
     
-    func dtoForItems(indexPath: IndexPath) -> Any {
-        let itemAtIndexPath = bannerData![indexPath.item]
-        let imageURL = itemAtIndexPath.urlImagem
+    func dtoForItems(indexPath: IndexPath) -> BannerCollectionCellDTO {
+        let itemAtIndexPath = bannerData[indexPath.item]
+        let imageURL = itemAtIndexPath.urlImage
         
-        return BannerCellDTO(imageURL: imageURL)
+        return BannerCollectionCellDTO(imageURL: imageURL)
     }
     
     func show(id: String) {

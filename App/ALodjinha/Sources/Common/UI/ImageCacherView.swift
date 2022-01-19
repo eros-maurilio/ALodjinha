@@ -1,6 +1,6 @@
 import UIKit
 
-class ImageCacher: UIImageView {
+class ImageCacherView: UIImageView {
     let imageCache = NSCache<NSString, UIImage>()
     
     func downloadImage(withURL urlString: String) {

@@ -1,24 +1,24 @@
 import UIKit
 
-struct TopSellersDTO {
+struct CategoryTableCellDTO {
     let imageURL: String
     let name: String
     let oldPrice: Float
     let newPrice: Float
 }
 
-class TopSellerViewCell: UITableViewCell {
+class ProductCell: UITableViewCell {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var productImage: ImageCacher!
+    @IBOutlet weak var productImage: ImageCacherView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var oldPrice: UILabel!
     @IBOutlet weak var newPrice: UILabel!
     
     // MARK: - Public Method
     
-    func fill(dto: TopSellersDTO) {
+    func fill(dto: CategoryTableCellDTO) {
         productImage.downloadImage(withURL: dto.imageURL)
         
         if productImage.image == nil {

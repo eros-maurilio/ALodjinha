@@ -52,6 +52,7 @@ private extension TabBarController {
         navigationController.tabBarItem.title = tab.title
         navigationController.navigationBar.barTintColor = .purple
         navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController.navigationBar.tintColor = .white
         
         if #available(iOS 13.0, *) {
             let navigationBarAppearance = UINavigationBarAppearance()

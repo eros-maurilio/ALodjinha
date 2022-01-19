@@ -1,30 +1,44 @@
 import UIKit
 
 class CategoryViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Properties
     
     private lazy var viewModel: CategoryViewModelProtocol = CategoryViewModel(delegate: self)
+    
+    // MARK: - View's Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+}
+
+    // MARK: - Public Methods
+
+extension CategoryViewController {
     
     func setup(categoryID: String) {
         viewModel.loadFromAPI(id: categoryID)
     }
 }
 
+    // MARK: - Private Methods
+
 private extension CategoryViewController {
+    
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(TopSellerViewCell.self)
+        tableView.register(ProductCell.self)
     }
     
-    func cell(_ tableView: UITableView, at indexPath: IndexPath, forCellDTO aCellDTO: TopSellersDTO) -> TopSellerViewCell {
-        let cell = tableView.dequeueCell(TopSellerViewCell.self, indexPath)
+    func cell(_ tableView: UITableView, at indexPath: IndexPath, forCellDTO aCellDTO: CategoryTableCellDTO) -> ProductCell {
+        let cell = tableView.dequeueCell(ProductCell.self, indexPath)
         cell.fill(dto: aCellDTO)
         
         return cell
@@ -40,35 +54,36 @@ private extension CategoryViewController {
     }
 }
 
+    // MARK: - UITableViewDataSouce
+
 extension CategoryViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return viewModel.numberOfItems()
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return cell(tableView, at: indexPath, forCellDTO: viewModel.dtoForItems(indexPath: indexPath) as! TopSellersDTO)
+        return cell(tableView, at: indexPath, forCellDTO: viewModel.dtoForItems(indexPath: indexPath))
     }
-    
 }
 
-extension CategoryViewController: UITableViewDelegate {
+    // MARK: - UITableViewDelegate
 
-    
-}
+extension CategoryViewController: UITableViewDelegate { }
+
+    // MARK: - ViewDelegate
 
 extension CategoryViewController: LoadContentable {
+    
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.setupNavBar()
             self.setupTableView()
-            print(self.tableView.contentSize)
             self.tableView.reloadData()
             self.rowSetup()
              

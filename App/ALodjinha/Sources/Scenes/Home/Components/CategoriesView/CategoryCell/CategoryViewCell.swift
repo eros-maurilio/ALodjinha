@@ -1,6 +1,6 @@
 import UIKit
 
-struct CategoryCellDTO {
+struct CategoryCollectionDTO {
     let imageURL: String
     let name: String
 }
@@ -9,12 +9,12 @@ class CategoryViewCell: UICollectionViewCell {
     
     // MARK: - IBOutlets
     
-    @IBOutlet private weak var categoryImage: ImageCacher!
+    @IBOutlet private weak var categoryImage: ImageCacherView!
     @IBOutlet private weak var categoryName: UILabel!
 
     // MARK: - Public Method
     
-    func fill(dto: CategoryCellDTO) {
+    func fill(dto: CategoryCollectionDTO) {
         categoryImage.downloadImage(withURL: dto.imageURL)
         
         if categoryImage.image == nil {
