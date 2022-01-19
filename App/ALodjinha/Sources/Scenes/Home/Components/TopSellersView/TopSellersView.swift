@@ -17,7 +17,6 @@ class TopSellersView: UIView {
 extension TopSellersView {
     
     func setup() {
-        registerCell()
         viewModel.loadFromAPI()
     }
 }
@@ -69,14 +68,14 @@ extension TopSellersView: LoadContentable {
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            
+            self.registerCell()
             self.tableView.reloadData()
             self.rowSetup()
         }
         
     }
     
-    func showMore() {
+    func showMore(id: String) {
         
     }
 }

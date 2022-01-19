@@ -40,6 +40,9 @@
 		149EFEE327977A3E004DF61E /* TopSellersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEE227977A3E004DF61E /* TopSellersTableView.swift */; };
 		149EFEE927978948004DF61E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEE727978948004DF61E /* AboutViewController.swift */; };
 		149EFEEA27978948004DF61E /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149EFEE827978948004DF61E /* AboutViewController.xib */; };
+		149EFEF42797AFC4004DF61E /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEF32797AFC4004DF61E /* CategoryViewModel.swift */; };
+		149EFEF72797AFDA004DF61E /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEF52797AFDA004DF61E /* CategoryViewController.swift */; };
+		149EFEF82797AFDA004DF61E /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149EFEF62797AFDA004DF61E /* CategoryViewController.xib */; };
 		14B56B3C279393360018720C /* NibWrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B3B279393360018720C /* NibWrapped.swift */; };
 		14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B422793A6D60018720C /* CategoryViewCell.swift */; };
 		14B56B452793A6D60018720C /* CategoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B56B432793A6D60018720C /* CategoryViewCell.xib */; };
@@ -85,6 +88,9 @@
 		149EFEE227977A3E004DF61E /* TopSellersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSellersTableView.swift; sourceTree = "<group>"; };
 		149EFEE727978948004DF61E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		149EFEE827978948004DF61E /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		149EFEF32797AFC4004DF61E /* CategoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryViewModel.swift; path = ../../../../../../../.Trash/CategoryViewModel.swift; sourceTree = "<group>"; };
+		149EFEF52797AFDA004DF61E /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		149EFEF62797AFDA004DF61E /* CategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
 		14B56B3B279393360018720C /* NibWrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibWrapped.swift; sourceTree = "<group>"; };
 		14B56B422793A6D60018720C /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		14B56B432793A6D60018720C /* CategoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryViewCell.xib; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 				141C99422791FC0D00B90284 /* Home */,
 				141CD138278F82E100613A4A /* TabBarController */,
 				149EFEE627978519004DF61E /* About */,
+				149EFEEC27979AFD004DF61E /* Category */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -316,6 +323,16 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		149EFEEC27979AFD004DF61E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				149EFEF32797AFC4004DF61E /* CategoryViewModel.swift */,
+				149EFEF52797AFDA004DF61E /* CategoryViewController.swift */,
+				149EFEF62797AFDA004DF61E /* CategoryViewController.xib */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		14B56B3D2793994E0018720C /* NibWrapp */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +473,7 @@
 				149EFEEA27978948004DF61E /* AboutViewController.xib in Resources */,
 				14826C372794619C003714CB /* TopSellerViewCell.xib in Resources */,
 				14FAAA42278F27A100904807 /* LaunchScreen.storyboard in Resources */,
+				149EFEF82797AFDA004DF61E /* CategoryViewController.xib in Resources */,
 				141C99512791FF8900B90284 /* BannerViewCell.xib in Resources */,
 				14FAAA3F278F27A100904807 /* Assets.xcassets in Resources */,
 				141C995F27922F6F00B90284 /* HomeViewController.xib in Resources */,
@@ -471,6 +489,7 @@
 			files = (
 				1473DA3B2790BD8600F268BB /* UIColor+Extension.swift in Sources */,
 				141CD13F278F88D200613A4A /* WindowFactory.swift in Sources */,
+				149EFEF72797AFDA004DF61E /* CategoryViewController.swift in Sources */,
 				14270C64279602C500F8C25A /* DataLoader.swift in Sources */,
 				14270C662796056200F8C25A /* BannerResponse.swift in Sources */,
 				149EFEE327977A3E004DF61E /* TopSellersTableView.swift in Sources */,
@@ -494,6 +513,7 @@
 				149EFED6279729B7004DF61E /* DataModel.swift in Sources */,
 				149EFEE127974251004DF61E /* TopSellersViewModel.swift in Sources */,
 				1431F2312793592800201858 /* NibWrapperView.swift in Sources */,
+				149EFEF42797AFC4004DF61E /* CategoryViewModel.swift in Sources */,
 				1473DA3D2791092500F268BB /* TabControllerType.swift in Sources */,
 				1431F23927935F6D00201858 /* BannerView.swift in Sources */,
 				149EFEDC27972A95004DF61E /* ViewModelProtocol.swift in Sources */,

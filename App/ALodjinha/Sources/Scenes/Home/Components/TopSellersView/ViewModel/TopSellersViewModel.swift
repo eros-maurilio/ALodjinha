@@ -47,6 +47,10 @@ final class TopSellersViewModel: TableCollectionViewModelProtocol {
         return TopSellersDTO(imageURL: imageURL, name: title ?? "", oldPrice: oldPrice ?? 0.0, newPrice: newPrice ?? 0.0)
     }
     
+    func show(id: String) {
+        
+    }
+    
     func transporter(_ indexPath: IndexPath) -> String {
        return ""
     }

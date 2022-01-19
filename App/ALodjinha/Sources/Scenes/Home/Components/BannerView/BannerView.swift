@@ -15,7 +15,6 @@ class BannerView: UIView {
     // MARK: - Public Method
     
     func setup() {
-        registerCell()
         viewModel.loadFromAPI()
     }
 }
@@ -92,13 +91,14 @@ extension BannerView: LoadContentable {
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            self.registerCell()
             self.collectionView.reloadData()
             self.setupViewComponents()
 
         }
     }
     
-    func showMore() {
+    func showMore(id: String) {
         
     }
 }
