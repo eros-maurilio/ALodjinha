@@ -20,11 +20,11 @@ private extension CategoryViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(TopSellerViewCell.self)
+        tableView.register(ProductCell.self)
     }
     
-    func cell(_ tableView: UITableView, at indexPath: IndexPath, forCellDTO aCellDTO: TopSellersDTO) -> TopSellerViewCell {
-        let cell = tableView.dequeueCell(TopSellerViewCell.self, indexPath)
+    func cell(_ tableView: UITableView, at indexPath: IndexPath, forCellDTO aCellDTO: TopSellersDTO) -> ProductCell {
+        let cell = tableView.dequeueCell(ProductCell.self, indexPath)
         cell.fill(dto: aCellDTO)
         
         return cell

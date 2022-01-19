@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="80" height="112"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="uVe-ET-VHI" customClass="ImageCacher" customModule="ALodjinha" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="uVe-ET-VHI" customClass="ImageCacherView" customModule="ALodjinha" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="8A2-me-r1r"/>

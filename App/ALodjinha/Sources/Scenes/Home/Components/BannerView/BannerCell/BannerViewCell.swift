@@ -8,7 +8,7 @@ class BannerViewCell: UICollectionViewCell {
    
     // MARK: - IBOutlets
     
-    @IBOutlet private weak var bannerImage: ImageCacher!
+    @IBOutlet private weak var bannerImage: ImageCacherView!
     
     // MARK: - Public Method
     

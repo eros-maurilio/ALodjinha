@@ -27,12 +27,12 @@ private extension TopSellersView {
     func registerCell() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(TopSellerViewCell.self)
+        tableView.register(ProductCell.self)
         tableView.tableFooterView = UIView()
     }
     
-    func cell(_ tableView: UITableView, at indexPath: IndexPath, forACellDTO ACellDTO: TopSellersDTO) -> TopSellerViewCell {
-        let cell = tableView.dequeueCell(TopSellerViewCell.self, indexPath)
+    func cell(_ tableView: UITableView, at indexPath: IndexPath, forACellDTO ACellDTO: TopSellersDTO) -> ProductCell {
+        let cell = tableView.dequeueCell(ProductCell.self, indexPath)
         cell.fill(dto: ACellDTO)
         
         return cell

@@ -9,7 +9,7 @@ class CategoryViewCell: UICollectionViewCell {
     
     // MARK: - IBOutlets
     
-    @IBOutlet private weak var categoryImage: ImageCacher!
+    @IBOutlet private weak var categoryImage: ImageCacherView!
     @IBOutlet private weak var categoryName: UILabel!
 
     // MARK: - Public Method

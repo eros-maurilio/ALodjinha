@@ -7,11 +7,11 @@ struct TopSellersDTO {
     let newPrice: Float
 }
 
-class TopSellerViewCell: UITableViewCell {
+class ProductCell: UITableViewCell {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var productImage: ImageCacher!
+    @IBOutlet weak var productImage: ImageCacherView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var oldPrice: UILabel!
     @IBOutlet weak var newPrice: UILabel!
