@@ -60,6 +60,7 @@ private extension HomeViewController {
 extension HomeViewController: ViewDelegate {
     
     func didPush(view: UIViewController) {
+        view.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(view, animated: true)
     }
 }
