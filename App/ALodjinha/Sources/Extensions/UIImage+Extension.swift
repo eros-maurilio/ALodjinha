@@ -4,6 +4,7 @@ extension UIImage {
     
     @available(iOS 10.0, *)
     func upscale(targetSize: CGSize) -> UIImage {
+        
         let widthRatio = targetSize.width / size.width
         let heightRatio = targetSize.height / size.height
         
@@ -16,8 +17,7 @@ extension UIImage {
         
         let renderer = UIGraphicsImageRenderer(size: scaledImageSize)
         
-        let scaledImage = renderer.image { _ in self.draw(in: CGRect(origin: .zero, size: scaledImageSize))
-        }
+        let scaledImage = renderer.image { _ in self.draw(in: CGRect(origin: .zero, size: scaledImageSize)) }
         
         return scaledImage
     }
