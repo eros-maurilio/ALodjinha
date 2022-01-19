@@ -2,6 +2,10 @@ import UIKit
 
 @IBDesignable class CategoriesViewWrapper: NibWrapperView<CategoriesView> { }
 
+protocol ViewDelegate: AnyObject {
+    func didPush(view: UIViewController)
+}
+
 class CategoriesView: UIView {
     
     // MARK: - IBOutlets
@@ -9,12 +13,13 @@ class CategoriesView: UIView {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var layout: UICollectionViewFlowLayout!
     
+    weak var delegate: ViewDelegate?
+    
     private lazy var viewModel: TableCollectionViewModelProtocol = CategoriesViewModel(delegate: self)
     
     // MARK: - Public Method
     
     func setup() {
-        register()
         viewModel.loadFromAPI()
     }
 }
@@ -39,11 +44,20 @@ private extension CategoriesView {
     func setupViewComponents() {
         layout.itemSize = CGSize(width: 80, height: 100)
     }
+    
+    func sendView(_ view: UIViewController) {
+        delegate?.didPush(view: view)
+    }
 }
 
     // MARK: - UICollectionViewDelegate
 
-extension CategoriesView: UICollectionViewDelegate { }
+extension CategoriesView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.show(id: viewModel.transporter(indexPath))
+    }
+    
+}
 
     // MARK: - UICollectionViewDataSource
 
@@ -68,14 +82,15 @@ extension CategoriesView: LoadContentable {
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            
+            self.register()
             self.collectionView.reloadData()
             self.setupViewComponents()
         }
     }
     
-    func showMore() {
-        
-    }
-    
+    func showMore(id: String) {
+        let viewController = CategoryViewController()
+        viewController.setup(categoryID: id)
+        sendView(viewController)
+    }    
 }
