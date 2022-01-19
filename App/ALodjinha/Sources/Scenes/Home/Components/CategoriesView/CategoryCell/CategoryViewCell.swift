@@ -1,6 +1,6 @@
 import UIKit
 
-struct CategoryCellDTO {
+struct CategoryCollectionDTO {
     let imageURL: String
     let name: String
 }
@@ -14,7 +14,7 @@ class CategoryViewCell: UICollectionViewCell {
 
     // MARK: - Public Method
     
-    func fill(dto: CategoryCellDTO) {
+    func fill(dto: CategoryCollectionDTO) {
         categoryImage.downloadImage(withURL: dto.imageURL)
         
         if categoryImage.image == nil {

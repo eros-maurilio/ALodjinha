@@ -23,7 +23,7 @@ private extension CategoryViewController {
         tableView.register(ProductCell.self)
     }
     
-    func cell(_ tableView: UITableView, at indexPath: IndexPath, forCellDTO aCellDTO: TopSellersDTO) -> ProductCell {
+    func cell(_ tableView: UITableView, at indexPath: IndexPath, forCellDTO aCellDTO: CategoryTableCellDTO) -> ProductCell {
         let cell = tableView.dequeueCell(ProductCell.self, indexPath)
         cell.fill(dto: aCellDTO)
         
@@ -41,20 +41,18 @@ private extension CategoryViewController {
 }
 
 extension CategoryViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return viewModel.numberOfItems()
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return cell(tableView, at: indexPath, forCellDTO: viewModel.dtoForItems(indexPath: indexPath) as! TopSellersDTO)
+        return cell(tableView, at: indexPath, forCellDTO: viewModel.dtoForItems(indexPath: indexPath))
     }
-    
 }
 
 extension CategoryViewController: UITableViewDelegate {

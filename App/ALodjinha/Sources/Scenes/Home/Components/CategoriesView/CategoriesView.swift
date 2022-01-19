@@ -34,7 +34,7 @@ private extension CategoriesView {
         collectionView.register(CategoryViewCell.self)
     }
     
-    func collectionCell(_ collectionView: UICollectionView, at indexPath: IndexPath, forACellDTO ACellDTO: CategoryCellDTO) -> CategoryViewCell {
+    func collectionCell(_ collectionView: UICollectionView, at indexPath: IndexPath, forACellDTO ACellDTO: CategoryCollectionDTO) -> CategoryViewCell {
         let cell = collectionView.dequeueCell(CategoryViewCell.self, indexPath)
         cell.fill(dto: ACellDTO)
         
@@ -73,7 +73,7 @@ extension CategoriesView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionCell(collectionView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath) as! CategoryCellDTO)
+        return collectionCell(collectionView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath) as! CategoryCollectionDTO)
     }
     
 }

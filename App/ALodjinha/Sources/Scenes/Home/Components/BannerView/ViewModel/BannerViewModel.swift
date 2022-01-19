@@ -39,7 +39,7 @@ final class BannerViewModel: TableCollectionViewModelProtocol {
         let itemAtIndexPath = bannerData![indexPath.item]
         let imageURL = itemAtIndexPath.urlImage
         
-        return BannerCellDTO(imageURL: imageURL)
+        return BannerCollectionCellDTO(imageURL: imageURL)
     }
     
     func show(id: String) {

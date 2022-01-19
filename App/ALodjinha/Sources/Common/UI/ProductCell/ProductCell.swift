@@ -1,6 +1,6 @@
 import UIKit
 
-struct TopSellersDTO {
+struct CategoryTableCellDTO {
     let imageURL: String
     let name: String
     let oldPrice: Float
@@ -18,7 +18,7 @@ class ProductCell: UITableViewCell {
     
     // MARK: - Public Method
     
-    func fill(dto: TopSellersDTO) {
+    func fill(dto: CategoryTableCellDTO) {
         productImage.downloadImage(withURL: dto.imageURL)
         
         if productImage.image == nil {

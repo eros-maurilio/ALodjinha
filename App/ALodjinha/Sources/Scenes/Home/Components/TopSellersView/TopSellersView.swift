@@ -31,7 +31,7 @@ private extension TopSellersView {
         tableView.tableFooterView = UIView()
     }
     
-    func cell(_ tableView: UITableView, at indexPath: IndexPath, forACellDTO ACellDTO: TopSellersDTO) -> ProductCell {
+    func cell(_ tableView: UITableView, at indexPath: IndexPath, forACellDTO ACellDTO: CategoryTableCellDTO) -> ProductCell {
         let cell = tableView.dequeueCell(ProductCell.self, indexPath)
         cell.fill(dto: ACellDTO)
         
@@ -56,7 +56,7 @@ extension TopSellersView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        cell(tableView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath) as! TopSellersDTO)
+        cell(tableView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath) as! CategoryTableCellDTO)
     }
 }
 

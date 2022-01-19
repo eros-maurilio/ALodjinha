@@ -42,7 +42,7 @@ final class TopSellersViewModel: TableCollectionViewModelProtocol {
         let oldPrice = itemAtIndexPath.oldPrice
         let newPrice = itemAtIndexPath.newPrice
         
-        return TopSellersDTO(imageURL: imageURL, name: title ?? "", oldPrice: oldPrice ?? 0.0, newPrice: newPrice ?? 0.0)
+        return CategoryTableCellDTO(imageURL: imageURL, name: title ?? "", oldPrice: oldPrice ?? 0.0, newPrice: newPrice ?? 0.0)
     }
     
     func show(id: String) {

@@ -38,7 +38,7 @@ final class CategoriesViewModel: TableCollectionViewModelProtocol {
         let imageURL = itemAtIndexPaht.urlImage
         let categorieName = itemAtIndexPaht.productDescription
         
-        return CategoryCellDTO(imageURL: imageURL, name: categorieName ?? "")
+        return CategoryCollectionDTO(imageURL: imageURL, name: categorieName ?? "")
     }
     
     func show(id: String) {

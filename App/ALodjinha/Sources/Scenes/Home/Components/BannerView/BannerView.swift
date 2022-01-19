@@ -29,7 +29,7 @@ private extension BannerView {
         collectionView.register(BannerViewCell.self)
     }
     
-    func collectionCell(_ collectionView: UICollectionView, at indexPath: IndexPath, forACellDTO aCellDTO: BannerCellDTO) -> BannerViewCell {
+    func collectionCell(_ collectionView: UICollectionView, at indexPath: IndexPath, forACellDTO aCellDTO: BannerCollectionCellDTO) -> BannerViewCell {
         let cell = collectionView.dequeueCell(BannerViewCell.self, indexPath)
         cell.fillCell(dto: aCellDTO)
         
@@ -65,7 +65,7 @@ extension BannerView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionCell(collectionView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath) as! BannerCellDTO)
+        return collectionCell(collectionView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath) as! BannerCollectionCellDTO)
     }
 }
 
