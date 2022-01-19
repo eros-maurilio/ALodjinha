@@ -1,7 +1,5 @@
 import Foundation
 
-typealias CategoriesResult = Result<APIResponse, NSError>
-
 final class CategoriesViewModel: TableCollectionViewModelProtocol {
     
     private weak var delegate: LoadContentable?
@@ -13,7 +11,7 @@ final class CategoriesViewModel: TableCollectionViewModelProtocol {
     }
     
     func loadFromAPI() {
-        dataLoader.request(.getURLRequestWithPath(["categoria"])) { [weak self] (result: CategoriesResult) in
+        dataLoader.request(.getURLRequestWithPath(["categoria"])) { [weak self] (result: APIResult) in
             guard let self = self else { return }
             
             switch result {

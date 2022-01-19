@@ -1,7 +1,5 @@
 import UIKit
 
-typealias BannerResult = Result<APIResponse, NSError>
-
 final class BannerViewModel: TableCollectionViewModelProtocol {
     
     private var bannerData: [DataModel]?
@@ -13,7 +11,7 @@ final class BannerViewModel: TableCollectionViewModelProtocol {
     }
     
     func loadFromAPI() {
-        dataLoader.request(.getURLRequestWithPath(["banner"])) { [weak self] (result: BannerResult) in
+        dataLoader.request(.getURLRequestWithPath(["banner"])) { [weak self] (result: APIResult) in
             
             guard let self = self else { return }
             
