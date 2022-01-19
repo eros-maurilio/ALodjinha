@@ -1,22 +1,36 @@
 import UIKit
 
 class CategoryViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Properties
     
     private lazy var viewModel: CategoryViewModelProtocol = CategoryViewModel(delegate: self)
+    
+    // MARK: - View's Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+}
+
+    // MARK: - Public Methods
+
+extension CategoryViewController {
     
     func setup(categoryID: String) {
         viewModel.loadFromAPI(id: categoryID)
     }
 }
 
+    // MARK: - Private Methods
+
 private extension CategoryViewController {
+    
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -40,6 +54,8 @@ private extension CategoryViewController {
     }
 }
 
+    // MARK: - UITableViewDataSouce
+
 extension CategoryViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,18 +71,19 @@ extension CategoryViewController: UITableViewDataSource {
     }
 }
 
-extension CategoryViewController: UITableViewDelegate {
+    // MARK: - UITableViewDelegate
 
-    
-}
+extension CategoryViewController: UITableViewDelegate { }
+
+    // MARK: - ViewDelegate
 
 extension CategoryViewController: LoadContentable {
+    
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.setupNavBar()
             self.setupTableView()
-            print(self.tableView.contentSize)
             self.tableView.reloadData()
             self.rowSetup()
              

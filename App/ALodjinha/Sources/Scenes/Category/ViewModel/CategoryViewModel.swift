@@ -1,16 +1,25 @@
 import Foundation
 
 final class CategoryViewModel: CategoryViewModelProtocol {
+    
+    // MARK: - Attributes
+    
     private weak var delegate: LoadContentable?
-    private var categoryData: [DataModel]?
+    private var categoryData = [DataModel]()
     private var dataLoader = DataLoader()
     private var itemAtIndexPath = String()
     
+    // MARK: - Computed Variable
+    
     var navTitle: String { navigationTitle() }
+    
+    // MARK: - Dependencies
     
     init(delegate: LoadContentable) {
         self.delegate = delegate
     }
+    
+    // MARK: - Public Methods
     
     func loadFromAPI(id: String) {
         dataLoader.request(.getURLRequestWithQuery(path: "/produto", query: id)) { [weak self] (result: APIResult) in
@@ -21,7 +30,6 @@ final class CategoryViewModel: CategoryViewModelProtocol {
                 
             case let .success(response):
                 self.categoryData = response.data
-                debugPrint(self.categoryData!)
                 self.delegate?.didLoad()
             case let .failure(error):
                 debugPrint(error)
@@ -34,13 +42,11 @@ final class CategoryViewModel: CategoryViewModelProtocol {
     }
     
     func numberOfItems() -> Int {
-        guard let categoryDataCount = categoryData?.count else { return .zero}
-        
-        return categoryDataCount
+        return categoryData.count
     }
     
     func dtoForItems(indexPath: IndexPath) -> CategoryTableCellDTO {
-        let itemAtIndexPath = categoryData![indexPath.row]
+        let itemAtIndexPath = categoryData[indexPath.row]
         let imageURL = itemAtIndexPath.urlImage
         let name = itemAtIndexPath.productName
         let oldPrice = itemAtIndexPath.oldPrice
@@ -58,10 +64,10 @@ final class CategoryViewModel: CategoryViewModelProtocol {
     }
     
     func transporter(_ indexPath: IndexPath) -> String {
-        return String(categoryData![indexPath.row].id)
+        return String(categoryData[indexPath.row].id)
     }
     
     func navigationTitle() -> String {
-        categoryData?.first?.category?.categoryName ?? ""
+        categoryData.first?.category?.categoryName ?? ""
     }
 }

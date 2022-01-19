@@ -2,10 +2,6 @@ import UIKit
 
 @IBDesignable class CategoriesViewWrapper: NibWrapperView<CategoriesView> { }
 
-protocol ViewDelegate: AnyObject {
-    func didPush(view: UIViewController)
-}
-
 class CategoriesView: UIView {
     
     // MARK: - IBOutlets
@@ -13,9 +9,10 @@ class CategoriesView: UIView {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var layout: UICollectionViewFlowLayout!
     
-    weak var delegate: ViewDelegate?
+    // MARK: - Properties
     
-    private lazy var viewModel: TableCollectionViewModelProtocol = CategoriesViewModel(delegate: self)
+    weak var delegate: ViewDelegate?
+    private lazy var viewModel: CategoriesViewModelProtocol = CategoriesViewModel(delegate: self)
     
     // MARK: - Public Method
     
@@ -53,16 +50,15 @@ private extension CategoriesView {
     // MARK: - UICollectionViewDelegate
 
 extension CategoriesView: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.show(id: viewModel.transporter(indexPath))
     }
-    
 }
 
     // MARK: - UICollectionViewDataSource
 
 extension CategoriesView: UICollectionViewDataSource {
-    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.numberOfSections()
@@ -73,12 +69,14 @@ extension CategoriesView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionCell(collectionView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath) as! CategoryCollectionDTO)
-    }
-    
+        return collectionCell(collectionView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath))
+    }    
 }
 
+    // MARK: - ViewDelegate
+
 extension CategoriesView: LoadContentable {
+    
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }

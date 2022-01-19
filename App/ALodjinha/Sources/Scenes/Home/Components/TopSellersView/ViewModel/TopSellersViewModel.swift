@@ -1,14 +1,20 @@
 import Foundation
 
-final class TopSellersViewModel: TableCollectionViewModelProtocol {
+final class TopSellersViewModel: TopSellersViewModelProtocol {
+    
+    // MARK: - Attributes
     
     private weak var delegate: LoadContentable?
-    private var topSellersData: [DataModel]?
+    private var topSellersData = [DataModel]()
     private var dataLoader = DataLoader()
+    
+    // MARK: - Dependencies
     
     init(delegate: LoadContentable) {
         self.delegate = delegate
     }
+
+    // MARK: - Public Methods
 
     func loadFromAPI() {
         dataLoader.request(.getURLRequestWithPath(["produto", "maisvendidos"])) { [weak self] (result: APIResult) in
@@ -30,13 +36,11 @@ final class TopSellersViewModel: TableCollectionViewModelProtocol {
     }
     
     func numberOfItems() -> Int {
-        guard let topSellersCount = topSellersData?.count else { return 0 }
-    
-        return topSellersCount
+        return topSellersData.count
     }
     
-    func dtoForItems(indexPath: IndexPath) -> Any {
-        let itemAtIndexPath = topSellersData![indexPath.row]
+    func dtoForItems(indexPath: IndexPath) -> CategoryTableCellDTO {
+        let itemAtIndexPath = topSellersData[indexPath.row]
         let imageURL = itemAtIndexPath.urlImage
         let title = itemAtIndexPath.productName
         let oldPrice = itemAtIndexPath.oldPrice

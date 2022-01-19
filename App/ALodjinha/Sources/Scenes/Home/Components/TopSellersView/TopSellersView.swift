@@ -8,7 +8,9 @@ class TopSellersView: UIView {
 
     @IBOutlet private weak var tableView: UITableView!
     
-    private lazy var viewModel: TableCollectionViewModelProtocol = TopSellersViewModel(delegate: self)
+    // MARK: - Properties
+    
+    private lazy var viewModel: TopSellersViewModelProtocol = TopSellersViewModel(delegate: self)
     
 }
 
@@ -24,6 +26,7 @@ extension TopSellersView {
     // MARK: - Private Methods
 
 private extension TopSellersView {
+    
     func registerCell() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -47,6 +50,7 @@ private extension TopSellersView {
     // MARK: - UITableViewDataSource
 
 extension TopSellersView: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         viewModel.numberOfSections()
     }
@@ -56,7 +60,7 @@ extension TopSellersView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        cell(tableView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath) as! CategoryTableCellDTO)
+        cell(tableView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath))
     }
 }
 
@@ -64,7 +68,10 @@ extension TopSellersView: UITableViewDataSource {
 
 extension TopSellersView: UITableViewDelegate { }
 
+    // MARK: - ViewDelegate
+
 extension TopSellersView: LoadContentable {
+    
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
@@ -72,7 +79,6 @@ extension TopSellersView: LoadContentable {
             self.tableView.reloadData()
             self.rowSetup()
         }
-        
     }
     
     func showMore(id: String) {

@@ -14,7 +14,6 @@ class BannerViewCell: UICollectionViewCell {
     
     func fillCell(dto: BannerCollectionCellDTO) {
         bannerImage.downloadImage(withURL: dto.imageURL)
-        
     }
 }
 
