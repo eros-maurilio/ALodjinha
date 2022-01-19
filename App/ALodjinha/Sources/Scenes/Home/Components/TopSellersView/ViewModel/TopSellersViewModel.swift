@@ -1,6 +1,6 @@
 import Foundation
 
-typealias TopSellersResult = Result<BannerResponse, NSError>
+typealias TopSellersResult = Result<APIResponse, NSError>
 
 final class TopSellersViewModel: TableCollectionViewModelProtocol {
     
@@ -13,7 +13,7 @@ final class TopSellersViewModel: TableCollectionViewModelProtocol {
     }
 
     func loadFromAPI() {
-        dataLoader.request(.getRequestURL(["produto", "maisvendidos"])) { [weak self] (result: TopSellersResult) in
+        dataLoader.request(.getURLRequestWithPath(["produto", "maisvendidos"])) { [weak self] (result: TopSellersResult) in
             guard let self = self else { return }
             
             switch result {
@@ -39,10 +39,10 @@ final class TopSellersViewModel: TableCollectionViewModelProtocol {
     
     func dtoForItems(indexPath: IndexPath) -> Any {
         let itemAtIndexPath = topSellersData![indexPath.row]
-        let imageURL = itemAtIndexPath.urlImagem
-        let title = itemAtIndexPath.nome
-        let oldPrice = itemAtIndexPath.precoDe
-        let newPrice = itemAtIndexPath.precoPor
+        let imageURL = itemAtIndexPath.urlImage
+        let title = itemAtIndexPath.productName
+        let oldPrice = itemAtIndexPath.oldPrice
+        let newPrice = itemAtIndexPath.newPrice
         
         return TopSellersDTO(imageURL: imageURL, name: title ?? "", oldPrice: oldPrice ?? 0.0, newPrice: newPrice ?? 0.0)
     }

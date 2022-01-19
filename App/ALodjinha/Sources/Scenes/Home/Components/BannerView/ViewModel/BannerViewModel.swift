@@ -1,6 +1,6 @@
 import UIKit
 
-typealias BannerResult = Result<BannerResponse, NSError>
+typealias BannerResult = Result<APIResponse, NSError>
 
 final class BannerViewModel: TableCollectionViewModelProtocol {
     
@@ -13,7 +13,7 @@ final class BannerViewModel: TableCollectionViewModelProtocol {
     }
     
     func loadFromAPI() {
-        dataLoader.request(.getRequestURL(["banner"])) { [weak self] (result: BannerResult) in
+        dataLoader.request(.getURLRequestWithPath(["banner"])) { [weak self] (result: BannerResult) in
             
             guard let self = self else { return }
             
@@ -39,7 +39,7 @@ final class BannerViewModel: TableCollectionViewModelProtocol {
     
     func dtoForItems(indexPath: IndexPath) -> Any {
         let itemAtIndexPath = bannerData![indexPath.item]
-        let imageURL = itemAtIndexPath.urlImagem
+        let imageURL = itemAtIndexPath.urlImage
         
         return BannerCellDTO(imageURL: imageURL)
     }

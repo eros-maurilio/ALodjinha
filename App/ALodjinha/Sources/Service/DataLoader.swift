@@ -2,7 +2,11 @@ import Foundation
 
 final class DataLoader {
     
+    // MARK: - SharedSession
+    
     private var sharedSession: URLSession { URLSession.shared}
+    
+    // MARK: - Main Method
     
     func request<T: Decodable>(_ endPoint: EndPoint, completion: @escaping(Result<T, NSError>) -> Void) {
         

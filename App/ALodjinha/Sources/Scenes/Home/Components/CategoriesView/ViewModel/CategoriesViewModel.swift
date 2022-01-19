@@ -1,6 +1,6 @@
 import Foundation
 
-typealias CategoriesResult = Result<BannerResponse, NSError>
+typealias CategoriesResult = Result<APIResponse, NSError>
 
 final class CategoriesViewModel: TableCollectionViewModelProtocol {
     
@@ -13,7 +13,7 @@ final class CategoriesViewModel: TableCollectionViewModelProtocol {
     }
     
     func loadFromAPI() {
-        dataLoader.request(.getRequestURL(["categoria"])) { [weak self] (result: CategoriesResult) in
+        dataLoader.request(.getURLRequestWithPath(["categoria"])) { [weak self] (result: CategoriesResult) in
             guard let self = self else { return }
             
             switch result {
@@ -37,8 +37,8 @@ final class CategoriesViewModel: TableCollectionViewModelProtocol {
     
     func dtoForItems(indexPath: IndexPath) -> Any {
         let itemAtIndexPaht = categoriesData![indexPath.item]
-        let imageURL = itemAtIndexPaht.urlImagem
-        let categorieName = itemAtIndexPaht.descricao
+        let imageURL = itemAtIndexPaht.urlImage
+        let categorieName = itemAtIndexPaht.productDescription
         
         return CategoryCellDTO(imageURL: imageURL, name: categorieName ?? "")
     }

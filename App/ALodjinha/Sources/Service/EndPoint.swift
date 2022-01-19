@@ -1,8 +1,13 @@
 import Foundation
 
 struct EndPoint {
+    
+    // MARK: - Attributes
+    
     let path: String
     let queryItem: [URLQueryItem]?
+    
+    // MARK: - URL Computed Variable
     
     var url: URL? {
         var components = URLComponents()
@@ -16,10 +21,11 @@ struct EndPoint {
         }
         
         components.queryItems = query
-
         
         return components.url
     }
+    
+    // MARK: Type Dependencies
     
     init(path: String, queryItem: [URLQueryItem]? = nil) {
         self.path = path
@@ -28,7 +34,10 @@ struct EndPoint {
 }
 
 extension EndPoint {
-    static func getRequestURL(_ paths: [String]) -> EndPoint {
+    
+    // MARK: - Static Methods
+    
+    static func getURLRequestWithPath(_ paths: [String]) -> EndPoint {
         var currentPath = String()
         
         for path in paths {
@@ -42,10 +51,7 @@ extension EndPoint {
         let query = [
             URLQueryItem(name: "categoriaId", value: query)
         ]
-        
-        print(query)
-        print(path)
-        
+
         return EndPoint(path: path, queryItem: query)
     }
 }
