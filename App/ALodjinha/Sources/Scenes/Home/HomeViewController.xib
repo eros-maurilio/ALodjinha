@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aA-Sz-zWj">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="973"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="363"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6A-L0-Vx7" customClass="BannerViewWrapper" customModule="ALodjinha" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -69,7 +69,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAA-M3-M8n" customClass="TopSellersViewWrapper" customModule="ALodjinha" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="363" width="414" height="610"/>
+                                    <rect key="frame" x="0.0" y="363" width="414" height="0.0"/>
                                     <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 </view>
                             </subviews>
@@ -102,6 +102,7 @@
                         <constraint firstItem="2aA-Sz-zWj" firstAttribute="top" secondItem="IAt-KB-9cc" secondAttribute="top" id="OcS-fS-RKT"/>
                         <constraint firstAttribute="bottom" secondItem="2aA-Sz-zWj" secondAttribute="bottom" id="XLG-35-Stb"/>
                         <constraint firstItem="2aA-Sz-zWj" firstAttribute="leading" secondItem="IAt-KB-9cc" secondAttribute="leading" id="cd8-7K-R5d"/>
+                        <constraint firstItem="2aA-Sz-zWj" firstAttribute="centerX" secondItem="IAt-KB-9cc" secondAttribute="centerX" id="nPm-lP-ACh"/>
                         <constraint firstItem="2aA-Sz-zWj" firstAttribute="width" secondItem="IAt-KB-9cc" secondAttribute="width" id="nkc-61-7gM"/>
                     </constraints>
                 </scrollView>
