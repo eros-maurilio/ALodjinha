@@ -13,7 +13,6 @@
 		141C995E27922F6F00B90284 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141C995C27922F6F00B90284 /* HomeViewController.swift */; };
 		141C995F27922F6F00B90284 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141C995D27922F6F00B90284 /* HomeViewController.xib */; };
 		141CD13A278F831900613A4A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CD139278F831900613A4A /* TabBarController.swift */; };
-		141CD13C278F86FD00613A4A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CD13B278F86FD00613A4A /* AboutViewController.swift */; };
 		141CD13F278F88D200613A4A /* WindowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CD13E278F88D200613A4A /* WindowFactory.swift */; };
 		14270C5C2795F76500F8C25A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14270C5B2795F76500F8C25A /* UIImage+Extension.swift */; };
 		14270C602795FF6300F8C25A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14270C5F2795FF6300F8C25A /* EndPoint.swift */; };
@@ -39,6 +38,8 @@
 		149EFEDE27972BCE004DF61E /* TableCollectionViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEDD27972BCE004DF61E /* TableCollectionViewModelProtocol.swift */; };
 		149EFEE127974251004DF61E /* TopSellersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEE027974251004DF61E /* TopSellersViewModel.swift */; };
 		149EFEE327977A3E004DF61E /* TopSellersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEE227977A3E004DF61E /* TopSellersTableView.swift */; };
+		149EFEE927978948004DF61E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEE727978948004DF61E /* AboutViewController.swift */; };
+		149EFEEA27978948004DF61E /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149EFEE827978948004DF61E /* AboutViewController.xib */; };
 		14B56B3C279393360018720C /* NibWrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B3B279393360018720C /* NibWrapped.swift */; };
 		14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B422793A6D60018720C /* CategoryViewCell.swift */; };
 		14B56B452793A6D60018720C /* CategoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B56B432793A6D60018720C /* CategoryViewCell.xib */; };
@@ -57,7 +58,6 @@
 		141C995C27922F6F00B90284 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		141C995D27922F6F00B90284 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		141CD139278F831900613A4A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		141CD13B278F86FD00613A4A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		141CD13E278F88D200613A4A /* WindowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowFactory.swift; sourceTree = "<group>"; };
 		14270C5B2795F76500F8C25A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		14270C5F2795FF6300F8C25A /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -83,6 +83,8 @@
 		149EFEDD27972BCE004DF61E /* TableCollectionViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionViewModelProtocol.swift; sourceTree = "<group>"; };
 		149EFEE027974251004DF61E /* TopSellersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSellersViewModel.swift; sourceTree = "<group>"; };
 		149EFEE227977A3E004DF61E /* TopSellersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSellersTableView.swift; sourceTree = "<group>"; };
+		149EFEE727978948004DF61E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		149EFEE827978948004DF61E /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		14B56B3B279393360018720C /* NibWrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibWrapped.swift; sourceTree = "<group>"; };
 		14B56B422793A6D60018720C /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
 		14B56B432793A6D60018720C /* CategoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryViewCell.xib; sourceTree = "<group>"; };
@@ -170,7 +172,7 @@
 			children = (
 				141C99422791FC0D00B90284 /* Home */,
 				141CD138278F82E100613A4A /* TabBarController */,
-				141CD13B278F86FD00613A4A /* AboutViewController.swift */,
+				149EFEE627978519004DF61E /* About */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -303,6 +305,15 @@
 				149EFEE027974251004DF61E /* TopSellersViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		149EFEE627978519004DF61E /* About */ = {
+			isa = PBXGroup;
+			children = (
+				149EFEE727978948004DF61E /* AboutViewController.swift */,
+				149EFEE827978948004DF61E /* AboutViewController.xib */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		14B56B3D2793994E0018720C /* NibWrapp */ = {
@@ -442,6 +453,7 @@
 				14B56B452793A6D60018720C /* CategoryViewCell.xib in Resources */,
 				1431F23727935F1E00201858 /* BannerView.xib in Resources */,
 				14826C3227945D94003714CB /* TopSellersView.xib in Resources */,
+				149EFEEA27978948004DF61E /* AboutViewController.xib in Resources */,
 				14826C372794619C003714CB /* TopSellerViewCell.xib in Resources */,
 				14FAAA42278F27A100904807 /* LaunchScreen.storyboard in Resources */,
 				141C99512791FF8900B90284 /* BannerViewCell.xib in Resources */,
@@ -464,8 +476,8 @@
 				149EFEE327977A3E004DF61E /* TopSellersTableView.swift in Sources */,
 				14826C3927946881003714CB /* UITableView+Extension.swift in Sources */,
 				149EFED827972A33004DF61E /* CategoriesViewModel.swift in Sources */,
-				141CD13C278F86FD00613A4A /* AboutViewController.swift in Sources */,
 				141CD13A278F831900613A4A /* TabBarController.swift in Sources */,
+				149EFEE927978948004DF61E /* AboutViewController.swift in Sources */,
 				14270C6A2796186B00F8C25A /* BannerViewModel.swift in Sources */,
 				14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */,
 				14FAAA36278F279F00904807 /* AppDelegate.swift in Sources */,
