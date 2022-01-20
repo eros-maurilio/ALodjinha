@@ -22,14 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="164" height="149"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVe-ET-VHI" customClass="ImageCacherView" customModule="ALodjinha" customModuleProvider="target">
-                                <rect key="frame" x="42" y="0.0" width="80" height="80"/>
+                                <rect key="frame" x="42" y="5" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="8A2-me-r1r"/>
                                     <constraint firstAttribute="width" constant="80" id="PdJ-XV-XjO"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eletrodomésticos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FK-7d-wnT">
-                                <rect key="frame" x="0.0" y="80" width="164" height="69"/>
+                                <rect key="frame" x="0.0" y="85" width="164" height="64"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.36078431372549019" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                             <constraint firstItem="3FK-7d-wnT" firstAttribute="top" secondItem="uVe-ET-VHI" secondAttribute="bottom" id="4dH-Vk-5f7"/>
                             <constraint firstItem="uVe-ET-VHI" firstAttribute="centerX" secondItem="eH2-sK-52q" secondAttribute="centerX" id="C7h-30-JFm"/>
                             <constraint firstItem="n5L-eE-7Sb" firstAttribute="centerX" secondItem="eH2-sK-52q" secondAttribute="centerX" id="E0v-gD-b7c"/>
-                            <constraint firstItem="uVe-ET-VHI" firstAttribute="top" secondItem="eH2-sK-52q" secondAttribute="top" id="JYm-df-dtU"/>
+                            <constraint firstItem="uVe-ET-VHI" firstAttribute="top" secondItem="eH2-sK-52q" secondAttribute="top" constant="5" id="JYm-df-dtU"/>
                             <constraint firstItem="3FK-7d-wnT" firstAttribute="leading" secondItem="eH2-sK-52q" secondAttribute="leading" id="O4t-XL-8qX"/>
                             <constraint firstAttribute="bottom" secondItem="3FK-7d-wnT" secondAttribute="bottom" id="aVM-iU-yyG"/>
                             <constraint firstAttribute="trailing" secondItem="3FK-7d-wnT" secondAttribute="trailing" id="fCU-ZI-oMN"/>

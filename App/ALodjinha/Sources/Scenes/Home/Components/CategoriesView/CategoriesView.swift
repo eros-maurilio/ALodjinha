@@ -67,8 +67,6 @@ extension CategoriesView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionCell(collectionView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath))
     }
-    
-    
 }
 
     // MARK: - LoadContentableDelegate
