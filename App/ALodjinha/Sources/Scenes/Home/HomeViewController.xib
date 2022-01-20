@@ -28,7 +28,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aA-Sz-zWj">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="363"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="393"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6A-L0-Vx7" customClass="BannerViewWrapper" customModule="ALodjinha" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -44,10 +44,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57i-mO-5gk" customClass="CategoriesViewWrapper" customModule="ALodjinha" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="196" width="414" height="120"/>
+                                    <rect key="frame" x="0.0" y="196" width="414" height="150"/>
                                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="120" id="iPM-Us-5yS"/>
+                                        <constraint firstAttribute="height" constant="150" id="iPM-Us-5yS"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xab-Eu-efy" userLabel="Separator">
@@ -58,20 +58,20 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPa-LD-BQg" userLabel="Separator">
-                                    <rect key="frame" x="0.0" y="315.5" width="414" height="0.5"/>
+                                    <rect key="frame" x="0.0" y="345.5" width="414" height="0.5"/>
                                     <color key="backgroundColor" systemColor="separatorColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="0.5" id="UYA-BI-NDF"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mais vendidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLq-9X-1i2">
-                                    <rect key="frame" x="20" y="336" width="120" height="22"/>
+                                    <rect key="frame" x="20" y="366" width="120" height="22"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                     <color key="textColor" red="0.1843137255" green="0.20000000000000001" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAA-M3-M8n" customClass="TopSellersViewWrapper" customModule="ALodjinha" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="363" width="414" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="393" width="414" height="0.0"/>
                                     <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 </view>
                             </subviews>

@@ -38,10 +38,6 @@ private extension CategoriesView {
         return cell
     }
     
-    func setupViewComponents() {
-        layout.itemSize = CGSize(width: 80, height: 100)
-    }
-    
     func sendView(_ view: UIViewController) {
         delegate?.didPush(view: view)
     }
@@ -70,7 +66,9 @@ extension CategoriesView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return collectionCell(collectionView, at: indexPath, forACellDTO: viewModel.dtoForItems(indexPath: indexPath))
-    }    
+    }
+    
+    
 }
 
     // MARK: - LoadContentableDelegate
@@ -82,7 +80,6 @@ extension CategoriesView: LoadContentable {
             guard let self = self else { return }
             self.register()
             self.collectionView.reloadData()
-            self.setupViewComponents()
         }
     }
     
