@@ -41,6 +41,8 @@
 		14996086279886C800192689 /* TopSellersViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14996085279886C800192689 /* TopSellersViewModelProtocol.swift */; };
 		1499608A2798942800192689 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149960882798942800192689 /* ProductDetailsView.swift */; };
 		1499608B2798942800192689 /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149960892798942800192689 /* ProductDetailsView.xib */; };
+		1499608E2798CD2A00192689 /* ProductDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499608D2798CD2A00192689 /* ProductDetailsViewModelProtocol.swift */; };
+		149960902798CEE600192689 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499608F2798CEE600192689 /* ProductDetailsViewModel.swift */; };
 		149EFED6279729B7004DF61E /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFED5279729B7004DF61E /* DataModel.swift */; };
 		149EFED827972A33004DF61E /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFED727972A33004DF61E /* CategoriesViewModel.swift */; };
 		149EFEDC27972A95004DF61E /* LoadContentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149EFEDB27972A95004DF61E /* LoadContentableProtocol.swift */; };
@@ -96,6 +98,8 @@
 		14996085279886C800192689 /* TopSellersViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSellersViewModelProtocol.swift; sourceTree = "<group>"; };
 		149960882798942800192689 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 		149960892798942800192689 /* ProductDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsView.xib; sourceTree = "<group>"; };
+		1499608D2798CD2A00192689 /* ProductDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
+		1499608F2798CEE600192689 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		149EFED5279729B7004DF61E /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		149EFED727972A33004DF61E /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		149EFEDB27972A95004DF61E /* LoadContentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadContentableProtocol.swift; sourceTree = "<group>"; };
@@ -301,10 +305,20 @@
 		14996087279893EC00192689 /* ProductDetails */ = {
 			isa = PBXGroup;
 			children = (
+				1499608C2798CD0300192689 /* ViewModel */,
 				149960882798942800192689 /* ProductDetailsView.swift */,
 				149960892798942800192689 /* ProductDetailsView.xib */,
 			);
 			path = ProductDetails;
+			sourceTree = "<group>";
+		};
+		1499608C2798CD0300192689 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1499608D2798CD2A00192689 /* ProductDetailsViewModelProtocol.swift */,
+				1499608F2798CEE600192689 /* ProductDetailsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		149EFED227972978004DF61E /* ViewModel */ = {
@@ -518,6 +532,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1473DA3B2790BD8600F268BB /* UIColor+Extension.swift in Sources */,
+				1499608E2798CD2A00192689 /* ProductDetailsViewModelProtocol.swift in Sources */,
 				141CD13F278F88D200613A4A /* WindowFactory.swift in Sources */,
 				149EFEF72797AFDA004DF61E /* CategoryViewController.swift in Sources */,
 				14270C64279602C500F8C25A /* DataLoader.swift in Sources */,
@@ -548,6 +563,7 @@
 				14FAAA38278F279F00904807 /* SceneDelegate.swift in Sources */,
 				1499608A2798942800192689 /* ProductDetailsView.swift in Sources */,
 				1429DEC427985B3500890161 /* APIResponseModel.swift in Sources */,
+				149960902798CEE600192689 /* ProductDetailsViewModel.swift in Sources */,
 				149EFED6279729B7004DF61E /* DataModel.swift in Sources */,
 				149EFEE127974251004DF61E /* TopSellersViewModel.swift in Sources */,
 				1431F2312793592800201858 /* NibWrapperView.swift in Sources */,

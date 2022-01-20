@@ -35,7 +35,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Tm-qM-kP7" userLabel="ContentView">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="917"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v3t-bw-46Q">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v3t-bw-46Q" customClass="ImageCacherView" customModule="ALodjinha" customModuleProvider="target">
                                             <rect key="frame" x="132" y="10" width="150" height="150"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="150" id="d2A-f9-aZE"/>
@@ -90,9 +90,9 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFW-xM-Seb">
                                             <rect key="frame" x="20" y="338.5" width="374" height="558.5"/>
-                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in suscipit ante, ac mollis massa. Pellentesque consectetur facilisis sapien, eget rutrum elit. Duis nec cursus nunc. Proin at ligula eget orci porttitor sodales id eu dolor. Cras id odio volutpat neque fermentum fermentum. Etiam eget tincidunt arcu, a pulvinar nisi. Nam at semper ipsum, eu egestas mi. Nunc a turpis eu massa elementum facilisis a in elit. Curabitur ac nisi a orci cursus imperdiet.
+                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in suscipit ante, ac mollis massa. Pellentesque consectetur facilisis sapien, eget rutrum elit. Duis nec cursus nunc. Proin at ligula eget orci porttitor sodales id eu dolor. Cras id odio volutpat neque fermentum fermentum. Etiam eget tincidunt arcu, a pulvinar nisi. Nam at semper ipsum, eu egestas mi. Nunc a turpis eu massa elementum facilisis a in elit. Curabitur ac nisi a orci cursus imperdiet.
 
-Aenean pharetra condimentum leo, nec efficitur sapien pellentesque ut. Fusce semper cursus facilisis. In rutrum, lacus non consectetur fermentum, urna quam viverra turpis, et condimentum libero tellus vitae ex. Suspendisse potenti. Aenean elementum elit eget sollicitudin vestibulum. Nam faucibus rutrum ultricies. Donec vitae odio ut tellus dictum cursus a non nisi. Vestibulum at est a massa iaculis dignissim sed quis nunc. Curabitur eget odio lectus. In tempor ligula eu suscipit facilisis. Donec at arcu nec ipsum viverra suscipit in in mauris. Duis non faucibus urna, a porttitor tortor.</mutableString>
+Aenean pharetra condimentum leo, nec efficitur sapien pellentesque ut. Fusce semper cursus facilisis. In rutrum, lacus non consectetur fermentum, urna quam viverra turpis, et condimentum libero tellus vitae ex. Suspendisse potenti. Aenean elementum elit eget sollicitudin vestibulum. Nam faucibus rutrum ultricies. Donec vitae odio ut tellus dictum cursus a non nisi. Vestibulum at est a massa iaculis dignissim sed quis nunc. Curabitur eget odio lectus. In tempor ligula eu suscipit facilisis. Donec at arcu nec ipsum viverra suscipit in in mauris. Duis non faucibus urna, a porttitor tortor.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="0.1843137255" green="0.20000000000000001" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -172,7 +172,6 @@ Aenean pharetra condimentum leo, nec efficitur sapien pellentesque ut. Fusce sem
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="AWH-8a-ous" secondAttribute="trailing" id="7cW-eJ-ecZ"/>
                         <constraint firstItem="AWH-8a-ous" firstAttribute="leading" secondItem="REh-4u-Rqo" secondAttribute="leading" id="Vnv-KY-wdc"/>
@@ -202,9 +201,6 @@ Aenean pharetra condimentum leo, nec efficitur sapien pellentesque ut. Fusce sem
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
