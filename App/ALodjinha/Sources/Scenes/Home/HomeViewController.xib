@@ -111,6 +111,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IAt-KB-9cc" secondAttribute="trailing" id="C4m-cm-Jga"/>
+                <constraint firstItem="IAt-KB-9cc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Fbg-Cv-ZVh"/>
                 <constraint firstItem="IAt-KB-9cc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZZo-ek-Xjd"/>
                 <constraint firstItem="IAt-KB-9cc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bMK-QA-VY2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IAt-KB-9cc" secondAttribute="bottom" id="fSq-2q-3HU"/>

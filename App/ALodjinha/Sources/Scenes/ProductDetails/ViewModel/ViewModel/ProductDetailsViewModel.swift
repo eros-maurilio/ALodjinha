@@ -4,15 +4,23 @@ typealias ProductsDetailsResult = Result<DataModel, NSError>
 
 final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     
-    private weak var delegate: LoadContentable?
+    // MARK: - Attributes
+    
+    private weak var delegate: SearchViewDelegate?
     private var productDetailsData: DataModel?
     private var dataLoader = DataLoader()
     
+    // MARK: - Computed Variable
+    
     var navTitle: String { navigationTitle() }
     
-    init(delegate: LoadContentable) {
+    // MARK: - Dependencies
+    
+    init(delegate: SearchViewDelegate) {
         self.delegate = delegate
     }
+    
+    // MARK: - Public Methods
     
     func loadFromAPI(productID id: String) {
         dataLoader.request(.getURLRequestWithPath(["produto"], id: id)) { [weak self] (result: ProductsDetailsResult) in
@@ -41,6 +49,8 @@ final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     func booking() {
         
     }
+    
+    // MARK: - Helper method
     
     private func navigationTitle() -> String {
         productDetailsData?.category?.categoryName ?? ""

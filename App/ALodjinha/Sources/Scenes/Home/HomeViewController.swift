@@ -29,16 +29,11 @@ class HomeViewController: UIViewController {
 private extension HomeViewController {
     
     func setupSubviewComponents() {
-        let bannerView = _bannerViewHolder.unwrapped
-        let categoriesView = _categoriesViewHolder.unwrapped
-        let topSellersView = _topSellersViewHolder.unwrapped
-        
-        bannerView.setup()
-        categoriesView.setup()
-        topSellersView.setup()
+        _bannerViewHolder.unwrapped.setup()
+        _categoriesViewHolder.unwrapped.setup()
+        _topSellersViewHolder.unwrapped.setup()
         
         setupSubviewsDelegate()
-
     }
     
     func setupSubviewsDelegate() {
@@ -56,9 +51,9 @@ private extension HomeViewController {
     }
 }
 
-    // MARK: - ViewDelegate
+    // MARK: - PushViewDelegate
 
-extension HomeViewController: ViewDelegate {
+extension HomeViewController: PushViewDelegate {
     
     func didPush(view: UIViewController) {
         view.hidesBottomBarWhenPushed = true

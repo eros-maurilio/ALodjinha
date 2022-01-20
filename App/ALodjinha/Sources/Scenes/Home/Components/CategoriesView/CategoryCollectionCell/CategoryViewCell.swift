@@ -1,10 +1,5 @@
 import UIKit
 
-struct CategoryCollectionDTO {
-    let imageURL: String
-    let name: String
-}
-
 class CategoryViewCell: UICollectionViewCell {
     
     // MARK: - IBOutlets

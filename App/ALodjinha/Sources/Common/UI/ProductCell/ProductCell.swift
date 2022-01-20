@@ -1,12 +1,5 @@
 import UIKit
 
-struct CategoryTableCellDTO {
-    let imageURL: String
-    let name: String
-    let oldPrice: Float
-    let newPrice: Float
-}
-
 class ProductCell: UITableViewCell {
     
     // MARK: - IBOutlets
@@ -24,6 +17,7 @@ class ProductCell: UITableViewCell {
         if productImage.image == nil {
             productImage.image = UIImage(named: "Placeholder")
         }
+        
         name.text = dto.name
         oldPrice.text = "De: \(String(dto.oldPrice))"
         newPrice.text = "Por \(String(dto.newPrice))"

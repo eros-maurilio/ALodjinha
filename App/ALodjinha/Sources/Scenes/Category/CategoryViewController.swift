@@ -91,13 +91,12 @@ extension CategoryViewController: LoadContentable {
             self.setupTableView()
             self.tableView.reloadData()
             self.rowSetup()
-             
         }
     }
     
     func showMore(id: String) {
-        let viewController = ProductDetailsView()
-        viewController.setupView(id: id)
+        let viewController = ProductDetailsViewController()
+        viewController.setupView(productID: id)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

@@ -1,5 +1,5 @@
 import UIKit
 
-protocol ViewDelegate: AnyObject {
+protocol PushViewDelegate: AnyObject {
     func didPush(view: UIViewController)
 }

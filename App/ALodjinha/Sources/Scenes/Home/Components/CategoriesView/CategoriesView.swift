@@ -11,7 +11,7 @@ class CategoriesView: UIView {
     
     // MARK: - Properties
     
-    weak var delegate: ViewDelegate?
+    weak var delegate: PushViewDelegate?
     private lazy var viewModel: CategoriesViewModelProtocol = CategoriesViewModel(delegate: self)
     
     // MARK: - Public Method
@@ -73,7 +73,7 @@ extension CategoriesView: UICollectionViewDataSource {
     }    
 }
 
-    // MARK: - ViewDelegate
+    // MARK: - LoadContentableDelegate
 
 extension CategoriesView: LoadContentable {
     

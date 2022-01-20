@@ -52,10 +52,13 @@ extension EndPoint {
     }
     
     static func getURLRequestWithQuery(path: String, query: String) -> EndPoint {
+        var currentPath = String()
+        currentPath = path.insertSlash(in: path)
+        
         let query = [
             URLQueryItem(name: "categoriaId", value: query)
         ]
-
-        return EndPoint(path: path, queryItem: query)
+        
+        return EndPoint(path: currentPath, queryItem: query)
     }
 }

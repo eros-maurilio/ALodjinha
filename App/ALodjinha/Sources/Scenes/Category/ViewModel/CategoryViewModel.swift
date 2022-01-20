@@ -22,7 +22,7 @@ final class CategoryViewModel: CategoryViewModelProtocol {
     // MARK: - Public Methods
     
     func loadFromAPI(id: String) {
-        dataLoader.request(.getURLRequestWithQuery(path: "/produto", query: id)) { [weak self] (result: APIResult) in
+        dataLoader.request(.getURLRequestWithQuery(path: "produto", query: id)) { [weak self] (result: APIResult) in
             
             guard let self = self else { return }
             
@@ -66,6 +66,8 @@ final class CategoryViewModel: CategoryViewModelProtocol {
     func transporter(_ indexPath: IndexPath) -> String {
         return String(categoryData[indexPath.row].id)
     }
+    
+    // MARK: - Helper Method
     
     private func navigationTitle() -> String {
         categoryData.first?.category?.categoryName ?? ""
