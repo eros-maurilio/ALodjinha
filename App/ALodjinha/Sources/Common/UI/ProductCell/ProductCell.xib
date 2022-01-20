@@ -65,7 +65,12 @@
                             <constraint firstAttribute="height" constant="1.5" id="RlF-V4-h1E"/>
                         </constraints>
                     </view>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="z7L-Vf-7RZ">
+                        <rect key="frame" x="50" y="41.5" width="20" height="20"/>
+                        <color key="color" red="0.38823529410000002" green="0.25882352939999997" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </activityIndicatorView>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="vjs-fU-s2r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="DC5-RE-CDu"/>
                     <constraint firstItem="rt6-Vu-7w8" firstAttribute="width" secondItem="kw9-SK-5wg" secondAttribute="width" id="EFE-F6-hRb"/>
@@ -80,13 +85,16 @@
                     <constraint firstItem="tJc-jP-OOp" firstAttribute="leading" secondItem="Ctb-Yw-ynw" secondAttribute="trailing" constant="10" id="hAN-7k-lDX"/>
                     <constraint firstItem="KcS-SS-VKA" firstAttribute="leading" secondItem="vjs-fU-s2r" secondAttribute="trailing" constant="15" id="q6S-9M-JDW"/>
                     <constraint firstAttribute="trailing" secondItem="KcS-SS-VKA" secondAttribute="trailing" constant="12" id="rcT-sA-Nyb"/>
+                    <constraint firstItem="z7L-Vf-7RZ" firstAttribute="centerX" secondItem="Ctb-Yw-ynw" secondAttribute="centerX" id="rg1-AM-4wp"/>
                     <constraint firstItem="rt6-Vu-7w8" firstAttribute="centerX" secondItem="kw9-SK-5wg" secondAttribute="centerX" id="rpf-hf-znU"/>
+                    <constraint firstItem="z7L-Vf-7RZ" firstAttribute="centerY" secondItem="Ctb-Yw-ynw" secondAttribute="centerY" id="t0v-nL-eU1"/>
                     <constraint firstItem="Ctb-Yw-ynw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="tli-E4-WeF"/>
                     <constraint firstItem="Ctb-Yw-ynw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wWg-I0-tX3"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="activityIndicator" destination="z7L-Vf-7RZ" id="nUW-GR-r5D"/>
                 <outlet property="name" destination="vjs-fU-s2r" id="0m7-M0-L8b"/>
                 <outlet property="newPrice" destination="KMG-jS-kqI" id="wmU-rb-J7r"/>
                 <outlet property="oldPrice" destination="kw9-SK-5wg" id="xB2-TV-cjp"/>

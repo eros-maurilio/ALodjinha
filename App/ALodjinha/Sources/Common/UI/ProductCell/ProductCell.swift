@@ -8,18 +8,48 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var oldPrice: UILabel!
     @IBOutlet weak var newPrice: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    weak var delegate: cellDelegate?
     
     // MARK: - Public Method
     
     func fill(dto: CategoryTableCellDTO) {
         productImage.downloadImage(withURL: dto.imageURL)
-        
-        if productImage.image == nil {
-            productImage.image = UIImage(named: "Placeholder")
-        }
-        
+        productImage.delegate = self
         name.text = dto.name
         oldPrice.text = "De: \(String(dto.oldPrice))"
         newPrice.text = "Por \(String(dto.newPrice))"
+    }
+    
+    func startLoading() {
+        productImage.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        
+    }
+    
+    func stopLoading() {
+        activityIndicator.stopAnimating()
+        productImage.isHidden = false
+    }
+}
+
+extension ProductCell: cellDelegate {
+    func startLoad() {
+        DispatchQueue.main.async { [weak self] in
+            self?.startLoad()
+        }
+    }
+    
+    func stopLoad() {
+        DispatchQueue.main.async { [weak self] in
+            self?.stopLoading()
+            
+            if self?.productImage == nil {
+                self?.productImage.image = UIImage(named: "Placeholder")
+                
+            }
+        }
     }
 }
