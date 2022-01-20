@@ -10,10 +10,15 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet private weak var newPrice: UILabel!
     @IBOutlet private weak var productDescription: UILabel!
     @IBOutlet private weak var bookingButton: UIButton!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var activityIndicatorLarge: UIActivityIndicatorView!
+    @IBOutlet weak var imageActivityindicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     
     private lazy var viewModel: ProductDetailsViewModelProtocol = ProductDetailsViewModel(delegate: self)
+    
+    weak var delegate: cellDelegate?
     
     // MARK: - View's Life Cycle
     override func viewDidLoad() {
@@ -34,6 +39,7 @@ extension ProductDetailsViewController {
 private extension ProductDetailsViewController {
     
     func fillOutlets(dto: ProductDetailsDTO) {
+        productImage.delegate = self
         productName.text = dto.name
         productImage.downloadImage(withURL: dto.imageURL)
         oldPrice.text = "De: \(String(dto.oldPrice))"
@@ -42,7 +48,12 @@ private extension ProductDetailsViewController {
     }
     
     func setupNavigationBar() {
-        navigationItem.title = viewModel.navTitle
+        navigationItem.title = "Produto"
+    }
+    
+    func stopLoading() {
+        activityIndicatorLarge.stopAnimating()
+        contentView.isHidden = false
     }
 }
 
@@ -54,8 +65,23 @@ extension ProductDetailsViewController: SearchViewDelegate {
             guard let self = self else { return }
             self.fillOutlets(dto: self.viewModel.dtoForViews())
             self.setupNavigationBar()
+            self.stopLoading()
         }
     }
+}
+
+extension ProductDetailsViewController: cellDelegate {
+    func startLoad() {
+        productImage.isHidden = true
+        imageActivityindicator.startAnimating()
+    }
+    
+    func stopLoad() {
+        imageActivityindicator.stopAnimating()
+        productImage.isHidden = false
+    }
+    
+    
 }
 
 

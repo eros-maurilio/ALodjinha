@@ -12,7 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailsViewController" customModule="ALodjinha" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicatorLarge" destination="HXH-if-i14" id="F8x-DG-lue"/>
                 <outlet property="bookingButton" destination="Men-ba-hwo" id="FLQ-Xc-ncV"/>
+                <outlet property="contentView" destination="REh-4u-Rqo" id="qRz-E9-VE3"/>
+                <outlet property="imageActivityindicator" destination="gwc-tm-mTc" id="trt-Py-xC5"/>
                 <outlet property="newPrice" destination="JwP-Xy-Fe6" id="06E-vq-cPx"/>
                 <outlet property="oldPrice" destination="fS6-Ae-AWW" id="ksH-FW-gLZ"/>
                 <outlet property="productDescription" destination="KFW-xM-Seb" id="MH4-Rh-y66"/>
@@ -26,7 +29,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REh-4u-Rqo">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REh-4u-Rqo">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BL-iG-dIQ">
@@ -42,6 +45,10 @@
                                                 <constraint firstAttribute="width" constant="150" id="jlA-5n-i1o"/>
                                             </constraints>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="gwc-tm-mTc">
+                                            <rect key="frame" x="197" y="75" width="20" height="20"/>
+                                            <color key="color" red="0.38823529410000002" green="0.25882352939999997" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do produto com uma descrição bem grandona" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQO-Au-WOV">
                                             <rect key="frame" x="20" y="170" width="374" height="43"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
@@ -111,6 +118,7 @@ Aenean pharetra condimentum leo, nec efficitur sapien pellentesque ut. Fusce sem
                                         <constraint firstItem="0bB-ds-ULh" firstAttribute="top" secondItem="fHs-Ya-0lG" secondAttribute="bottom" constant="10" id="1dm-29-6zZ"/>
                                         <constraint firstItem="v3t-bw-46Q" firstAttribute="centerX" secondItem="0Tm-qM-kP7" secondAttribute="centerX" id="3UI-Vt-5nv"/>
                                         <constraint firstItem="J6I-0q-wlV" firstAttribute="top" secondItem="4Me-EY-nv9" secondAttribute="bottom" constant="20" id="4qN-ff-ubR"/>
+                                        <constraint firstItem="gwc-tm-mTc" firstAttribute="centerY" secondItem="v3t-bw-46Q" secondAttribute="centerY" id="67h-6n-1jd"/>
                                         <constraint firstItem="KFW-xM-Seb" firstAttribute="top" secondItem="J6I-0q-wlV" secondAttribute="bottom" constant="20" id="7KH-il-g1u"/>
                                         <constraint firstAttribute="trailing" secondItem="4Me-EY-nv9" secondAttribute="trailing" id="8XO-1W-3r8"/>
                                         <constraint firstItem="4Me-EY-nv9" firstAttribute="top" secondItem="0bB-ds-ULh" secondAttribute="bottom" constant="10" id="J8k-CZ-cl9"/>
@@ -131,6 +139,7 @@ Aenean pharetra condimentum leo, nec efficitur sapien pellentesque ut. Fusce sem
                                         <constraint firstAttribute="trailing" secondItem="fHs-Ya-0lG" secondAttribute="trailing" id="sfO-rB-LlN"/>
                                         <constraint firstItem="J6I-0q-wlV" firstAttribute="leading" secondItem="0Tm-qM-kP7" secondAttribute="leading" constant="20" id="tKX-Fk-edu"/>
                                         <constraint firstItem="zha-kE-VzL" firstAttribute="centerX" secondItem="fS6-Ae-AWW" secondAttribute="centerX" id="vYK-q6-QXG"/>
+                                        <constraint firstItem="gwc-tm-mTc" firstAttribute="centerX" secondItem="v3t-bw-46Q" secondAttribute="centerX" id="zGT-JU-fL0"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -192,12 +201,18 @@ Aenean pharetra condimentum leo, nec efficitur sapien pellentesque ut. Fusce sem
                         <constraint firstAttribute="bottom" secondItem="AWH-8a-ous" secondAttribute="bottom" id="uoI-M2-Qkn"/>
                     </constraints>
                 </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HXH-if-i14">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" red="0.38823529410000002" green="0.25882352939999997" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="HXH-if-i14" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="293-dO-iXu"/>
                 <constraint firstItem="REh-4u-Rqo" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="2ba-iB-xrW"/>
                 <constraint firstAttribute="trailing" secondItem="REh-4u-Rqo" secondAttribute="trailing" id="J4e-PO-Cd4"/>
+                <constraint firstItem="HXH-if-i14" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fTE-HT-toL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="REh-4u-Rqo" secondAttribute="bottom" id="pLk-0G-33T"/>
                 <constraint firstItem="REh-4u-Rqo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="t8Y-Jm-ZoA"/>
                 <constraint firstItem="REh-4u-Rqo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uHT-9R-QUw"/>

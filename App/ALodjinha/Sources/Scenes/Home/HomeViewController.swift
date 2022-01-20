@@ -13,20 +13,32 @@ class HomeViewController: UIViewController {
     @NibWrapped(TopSellersView.self)
     @IBOutlet private var topSellersViewHolder: UIView!
     
+    @IBOutlet private var homeContentView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     // MARK: View's LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavBar()
-        setupSubviewComponents()
+        setup()
     }
 }
 
     // MARK: - Private Methods
 
 private extension HomeViewController {
+    
+    func setup() {
+        setupNavBar()
+        setupSubviewComponents()
+        
+        bannerViewHolder.layer.shadowColor = UIColor.black.cgColor
+        bannerViewHolder.layer.shadowRadius = 10
+        bannerViewHolder.layer.shadowOpacity = 1
+        bannerViewHolder.layer.shadowPath = UIBezierPath(rect: bannerViewHolder.bounds).cgPath
+    }
     
     func setupSubviewComponents() {
         _bannerViewHolder.unwrapped.setup()
@@ -47,16 +59,30 @@ private extension HomeViewController {
         let imageView = UIImageView(image: logo)
         imageView.frame = frame
         
+        navigationItem.title = "Home"
         navigationItem.titleView = imageView
+    }
+    
+    func stopLoading() {
+        homeContentView.isHidden = false
+        activityIndicator.stopAnimating()
     }
 }
 
     // MARK: - PushViewDelegate
 
-extension HomeViewController: PushViewDelegate {
+extension HomeViewController: HomeViewDelegate {
     
     func didPush(view: UIViewController) {
         view.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(view, animated: true)
+        self.stopLoading()
+    }
+    
+    func didLoad() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.stopLoading()
+        }
     }
 }

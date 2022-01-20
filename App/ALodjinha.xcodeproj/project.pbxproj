@@ -37,7 +37,7 @@
 		1499607E27986DFF00192689 /* CategoryViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499607D27986DFF00192689 /* CategoryViewModelProtocol.swift */; };
 		149960802798713A00192689 /* BannerViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499607F2798713A00192689 /* BannerViewModelProtocol.swift */; };
 		149960822798838300192689 /* CategoriesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149960812798838300192689 /* CategoriesViewModelProtocol.swift */; };
-		14996084279884AB00192689 /* PushViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14996083279884AB00192689 /* PushViewDelegate.swift */; };
+		14996084279884AB00192689 /* HomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14996083279884AB00192689 /* HomeViewDelegate.swift */; };
 		14996086279886C800192689 /* TopSellersViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14996085279886C800192689 /* TopSellersViewModelProtocol.swift */; };
 		1499608A2798942800192689 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149960882798942800192689 /* ProductDetailsViewController.swift */; };
 		1499608B2798942800192689 /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149960892798942800192689 /* ProductDetailsViewController.xib */; };
@@ -97,7 +97,7 @@
 		1499607D27986DFF00192689 /* CategoryViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModelProtocol.swift; sourceTree = "<group>"; };
 		1499607F2798713A00192689 /* BannerViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModelProtocol.swift; sourceTree = "<group>"; };
 		149960812798838300192689 /* CategoriesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModelProtocol.swift; sourceTree = "<group>"; };
-		14996083279884AB00192689 /* PushViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushViewDelegate.swift; sourceTree = "<group>"; };
+		14996083279884AB00192689 /* HomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDelegate.swift; sourceTree = "<group>"; };
 		14996085279886C800192689 /* TopSellersViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSellersViewModelProtocol.swift; sourceTree = "<group>"; };
 		149960882798942800192689 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		149960892798942800192689 /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
@@ -384,7 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				149EFEDB27972A95004DF61E /* LoadContentableProtocol.swift */,
-				14996083279884AB00192689 /* PushViewDelegate.swift */,
+				14996083279884AB00192689 /* HomeViewDelegate.swift */,
 			);
 			path = DelegateProtocols;
 			sourceTree = "<group>";
@@ -588,7 +588,7 @@
 				149960972798E53C00192689 /* CategoryCollectionDTO.swift in Sources */,
 				14270C6A2796186B00F8C25A /* BannerViewModel.swift in Sources */,
 				14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */,
-				14996084279884AB00192689 /* PushViewDelegate.swift in Sources */,
+				14996084279884AB00192689 /* HomeViewDelegate.swift in Sources */,
 				14FAAA36278F279F00904807 /* AppDelegate.swift in Sources */,
 				14270C5C2795F76500F8C25A /* UIImage+Extension.swift in Sources */,
 				14B56B492793AAEB0018720C /* CategoriesView.swift in Sources */,
