@@ -43,6 +43,7 @@ private extension HomeViewController {
     
     func setupSubviewsDelegate() {
         _categoriesViewHolder.unwrapped.delegate = self
+        _topSellersViewHolder.unwrapped.delegate = self
     }
     
     func setupNavBar() {

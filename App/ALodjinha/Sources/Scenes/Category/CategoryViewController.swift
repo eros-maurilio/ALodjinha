@@ -73,7 +73,12 @@ extension CategoryViewController: UITableViewDataSource {
 
     // MARK: - UITableViewDelegate
 
-extension CategoryViewController: UITableViewDelegate { }
+extension CategoryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.showCategory(id: viewModel.transporter(indexPath))
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
 
     // MARK: - ViewDelegate
 
@@ -91,7 +96,9 @@ extension CategoryViewController: LoadContentable {
     }
     
     func showMore(id: String) {
-        
+        let viewController = ProductDetailsView()
+        viewController.setupView(id: id)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

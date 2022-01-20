@@ -67,7 +67,7 @@ final class CategoryViewModel: CategoryViewModelProtocol {
         return String(categoryData[indexPath.row].id)
     }
     
-    func navigationTitle() -> String {
+    private func navigationTitle() -> String {
         categoryData.first?.category?.categoryName ?? ""
     }
 }
