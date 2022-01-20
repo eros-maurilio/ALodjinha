@@ -11,8 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ALodjinha" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="pVq-CK-RzZ" id="WSM-Kk-LuH"/>
                 <outlet property="bannerViewHolder" destination="c6A-L0-Vx7" id="AuQ-Wk-gVK"/>
                 <outlet property="categoriesViewHolder" destination="57i-mO-5gk" id="e1b-Me-aad"/>
+                <outlet property="homeContentView" destination="2aA-Sz-zWj" id="vke-xe-q81"/>
                 <outlet property="topSellersViewHolder" destination="wAA-M3-M8n" id="EIv-du-WhO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,7 +27,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAt-KB-9cc">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aA-Sz-zWj">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aA-Sz-zWj">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="363"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6A-L0-Vx7" customClass="BannerViewWrapper" customModule="ALodjinha" customModuleProvider="target">
@@ -73,6 +75,7 @@
                                     <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 </view>
                             </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="nPa-LD-BQg" secondAttribute="trailing" id="Bux-Ee-NTR"/>
                                 <constraint firstAttribute="trailing" secondItem="Xab-Eu-efy" secondAttribute="trailing" id="Cd3-0y-h1o"/>
@@ -106,14 +109,20 @@
                         <constraint firstItem="2aA-Sz-zWj" firstAttribute="width" secondItem="IAt-KB-9cc" secondAttribute="width" id="nkc-61-7gM"/>
                     </constraints>
                 </scrollView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pVq-CK-RzZ">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" red="0.38823529410000002" green="0.25882352939999997" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="pVq-CK-RzZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AJV-GD-5ZN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IAt-KB-9cc" secondAttribute="trailing" id="C4m-cm-Jga"/>
                 <constraint firstItem="IAt-KB-9cc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Fbg-Cv-ZVh"/>
                 <constraint firstItem="IAt-KB-9cc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZZo-ek-Xjd"/>
                 <constraint firstItem="IAt-KB-9cc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bMK-QA-VY2"/>
+                <constraint firstItem="pVq-CK-RzZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="eLP-i8-Sz8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IAt-KB-9cc" secondAttribute="bottom" id="fSq-2q-3HU"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="150.66964285714286"/>

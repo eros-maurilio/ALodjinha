@@ -11,7 +11,7 @@ class CategoriesView: UIView {
     
     // MARK: - Properties
     
-    weak var delegate: PushViewDelegate?
+    weak var delegate: HomeViewDelegate?
     private lazy var viewModel: CategoriesViewModelProtocol = CategoriesViewModel(delegate: self)
     
     // MARK: - Public Method

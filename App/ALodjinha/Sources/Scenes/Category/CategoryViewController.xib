@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryViewController" customModule="ALodjinha" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="f06-U5-B6g" id="OGO-R4-shm"/>
                 <outlet property="tableView" destination="00E-7Q-t8V" id="cGp-FN-abd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,17 +21,23 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="00E-7Q-t8V">
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="00E-7Q-t8V">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="f06-U5-B6g">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" red="0.38823529410000002" green="0.25882352939999997" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="00E-7Q-t8V" secondAttribute="trailing" id="9bm-tl-u4g"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="00E-7Q-t8V" secondAttribute="bottom" id="Cn7-zS-Dyb"/>
+                <constraint firstItem="f06-U5-B6g" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JHj-Y5-Tc9"/>
                 <constraint firstItem="00E-7Q-t8V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X3y-VW-rPf"/>
+                <constraint firstItem="f06-U5-B6g" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hgD-Z2-src"/>
                 <constraint firstItem="00E-7Q-t8V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oiM-wd-eWV"/>
             </constraints>
             <point key="canvasLocation" x="139" y="111"/>

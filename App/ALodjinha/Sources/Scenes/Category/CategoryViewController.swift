@@ -5,6 +5,7 @@ class CategoryViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     
@@ -52,6 +53,11 @@ private extension CategoryViewController {
     func setupNavBar() {
         navigationItem.title = viewModel.navTitle
     }
+    
+    func stopLoading() {
+        activityIndicator.stopAnimating()
+        tableView.isHidden = false
+    }
 }
 
     // MARK: - UITableViewDataSouce
@@ -91,6 +97,7 @@ extension CategoryViewController: LoadContentable {
             self.setupTableView()
             self.tableView.reloadData()
             self.rowSetup()
+            self.stopLoading()
         }
     }
     
