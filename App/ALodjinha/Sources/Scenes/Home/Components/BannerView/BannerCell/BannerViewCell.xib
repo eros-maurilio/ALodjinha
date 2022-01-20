@@ -17,26 +17,42 @@
                 <rect key="frame" x="0.0" y="0.0" width="296" height="159"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pGt-so-HfL" customClass="ImageCacherView" customModule="ALodjinha" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiU-o3-MHI">
                         <rect key="frame" x="0.0" y="0.0" width="296" height="159"/>
-                    </imageView>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="gKd-ix-lsf">
+                                <rect key="frame" x="138" y="69.5" width="20" height="20"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pGt-so-HfL" customClass="ImageCacherView" customModule="ALodjinha" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="296" height="159"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3501374338994156" green="0.27202220078947226" blue="0.4725963708126184" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="pGt-so-HfL" firstAttribute="top" secondItem="MiU-o3-MHI" secondAttribute="top" id="AQF-GT-WBj"/>
+                            <constraint firstItem="gKd-ix-lsf" firstAttribute="centerY" secondItem="MiU-o3-MHI" secondAttribute="centerY" id="Heb-13-Hpy"/>
+                            <constraint firstAttribute="trailing" secondItem="pGt-so-HfL" secondAttribute="trailing" id="KEB-5N-Spm"/>
+                            <constraint firstItem="pGt-so-HfL" firstAttribute="leading" secondItem="MiU-o3-MHI" secondAttribute="leading" id="OfU-xf-iIN"/>
+                            <constraint firstAttribute="bottom" secondItem="pGt-so-HfL" secondAttribute="bottom" id="SBn-Af-VzT"/>
+                            <constraint firstItem="gKd-ix-lsf" firstAttribute="centerX" secondItem="MiU-o3-MHI" secondAttribute="centerX" id="hGu-uD-DlJ"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="pGt-so-HfL" secondAttribute="bottom" id="27G-r0-bwh"/>
-                <constraint firstItem="pGt-so-HfL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="PMX-Nt-bVC"/>
-                <constraint firstItem="pGt-so-HfL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="roA-Tu-hQc"/>
-                <constraint firstAttribute="trailing" secondItem="pGt-so-HfL" secondAttribute="trailing" id="yMf-Sq-OVO"/>
+                <constraint firstAttribute="trailing" secondItem="MiU-o3-MHI" secondAttribute="trailing" id="4N9-Us-iMA"/>
+                <constraint firstItem="MiU-o3-MHI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VfH-y0-9ax"/>
+                <constraint firstItem="MiU-o3-MHI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ek8-3u-9W9"/>
+                <constraint firstAttribute="bottom" secondItem="MiU-o3-MHI" secondAttribute="bottom" id="w3r-WF-hrD"/>
             </constraints>
             <size key="customSize" width="296" height="159"/>
             <connections>
+                <outlet property="activityIndicator" destination="gKd-ix-lsf" id="TRJ-uM-JsE"/>
                 <outlet property="bannerImage" destination="pGt-so-HfL" id="iGs-C1-kcf"/>
             </connections>
             <point key="canvasLocation" x="108.69565217391305" y="142.29910714285714"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="Placeholder" width="150" height="150"/>
-    </resources>
 </document>
