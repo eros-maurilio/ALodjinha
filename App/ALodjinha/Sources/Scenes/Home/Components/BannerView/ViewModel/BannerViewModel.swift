@@ -6,11 +6,11 @@ final class BannerViewModel: BannerViewModelProtocol {
     
     private var bannerData = [DataModel]()
     private var dataLoader = DataLoader()
-    private weak var delegate: LoadContentable?
+    private weak var delegate: SearchViewDelegate?
     
     // MARK: - Dependencies
     
-    init(delegate: LoadContentable) {
+    init(delegate: SearchViewDelegate) {
         self.delegate = delegate
     }
     

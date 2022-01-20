@@ -11,7 +11,7 @@ class TopSellersView: UIView {
     // MARK: - Properties
     
     private lazy var viewModel: TopSellersViewModelProtocol = TopSellersViewModel(delegate: self)
-    weak var delegate: ViewDelegate?
+    weak var delegate: PushViewDelegate?
     
 }
 
@@ -78,7 +78,7 @@ extension TopSellersView: UITableViewDelegate {
     }
 }
 
-    // MARK: - ViewDelegate
+    // MARK: - LoadContentableDelegate
 
 extension TopSellersView: LoadContentable {
     
@@ -92,8 +92,8 @@ extension TopSellersView: LoadContentable {
     }
     
     func showMore(id: String) {
-        let viewControler = ProductDetailsView()
-        viewControler.setupView(id: id)
+        let viewControler = ProductDetailsViewController()
+        viewControler.setupView(productID: id)
         sendView(viewControler)
     }
 }
