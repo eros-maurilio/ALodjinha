@@ -88,9 +88,9 @@ extension BannerView: UICollectionViewDelegate {
     }
 }
 
-    // MARK: - ViewDelegate
+    // MARK: - SearchViewDelegateDelegate
 
-extension BannerView: LoadContentable {
+extension BannerView: SearchViewDelegate {
     
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
@@ -100,9 +100,5 @@ extension BannerView: LoadContentable {
             self.setupViewComponents()
 
         }
-    }
-    
-    func showMore(id: String) {
-        
     }
 }
