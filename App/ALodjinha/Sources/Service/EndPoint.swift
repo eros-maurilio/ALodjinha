@@ -37,11 +37,15 @@ extension EndPoint {
     
     // MARK: - Static Methods
     
-    static func getURLRequestWithPath(_ paths: [String]) -> EndPoint {
+    static func getURLRequestWithPath(_ paths: [String], id: String? = nil) -> EndPoint {
         var currentPath = String()
         
         for path in paths {
             currentPath += path.insertSlash(in: path)
+        }
+        
+        if let id = id {
+            currentPath += id.insertSlash(in: id)
         }
         
         return EndPoint(path: currentPath)
