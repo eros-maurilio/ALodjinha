@@ -58,19 +58,29 @@
                             <constraint firstItem="kw9-SK-5wg" firstAttribute="centerY" secondItem="tJc-jP-OOp" secondAttribute="centerY" id="TH8-Gh-QtN"/>
                         </constraints>
                     </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rt6-Vu-7w8">
+                        <rect key="frame" x="110" y="76" width="78" height="1.5"/>
+                        <color key="backgroundColor" red="0.8196079731" green="0.81960791349999995" blue="0.81960791349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1.5" id="RlF-V4-h1E"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="vjs-fU-s2r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="DC5-RE-CDu"/>
+                    <constraint firstItem="rt6-Vu-7w8" firstAttribute="width" secondItem="kw9-SK-5wg" secondAttribute="width" id="EFE-F6-hRb"/>
                     <constraint firstAttribute="bottom" secondItem="tJc-jP-OOp" secondAttribute="bottom" constant="15" id="EYj-pm-145"/>
                     <constraint firstItem="Ctb-Yw-ynw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11.5" id="Fkj-78-WR8"/>
                     <constraint firstItem="tJc-jP-OOp" firstAttribute="top" secondItem="vjs-fU-s2r" secondAttribute="bottom" constant="10" id="GKQ-95-8ZJ"/>
                     <constraint firstItem="KcS-SS-VKA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HK5-vU-0Dm"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ctb-Yw-ynw" secondAttribute="bottom" constant="11.5" id="UoU-Hr-4ID"/>
                     <constraint firstItem="vjs-fU-s2r" firstAttribute="leading" secondItem="Ctb-Yw-ynw" secondAttribute="trailing" constant="10" id="Z9A-iZ-Ieb"/>
+                    <constraint firstItem="rt6-Vu-7w8" firstAttribute="centerY" secondItem="kw9-SK-5wg" secondAttribute="centerY" id="ZHl-Nx-ByD"/>
                     <constraint firstItem="KcS-SS-VKA" firstAttribute="leading" secondItem="tJc-jP-OOp" secondAttribute="trailing" constant="15" id="b1n-F6-Mmv"/>
                     <constraint firstItem="tJc-jP-OOp" firstAttribute="leading" secondItem="Ctb-Yw-ynw" secondAttribute="trailing" constant="10" id="hAN-7k-lDX"/>
                     <constraint firstItem="KcS-SS-VKA" firstAttribute="leading" secondItem="vjs-fU-s2r" secondAttribute="trailing" constant="15" id="q6S-9M-JDW"/>
                     <constraint firstAttribute="trailing" secondItem="KcS-SS-VKA" secondAttribute="trailing" constant="12" id="rcT-sA-Nyb"/>
+                    <constraint firstItem="rt6-Vu-7w8" firstAttribute="centerX" secondItem="kw9-SK-5wg" secondAttribute="centerX" id="rpf-hf-znU"/>
                     <constraint firstItem="Ctb-Yw-ynw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="tli-E4-WeF"/>
                     <constraint firstItem="Ctb-Yw-ynw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wWg-I0-tX3"/>
                 </constraints>
