@@ -7,11 +7,12 @@ class TopSellersView: UIView {
     // MARK: - IBOutlet
 
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     
     private lazy var viewModel: TopSellersViewModelProtocol = TopSellersViewModel(delegate: self)
-    weak var delegate: PushViewDelegate?
+    weak var delegate: HomeViewDelegate?
     
 }
 
@@ -20,6 +21,7 @@ class TopSellersView: UIView {
 extension TopSellersView {
     
     func setup() {
+        startLoading()
         viewModel.loadFromAPI()
     }
 }
@@ -49,6 +51,18 @@ private extension TopSellersView {
     
     func sendView(_ view: UIViewController) {
         delegate?.didPush(view: view)
+    }
+    
+    func startLoading() {
+        tableView.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        
+    }
+    
+    func stopLoading() {
+        activityIndicator.stopAnimating()
+        tableView.isHidden = false
     }
 }
 
@@ -88,6 +102,8 @@ extension TopSellersView: LoadContentable {
             self.registerCell()
             self.tableView.reloadData()
             self.rowSetup()
+            self.delegate?.didLoad()
+            self.stopLoading()
         }
     }
     
