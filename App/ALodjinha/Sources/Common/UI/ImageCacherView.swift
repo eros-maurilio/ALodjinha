@@ -5,6 +5,7 @@ class ImageCacherView: UIImageView {
     // MARK: - Attributes
     
     let imageCache = NSCache<NSString, UIImage>()
+    private var task: URLSessionDataTask?
     
     weak var delegate: cellDelegate?
     
@@ -26,11 +27,14 @@ class ImageCacherView: UIImageView {
             return
         }
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        task = URLSession.shared.dataTask(with: url) { data, _, error in
             
             if let error = error {
                 debugPrint(error)
                 self.delegate?.stopLoad()
+                DispatchQueue.main.async {
+                    self.image = UIImage(named: "Placeholder")
+                }
                 return
             }
             
@@ -46,10 +50,16 @@ class ImageCacherView: UIImageView {
                     self.image = image
                     self.imageCache.setObject(image, forKey: NSString(string: urlString))
                     self.delegate?.stopLoad()
-
+                } else {
+                    self.image = UIImage(named: "Placeholder")
+                    
                 }
             }
         }
-        .resume()
+        task?.resume()
+    }
+    
+    func cancel() {
+        task?.cancel()
     }
 }

@@ -16,6 +16,11 @@ class CategoryViewCell: UICollectionViewCell {
     
     // MARK: - Public Method
     
+    override func prepareForReuse() {
+        cellView.cancel()
+        cellView.image = nil
+    }
+    
     func fill(dto: CategoryCollectionDTO) {
         categoryImage.downloadImage(withURL: dto.imageURL)
         categoryImage.delegate = self

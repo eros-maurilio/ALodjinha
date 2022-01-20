@@ -14,6 +14,11 @@ class ProductCell: UITableViewCell {
     
     // MARK: - Public Method
     
+    override func prepareForReuse() {
+        productImage.cancel()
+        productImage.image = nil
+    }
+    
     func fill(dto: CategoryTableCellDTO) {
         productImage.downloadImage(withURL: dto.imageURL)
         productImage.delegate = self
@@ -26,7 +31,6 @@ class ProductCell: UITableViewCell {
         productImage.isHidden = true
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
-        
     }
     
     func stopLoading() {
