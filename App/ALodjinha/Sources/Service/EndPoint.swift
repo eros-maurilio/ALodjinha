@@ -12,8 +12,8 @@ struct EndPoint {
     var url: URL? {
         var components = URLComponents()
         
-        components.scheme = "https"
-        components.host = "alodjinha.herokuapp.com"
+        components.scheme = Strings.URL.scheme
+        components.host = Strings.URL.apiHost
         components.path = path
         
         guard let query = queryItem else {
@@ -56,7 +56,7 @@ extension EndPoint {
         currentPath = path.insertSlash(in: path)
         
         let query = [
-            URLQueryItem(name: "categoriaId", value: query)
+            URLQueryItem(name: Strings.URL.queryID, value: query)
         ]
         
         return EndPoint(path: currentPath, queryItem: query)

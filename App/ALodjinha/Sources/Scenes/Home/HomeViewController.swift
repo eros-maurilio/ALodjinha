@@ -60,7 +60,7 @@ private extension HomeViewController {
         let imageView = UIImageView(image: logo)
         imageView.frame = frame
         
-        navigationItem.title = "Home"
+        navigationItem.title = Strings.Title.home
         navigationItem.titleView = imageView
     }
     

@@ -55,7 +55,7 @@ private extension ProductDetailsViewController {
     }
     
     func setupNavigationBar() {
-        navigationItem.title = "Produto"
+        navigationItem.title = Strings.Title.product
     }
     
     func stopLoading() {
@@ -82,7 +82,7 @@ private extension ProductDetailsViewController {
         newAttributedString.enumerateAttribute(.font, in: NSMakeRange(0, newAttributedString.length), options: []) { value, range, _ in
             guard let currentFont = value as? UIFont else { return }
             
-            let fontDescriptor = currentFont.fontDescriptor.addingAttributes([.family: "Helvetica Neue"])
+            let fontDescriptor = currentFont.fontDescriptor.addingAttributes([.family: Strings.Font.helvetica])
             
             if let newFontDescriptor = fontDescriptor.matchingFontDescriptors(withMandatoryKeys: [UIFontDescriptor.AttributeName.family]).first {
                  let newFont = UIFont(descriptor: newFontDescriptor, size: 16)
@@ -125,7 +125,6 @@ extension ProductDetailsViewController: DetailsDelegate {
     func alertHandler(message: String) {
         DispatchQueue.main.async { [weak self] in
             self?.setupAlert(message: message)
-            
         }
     }
     

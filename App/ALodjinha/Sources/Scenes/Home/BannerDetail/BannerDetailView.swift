@@ -3,7 +3,7 @@ import WebKit
 
 class BannerDetailView: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
-    let website = "github.com"
+    let website = Strings.URL.gitHost
     
     override func loadView() {
         webView = WKWebView()

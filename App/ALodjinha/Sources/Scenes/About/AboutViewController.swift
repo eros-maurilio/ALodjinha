@@ -15,6 +15,6 @@ class AboutViewController: UIViewController {
 private extension AboutViewController {
     
     func setupNavBar() {
-        navigationItem.title = "Sobre"
+        navigationItem.title = Strings.Title.about
     }
 }

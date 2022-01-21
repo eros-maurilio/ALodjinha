@@ -17,9 +17,9 @@ extension TabBarController {
         var title: String {
             switch self {
             case .home:
-                return "Home"
+                return Strings.Title.home
             case .about:
-                return "Sobre"
+                return Strings.Title.about
             }
         }
         
