@@ -51,6 +51,7 @@ private extension HomeViewController {
     func setupSubviewsDelegate() {
         _categoriesViewHolder.unwrapped.delegate = self
         _topSellersViewHolder.unwrapped.delegate = self
+        _bannerViewHolder.unwrapped.delegate = self
     }
     
     func setupNavBar() {
