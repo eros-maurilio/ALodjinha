@@ -9,15 +9,13 @@ final class DataPost {
         
         var request = URLRequest(url: url)
         
-        request.httpMethod = "POST"
+        request.httpMethod = Strings.URL.post
         let body: [String: AnyHashable] = [:]
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
         
         let task = sharedSession.dataTask(with: request) { data, _, error in
-            guard let data = data, error == nil else {
-                completion(.failure(NSError(domain: "", code: 000, userInfo: ["Message": "Cant get data"])))
-                return }
+            guard let data = data, error == nil else { return }
             
             do {
                 let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)

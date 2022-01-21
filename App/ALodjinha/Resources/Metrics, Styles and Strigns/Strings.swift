@@ -7,6 +7,7 @@ enum Strings {
         static let bannerPath = "banner"
         static let categoryPath = "categoria"
         static let topSellersPath = "maisvendidos"
+        static let post = "POST"
         
         static let gitHost = "github.com"
         static let gitOwnerPath = "eros-maurilio"
