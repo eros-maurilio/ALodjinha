@@ -13,6 +13,7 @@ class BannerView: UIView {
     // MARK: - Properties
 
     private lazy var viewModel: BannerViewModelProtocol = BannerViewModel(delegate: self)
+    weak var delegate: HomeViewDelegate?
     
     // MARK: - Public Method
     
@@ -52,6 +53,10 @@ private extension BannerView {
         
         return pageControl.currentPage
     }
+    
+    func sendView(_ view: UIViewController) {
+        delegate?.didPush(view: view)
+    }
 }
 
     // MARK: - UICollectionViewDataSource
@@ -75,6 +80,10 @@ extension BannerView: UICollectionViewDataSource {
 
 extension BannerView: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.show()
+    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageControl.currentPage = getCurrentCellIndex()
     }
@@ -90,7 +99,7 @@ extension BannerView: UICollectionViewDelegate {
 
     // MARK: - SearchViewDelegateDelegate
 
-extension BannerView: SearchViewDelegate {
+extension BannerView: LoadContentable {
     
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
@@ -100,5 +109,10 @@ extension BannerView: SearchViewDelegate {
             self.setupViewComponents()
 
         }
+    }
+    
+    func showMore(id: String) {
+            let viewController = BannerDetailView()
+            self.sendView(viewController)
     }
 }

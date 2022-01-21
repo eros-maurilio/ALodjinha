@@ -6,11 +6,11 @@ final class BannerViewModel: BannerViewModelProtocol {
     
     private var bannerData = [DataModel]()
     private var dataLoader = DataLoader()
-    private weak var delegate: SearchViewDelegate?
+    private weak var delegate: LoadContentable?
     
     // MARK: - Dependencies
     
-    init(delegate: SearchViewDelegate) {
+    init(delegate: LoadContentable) {
         self.delegate = delegate
     }
     
@@ -47,11 +47,7 @@ final class BannerViewModel: BannerViewModelProtocol {
         return BannerCollectionCellDTO(imageURL: imageURL)
     }
     
-    func show(id: String) {
-        
-    }
-    
-    func transporter(_ indexPath: IndexPath) -> String {
-        return ""
+    func show() {
+        delegate?.showMore(id: "")
     }
 }
