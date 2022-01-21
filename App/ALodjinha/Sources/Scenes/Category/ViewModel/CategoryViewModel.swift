@@ -22,7 +22,7 @@ final class CategoryViewModel: CategoryViewModelProtocol {
     // MARK: - Public Methods
     
     func loadFromAPI(id: String) {
-        dataLoader.request(.getURLRequestWithQuery(path: Strings.URL.productPath, query: id)) { [weak self] (result: APIResult) in
+        dataLoader.make(.urlRequestWithQuery(path: Strings.URL.productPath, query: id)) { [weak self] (result: APIResult) in
             
             guard let self = self else { return }
             

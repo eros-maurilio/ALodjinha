@@ -37,7 +37,7 @@ extension EndPoint {
     
     // MARK: - API Request Data Methods
     
-    static func getURLRequestWithPath(_ paths: [String], id: String? = nil) -> EndPoint {
+    static func urlRequestWithPath(_ paths: [String], id: String? = nil) -> EndPoint {
         var currentPath = String()
         
         for path in paths {
@@ -51,7 +51,7 @@ extension EndPoint {
         return EndPoint(path: currentPath)
     }
     
-    static func getURLRequestWithQuery(path: String, query: String) -> EndPoint {
+    static func urlRequestWithQuery(path: String, query: String) -> EndPoint {
         var currentPath = String()
         currentPath = path.insertSlash(in: path)
         

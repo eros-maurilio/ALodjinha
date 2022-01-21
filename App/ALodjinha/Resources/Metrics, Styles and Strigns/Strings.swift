@@ -1,4 +1,5 @@
 enum Strings {
+    
     enum URL {
         static let scheme = "https"
         static let apiHost = "alodjinha.herokuapp.com"

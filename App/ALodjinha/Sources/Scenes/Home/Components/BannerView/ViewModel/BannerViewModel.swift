@@ -17,7 +17,7 @@ final class BannerViewModel: BannerViewModelProtocol {
     // MARK: - Public Methods
     
     func loadFromAPI() {
-        dataLoader.request(.getURLRequestWithPath([Strings.URL.bannerPath])) { [weak self] (result: APIResult) in
+        dataLoader.make(.urlRequestWithPath([Strings.URL.bannerPath])) { [weak self] (result: APIResult) in
             
             guard let self = self else { return }
             

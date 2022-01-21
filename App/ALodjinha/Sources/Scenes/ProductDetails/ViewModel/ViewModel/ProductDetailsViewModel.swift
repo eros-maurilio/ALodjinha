@@ -27,7 +27,7 @@ final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     func loadFromAPI(productID id: String) {
         productID = id
         
-        dataLoader.request(.getURLRequestWithPath([Strings.URL.productPath], id: productID)) { [weak self] (result: ProductsDetailsResult) in
+        dataLoader.make(.urlRequestWithPath([Strings.URL.productPath], id: productID)) { [weak self] (result: ProductsDetailsResult) in
             guard let self = self else { return }
             
             switch result {

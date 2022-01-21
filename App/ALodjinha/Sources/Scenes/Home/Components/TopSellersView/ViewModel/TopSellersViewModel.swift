@@ -17,7 +17,7 @@ final class TopSellersViewModel: TopSellersViewModelProtocol {
     // MARK: - Public Methods
 
     func loadFromAPI() {
-        dataLoader.request(.getURLRequestWithPath([Strings.URL.productPath, Strings.URL.topSellersPath])) { [weak self] (result: APIResult) in
+        dataLoader.make(.urlRequestWithPath([Strings.URL.productPath, Strings.URL.topSellersPath])) { [weak self] (result: APIResult) in
             guard let self = self else { return }
             
             switch result {
