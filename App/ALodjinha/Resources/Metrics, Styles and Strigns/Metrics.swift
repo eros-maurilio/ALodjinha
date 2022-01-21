@@ -16,4 +16,8 @@ enum Metrics {
     enum TabController {
         static let iconSize = CGSize(width: 24, height: 21)
     }
+    
+    enum ProductDetails {
+        static let bodyFontSize: CGFloat = 16
+    }
 }

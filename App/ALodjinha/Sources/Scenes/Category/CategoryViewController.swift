@@ -46,7 +46,7 @@ private extension CategoryViewController {
     }
     
     func rowSetup() {
-        tableView.estimatedRowHeight = 80
+        tableView.estimatedRowHeight = Metrics.TopSellers.rowSize
         tableView.rowHeight = UITableView.automaticDimension
     }
     
