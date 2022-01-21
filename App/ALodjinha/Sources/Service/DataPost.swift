@@ -1,7 +1,12 @@
 import Foundation
 
 final class DataPost {
+    
+    // MARK: - SharedSession
+    
     private var sharedSession: URLSession { URLSession.shared }
+    
+    // MARK: - Main Method
     
     func make(_ endPoint: EndPoint, completion: @escaping(Result<String, NSError>) -> Void) {
         
