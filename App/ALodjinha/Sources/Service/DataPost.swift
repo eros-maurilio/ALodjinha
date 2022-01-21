@@ -3,8 +3,9 @@ import Foundation
 final class DataPost {
     private var sharedSession: URLSession { URLSession.shared }
     
-    func makePostRequest(id: String, completion: @escaping(Result<String, NSError>) -> Void) {
-        guard let url = URL(string: "https://alodjinha.herokuapp.com/produto/\(id)") else { return }
+    func make(_ endPoint: EndPoint, completion: @escaping(Result<String, NSError>) -> Void) {
+        
+        guard let url = endPoint.url else { return }
         
         var request = URLRequest(url: url)
         

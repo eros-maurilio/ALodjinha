@@ -35,7 +35,7 @@ struct EndPoint {
 
 extension EndPoint {
     
-    // MARK: - Static Methods
+    // MARK: - API Request Data Methods
     
     static func getURLRequestWithPath(_ paths: [String], id: String? = nil) -> EndPoint {
         var currentPath = String()
@@ -60,5 +60,19 @@ extension EndPoint {
         ]
         
         return EndPoint(path: currentPath, queryItem: query)
+    }
+    
+    // MARK: - API Post Request Method
+
+    static func postRequest(for id: String) -> EndPoint {
+        var path = Strings.URL.productPath
+        var productID = id
+        path = path.insertSlash(in: path)
+        productID = productID.insertSlash(in: productID)
+        
+        path += productID
+        
+        return EndPoint(path: path)
+
     }
 }
