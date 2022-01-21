@@ -92,6 +92,14 @@ private extension ProductDetailsViewController {
         return newAttributedString
     }
     
+    func buttonShadow() {
+        bookingButton.layer.shadowColor = UIColor.darkGray.cgColor
+        bookingButton.layer.shadowRadius = 5
+        bookingButton.layer.shadowOpacity = 0.5
+        bookingButton.layer.shadowOffset = CGSize(width: 0, height: 5)
+        bookingButton.layer.shadowPath = UIBezierPath(rect: bookingButton.bounds).cgPath
+    }
+    
     func setupAlert(message: String) {
         let alert = UIAlertController(title: "Mensagem", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: popView))
@@ -105,6 +113,7 @@ private extension ProductDetailsViewController {
     }
     
     @IBAction func buttonTapped(_ sender: Any) {
+        bookingButton.backgroundColor = UIColor.gray
         bookingButton.isEnabled = false
         viewModel.booking()
     }
@@ -125,6 +134,7 @@ extension ProductDetailsViewController: DetailsDelegate {
             guard let self = self else { return }
             self.fillOutlets(dto: self.viewModel.dtoForViews())
             self.setupNavigationBar()
+            self.buttonShadow()
             self.stopLoading()
         }
     }
