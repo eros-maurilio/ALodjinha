@@ -4,8 +4,8 @@ class CategoryViewController: UIViewController {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     
@@ -46,7 +46,7 @@ private extension CategoryViewController {
     }
     
     func rowSetup() {
-        tableView.estimatedRowHeight = 80
+        tableView.estimatedRowHeight = Metrics.TopSellers.rowSize
         tableView.rowHeight = UITableView.automaticDimension
     }
     

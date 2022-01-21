@@ -6,18 +6,18 @@ final class BannerViewModel: BannerViewModelProtocol {
     
     private var bannerData = [DataModel]()
     private var dataLoader = DataLoader()
-    private weak var delegate: LoadContentable?
+    private weak var delegate: BannerDetailDelegate?
     
     // MARK: - Dependencies
     
-    init(delegate: LoadContentable) {
+    init(delegate: BannerDetailDelegate) {
         self.delegate = delegate
     }
     
     // MARK: - Public Methods
     
     func loadFromAPI() {
-        dataLoader.request(.getURLRequestWithPath(["banner"])) { [weak self] (result: APIResult) in
+        dataLoader.make(.urlRequestWithPath([Strings.URL.bannerPath])) { [weak self] (result: APIResult) in
             
             guard let self = self else { return }
             
@@ -48,6 +48,6 @@ final class BannerViewModel: BannerViewModelProtocol {
     }
     
     func show() {
-        delegate?.showMore(id: "")
+        delegate?.showMore()
     }
 }

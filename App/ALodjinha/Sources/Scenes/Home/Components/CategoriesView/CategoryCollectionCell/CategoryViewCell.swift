@@ -1,6 +1,6 @@
 import UIKit
 
-protocol cellDelegate: AnyObject {
+protocol ImageCacherDelegate: AnyObject {
     func startLoad()
     func stopLoad()
 }
@@ -11,14 +11,14 @@ class CategoryViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var categoryImage: ImageCacherView!
     @IBOutlet private weak var categoryName: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var cellView: ImageCacherView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var cellView: UIView!
     
     // MARK: - Public Method
     
     override func prepareForReuse() {
-        cellView.cancel()
-        cellView.image = nil
+        categoryImage.taskCanceller()
+        categoryImage.image = nil
     }
     
     func fill(dto: CategoryCollectionDTO) {
@@ -31,7 +31,6 @@ class CategoryViewCell: UICollectionViewCell {
         cellView.isHidden = true
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
-        
     }
     
     func stopLoading() {
@@ -40,7 +39,10 @@ class CategoryViewCell: UICollectionViewCell {
     }
 }
 
-extension CategoryViewCell: cellDelegate {
+    // MARK: - ImageCacherDelegate
+
+extension CategoryViewCell: ImageCacherDelegate {
+    
     func startLoad() {
         DispatchQueue.main.async { [weak self] in
             self?.startLoad()
@@ -50,11 +52,6 @@ extension CategoryViewCell: cellDelegate {
     func stopLoad() {
         DispatchQueue.main.async { [weak self] in
             self?.stopLoading()
-            
-            if self?.categoryImage == nil {
-                self?.categoryImage.image = UIImage(named: "Placeholder")
-
-            }
         }
     }
 }

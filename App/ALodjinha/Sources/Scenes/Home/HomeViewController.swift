@@ -14,14 +14,12 @@ class HomeViewController: UIViewController {
     @IBOutlet private var topSellersViewHolder: UIView!
     
     @IBOutlet private var homeContentView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: View's LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
     }
 }
@@ -34,10 +32,11 @@ private extension HomeViewController {
         setupNavBar()
         setupSubviewComponents()
         
-        bannerViewHolder.layer.shadowColor = UIColor.black.cgColor
-        bannerViewHolder.layer.shadowRadius = 10
-        bannerViewHolder.layer.shadowOpacity = 1
-        bannerViewHolder.layer.shadowPath = UIBezierPath(rect: bannerViewHolder.bounds).cgPath
+        Styles.makeShadowFor(bannerViewHolder,
+                             color: .black,
+                             radius: 10,
+                             opacity: 1,
+                             offSet: .zero)
     }
     
     func setupSubviewComponents() {
@@ -55,12 +54,12 @@ private extension HomeViewController {
     }
     
     func setupNavBar() {
-        let logo = UIImage(named: "NavBar")
-        let frame = CGRect(x: 0, y: 0, width: 125, height: 33)
+        let logo = Styles.Image.logo
+        let frame = Metrics.Home.navIconFrame
         let imageView = UIImageView(image: logo)
         imageView.frame = frame
         
-        navigationItem.title = "Home"
+        navigationItem.title = Strings.Title.home
         navigationItem.titleView = imageView
     }
     

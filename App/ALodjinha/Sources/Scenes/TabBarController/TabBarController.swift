@@ -41,7 +41,7 @@ private extension TabBarController {
     func createNavigationController(for tab: TabControllerType) -> UIViewController {
         let navigationController = UINavigationController(rootViewController: tab.view)
         let icon = tab.icon
-        let size = CGSize(width: 24, height: 21)
+        let size = Metrics.TabController.iconSize
         
         if #available(iOS 10.0, *) {
             navigationController.tabBarItem.image = icon.upscale(targetSize: size)
@@ -49,27 +49,32 @@ private extension TabBarController {
             navigationController.tabBarItem.image = tab.icon
         }
         
-        navigationController.tabBarItem.title = tab.title
-        navigationController.navigationBar.barTintColor = .purple
-        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationController.navigationBar.tintColor = .white
+        styleTabBar(navigationController, for: tab)
         
-        if #available(iOS 13.0, *) {
-            let navigationBarAppearance = UINavigationBarAppearance()
-            navigationBarAppearance.configureWithDefaultBackground()
-            navigationBarAppearance.backgroundColor = .purple
-            navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            
-            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-            UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-        }
+        if #available(iOS 13.0, *) { styleNavBarNewiOS() }
         
-        navigationController.navigationBar.layer.shadowColor = UIColor.black.cgColor
-        navigationController.navigationBar.layer.shadowRadius = 20
-        navigationController.navigationBar.layer.shadowOpacity = 1
-        navigationController.navigationBar.layer.shadowPath = UIBezierPath(rect: navigationController.navigationBar.bounds).cgPath
+        Styles.makeShadowFor(navigationController.navigationBar, color: .black, radius: 20, opacity: 1, offSet: .zero)
         
         return navigationController
     }
+    
+    func styleTabBar(_ navController: UINavigationController, for tab: TabControllerType) {
+        navController.tabBarItem.title = tab.title
+        navController.navigationBar.barTintColor = .purple
+        navController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navController.navigationBar.tintColor = .white
+    }
+    
+    @available(iOS 13.0, *)
+    func styleNavBarNewiOS() {
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithDefaultBackground()
+        navigationBarAppearance.backgroundColor = .purple
+        navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+    }
+
 }

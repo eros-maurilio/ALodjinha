@@ -7,3 +7,7 @@ protocol BannerViewModelProtocol {
     func dtoForItems(indexPath: IndexPath) -> BannerCollectionCellDTO
     func show()
 }
+
+protocol BannerDetailDelegate: SearchViewDelegate {
+    func showMore()
+}

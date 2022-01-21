@@ -17,7 +17,7 @@ final class CategoriesViewModel: CategoriesViewModelProtocol {
     // MARK: - Public Methods
     
     func loadFromAPI() {
-        dataLoader.request(.getURLRequestWithPath(["categoria"])) { [weak self] (result: APIResult) in
+        dataLoader.make(.urlRequestWithPath([Strings.URL.categoryPath])) { [weak self] (result: APIResult) in
             guard let self = self else { return }
             
             switch result {

@@ -4,20 +4,27 @@ class ProductCell: UITableViewCell {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var productImage: ImageCacherView!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var oldPrice: UILabel!
-    @IBOutlet weak var newPrice: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var productImage: ImageCacherView!
+    @IBOutlet private weak var name: UILabel!
+    @IBOutlet private weak var oldPrice: UILabel!
+    @IBOutlet private weak var newPrice: UILabel!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
-    weak var delegate: cellDelegate?
+    // MARK: Attributes
     
-    // MARK: - Public Method
+    weak var delegate: ImageCacherDelegate?
+    
+    // MARK: - Override Cell Method
     
     override func prepareForReuse() {
-        productImage.cancel()
+        productImage.taskCanceller()
         productImage.image = nil
     }
+}
+
+    // MARK: - Public Methods
+
+extension ProductCell {
     
     func fill(dto: CategoryTableCellDTO) {
         productImage.downloadImage(withURL: dto.imageURL)
@@ -26,6 +33,11 @@ class ProductCell: UITableViewCell {
         oldPrice.text = "De: \(String(dto.oldPrice))"
         newPrice.text = "Por \(String(dto.newPrice))"
     }
+}
+
+    // MARK: - Private Methods
+
+private extension ProductCell {
     
     func startLoading() {
         productImage.isHidden = true
@@ -39,21 +51,22 @@ class ProductCell: UITableViewCell {
     }
 }
 
-extension ProductCell: cellDelegate {
+    // MARK: - ImageCacherDelegate
+
+extension ProductCell: ImageCacherDelegate {
+    
     func startLoad() {
         DispatchQueue.main.async { [weak self] in
-            self?.startLoad()
+            guard let self = self else { return }
+            self.startLoad()
         }
     }
     
     func stopLoad() {
         DispatchQueue.main.async { [weak self] in
-            self?.stopLoading()
-            
-            if self?.productImage == nil {
-                self?.productImage.image = UIImage(named: "Placeholder")
-                
-            }
+            guard let self = self else { return }
+            self.stopLoading()
+
         }
     }
 }

@@ -8,7 +8,7 @@ final class DataLoader {
     
     // MARK: - Main Method
     
-    func request<T: Decodable>(_ endPoint: EndPoint, completion: @escaping(Result<T, NSError>) -> Void) {
+    func  make<T: Decodable>(_ endPoint: EndPoint, completion: @escaping(Result<T, NSError>) -> Void) {
         
         guard let url = endPoint.url else {
             return completion(.failure(NSError(domain: "", code: 000, userInfo: ["Message": "Invalid URL"])))

@@ -6,8 +6,7 @@ class ImageCacherView: UIImageView {
     
     let imageCache = NSCache<NSString, UIImage>()
     private var task: URLSessionDataTask?
-    
-    weak var delegate: cellDelegate?
+    weak var delegate: ImageCacherDelegate?
     
     // MARK: - Downloader method
     
@@ -22,26 +21,16 @@ class ImageCacherView: UIImageView {
             return
         }
         
-        guard let url = URL(string: urlString) else {
-            self.delegate?.stopLoad()
-            return
-        }
+        guard let url = URL(string: urlString) else { return }
         
         task = URLSession.shared.dataTask(with: url) { data, _, error in
             
             if let error = error {
                 debugPrint(error)
-                self.delegate?.stopLoad()
-                DispatchQueue.main.async {
-                    self.image = UIImage(named: "Placeholder")
-                }
                 return
             }
             
-            guard let data = data else {
-                self.delegate?.stopLoad()
-                return
-            }
+            guard let data = data else { return }
             
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
@@ -51,7 +40,7 @@ class ImageCacherView: UIImageView {
                     self.imageCache.setObject(image, forKey: NSString(string: urlString))
                     self.delegate?.stopLoad()
                 } else {
-                    self.image = UIImage(named: "Placeholder")
+                    self.image = Styles.Image.placeholder
                     self.delegate?.stopLoad()
                     
                 }
@@ -60,7 +49,10 @@ class ImageCacherView: UIImageView {
         task?.resume()
     }
     
-    func cancel() {
+    // MARK: - Task Canceller
+    
+    func taskCanceller() {
+        delegate?.stopLoad()
         task?.cancel()
     }
 }

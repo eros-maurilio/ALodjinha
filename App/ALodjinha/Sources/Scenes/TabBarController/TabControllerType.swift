@@ -17,18 +17,18 @@ extension TabBarController {
         var title: String {
             switch self {
             case .home:
-                return "Home"
+                return Strings.Title.home
             case .about:
-                return "Sobre"
+                return Strings.Title.about
             }
         }
         
         var icon: UIImage {
             switch self {
             case .home:
-                return UIImage(named: "home") ?? UIImage()
+                return Styles.Image.homeIcon ?? UIImage()
             case .about:
-                return UIImage(named: "tag") ?? UIImage()
+                return Styles.Image.aboutIcon ?? UIImage()
             }
         }
     }

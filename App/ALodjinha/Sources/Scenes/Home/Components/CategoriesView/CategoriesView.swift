@@ -25,7 +25,7 @@ class CategoriesView: UIView {
 
 private extension CategoriesView {
 
-    func register() {
+    func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(CategoryViewCell.self)
@@ -76,7 +76,7 @@ extension CategoriesView: LoadContentable {
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.register()
+            self.setupCollectionView()
             self.collectionView.reloadData()
         }
     }

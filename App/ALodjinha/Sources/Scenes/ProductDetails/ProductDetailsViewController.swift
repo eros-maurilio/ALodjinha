@@ -1,10 +1,5 @@
 import UIKit
 
-protocol DetailsDelegate: SearchViewDelegate {
-    func didLoad()
-    func alertHandler(message: String)
-}
-
 class ProductDetailsViewController: UIViewController {
     
     // MARK: - IBOutlets
@@ -15,17 +10,17 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet private weak var newPrice: UILabel!
     @IBOutlet private weak var productDescription: UILabel!
     @IBOutlet private weak var bookingButton: UIButton!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var activityIndicatorLarge: UIActivityIndicatorView!
-    @IBOutlet weak var imageActivityindicator: UIActivityIndicatorView!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var activityIndicatorLarge: UIActivityIndicatorView!
+    @IBOutlet private weak var imageActivityindicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     
     private lazy var viewModel: ProductDetailsViewModelProtocol = ProductDetailsViewModel(delegate: self)
-    
-    weak var delegate: cellDelegate?
+    weak var delegate: ImageCacherDelegate?
     
     // MARK: - View's Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -34,10 +29,9 @@ class ProductDetailsViewController: UIViewController {
     // MARK: - Public Methods
 
 extension ProductDetailsViewController {
+    
     func setupView(productID: String) {
         viewModel.loadFromAPI(productID: productID)
-        
-        
     }
 }
 
@@ -55,7 +49,7 @@ private extension ProductDetailsViewController {
     }
     
     func setupNavigationBar() {
-        navigationItem.title = "Produto"
+        navigationItem.title = Strings.Title.product
     }
     
     func stopLoading() {
@@ -82,10 +76,10 @@ private extension ProductDetailsViewController {
         newAttributedString.enumerateAttribute(.font, in: NSMakeRange(0, newAttributedString.length), options: []) { value, range, _ in
             guard let currentFont = value as? UIFont else { return }
             
-            let fontDescriptor = currentFont.fontDescriptor.addingAttributes([.family: "Helvetica Neue"])
+            let fontDescriptor = currentFont.fontDescriptor.addingAttributes([.family: Strings.Font.helvetica])
             
             if let newFontDescriptor = fontDescriptor.matchingFontDescriptors(withMandatoryKeys: [UIFontDescriptor.AttributeName.family]).first {
-                 let newFont = UIFont(descriptor: newFontDescriptor, size: 16)
+                let newFont = UIFont(descriptor: newFontDescriptor, size: Metrics.ProductDetails.bodyFontSize)
                 newAttributedString.addAttributes([NSAttributedString.Key.font: newFont], range: range)
              }
         }
@@ -93,16 +87,16 @@ private extension ProductDetailsViewController {
     }
     
     func buttonShadow() {
-        bookingButton.layer.shadowColor = UIColor.darkGray.cgColor
-        bookingButton.layer.shadowRadius = 5
-        bookingButton.layer.shadowOpacity = 0.5
-        bookingButton.layer.shadowOffset = CGSize(width: 0, height: 5)
-        bookingButton.layer.shadowPath = UIBezierPath(rect: bookingButton.bounds).cgPath
+        Styles.makeShadowFor(bookingButton,
+                             color: .gray,
+                             radius: 5,
+                             opacity: 0.5,
+                             offSet: CGSize(width: 0, height: 5))
     }
     
     func setupAlert(message: String) {
-        let alert = UIAlertController(title: "Mensagem", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: popView))
+        let alert = UIAlertController(title: Strings.Alert.title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Strings.Alert.action, style: .default, handler: popView))
         self.present(alert, animated: true)
     }
     
@@ -119,13 +113,12 @@ private extension ProductDetailsViewController {
     }
 }
 
-    // MARK: - SearchViewDelegate
+    // MARK: - DetailsDelegate
 
 extension ProductDetailsViewController: DetailsDelegate {
     func alertHandler(message: String) {
         DispatchQueue.main.async { [weak self] in
             self?.setupAlert(message: message)
-            
         }
     }
     
@@ -140,7 +133,10 @@ extension ProductDetailsViewController: DetailsDelegate {
     }
 }
 
-extension ProductDetailsViewController: cellDelegate {
+    // MARK: - ImageCacherDelegate
+
+
+extension ProductDetailsViewController: ImageCacherDelegate {
     
     func startLoad() {
         productImage.isHidden = true

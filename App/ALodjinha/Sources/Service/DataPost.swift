@@ -1,22 +1,26 @@
 import Foundation
 
 final class DataPost {
+    
+    // MARK: - SharedSession
+    
     private var sharedSession: URLSession { URLSession.shared }
     
-    func makePostRequest(id: String, completion: @escaping(Result<String, NSError>) -> Void) {
-        guard let url = URL(string: "https://alodjinha.herokuapp.com/produto/\(id)") else { return }
+    // MARK: - Main Method
+    
+    func make(_ endPoint: EndPoint, completion: @escaping(Result<String, NSError>) -> Void) {
+        
+        guard let url = endPoint.url else { return }
         
         var request = URLRequest(url: url)
         
-        request.httpMethod = "POST"
+        request.httpMethod = Strings.URL.post
         let body: [String: AnyHashable] = [:]
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
         
         let task = sharedSession.dataTask(with: request) { data, _, error in
-            guard let data = data, error == nil else {
-                completion(.failure(NSError(domain: "", code: 000, userInfo: ["Message": "Cant get data"])))
-                return }
+            guard let data = data, error == nil else { return }
             
             do {
                 let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)

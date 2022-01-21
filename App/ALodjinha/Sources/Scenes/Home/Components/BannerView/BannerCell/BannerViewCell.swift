@@ -8,7 +8,7 @@ class BannerViewCell: UICollectionViewCell {
    
     // MARK: - IBOutlets
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var bannerImage: ImageCacherView!
     
     // MARK: - Public Method
@@ -31,7 +31,9 @@ class BannerViewCell: UICollectionViewCell {
     }
 }
 
-extension BannerViewCell: cellDelegate {
+    // MARK: - ImageCacherDelegate
+
+extension BannerViewCell: ImageCacherDelegate {
     func startLoad() {
         DispatchQueue.main.async { [weak self] in
             self?.startLoad()

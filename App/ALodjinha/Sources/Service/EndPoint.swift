@@ -12,8 +12,8 @@ struct EndPoint {
     var url: URL? {
         var components = URLComponents()
         
-        components.scheme = "https"
-        components.host = "alodjinha.herokuapp.com"
+        components.scheme = Strings.URL.scheme
+        components.host = Strings.URL.apiHost
         components.path = path
         
         guard let query = queryItem else {
@@ -35,9 +35,9 @@ struct EndPoint {
 
 extension EndPoint {
     
-    // MARK: - Static Methods
+    // MARK: - API Request Data Methods
     
-    static func getURLRequestWithPath(_ paths: [String], id: String? = nil) -> EndPoint {
+    static func urlRequestWithPath(_ paths: [String], id: String? = nil) -> EndPoint {
         var currentPath = String()
         
         for path in paths {
@@ -51,14 +51,28 @@ extension EndPoint {
         return EndPoint(path: currentPath)
     }
     
-    static func getURLRequestWithQuery(path: String, query: String) -> EndPoint {
+    static func urlRequestWithQuery(path: String, query: String) -> EndPoint {
         var currentPath = String()
         currentPath = path.insertSlash(in: path)
         
         let query = [
-            URLQueryItem(name: "categoriaId", value: query)
+            URLQueryItem(name: Strings.URL.queryID, value: query)
         ]
         
         return EndPoint(path: currentPath, queryItem: query)
+    }
+    
+    // MARK: - API Post Request Method
+
+    static func postRequest(for id: String) -> EndPoint {
+        var path = Strings.URL.productPath
+        var productID = id
+        path = path.insertSlash(in: path)
+        productID = productID.insertSlash(in: productID)
+        
+        path += productID
+        
+        return EndPoint(path: path)
+
     }
 }

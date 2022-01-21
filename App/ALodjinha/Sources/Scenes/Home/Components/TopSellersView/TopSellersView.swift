@@ -7,7 +7,7 @@ class TopSellersView: UIView {
     // MARK: - IBOutlet
 
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     
@@ -30,7 +30,7 @@ extension TopSellersView {
 
 private extension TopSellersView {
     
-    func registerCell() {
+    func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ProductCell.self)
@@ -45,7 +45,7 @@ private extension TopSellersView {
     }
     
     func rowSetup() {
-        tableView.estimatedRowHeight = 80
+        tableView.estimatedRowHeight = Metrics.TopSellers.rowSize
         tableView.rowHeight = UITableView.automaticDimension
     }
     
@@ -57,7 +57,6 @@ private extension TopSellersView {
         tableView.isHidden = true
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
-        
     }
     
     func stopLoading() {
@@ -99,7 +98,7 @@ extension TopSellersView: LoadContentable {
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.registerCell()
+            self.setupTableView()
             self.tableView.reloadData()
             self.rowSetup()
             self.delegate?.didLoad()

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1403887D279B2BB60053F713 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1403887C279B2BB60053F713 /* Styles.swift */; };
+		1403887F279B42660053F713 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1403887E279B42660053F713 /* Metrics.swift */; };
 		141C99502791FF8900B90284 /* BannerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141C994E2791FF8900B90284 /* BannerViewCell.swift */; };
 		141C99512791FF8900B90284 /* BannerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141C994F2791FF8900B90284 /* BannerViewCell.xib */; };
 		141C99532792038800B90284 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141C99522792038800B90284 /* UICollectionView+Extension.swift */; };
@@ -62,6 +64,7 @@
 		14B56B492793AAEB0018720C /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B56B472793AAEB0018720C /* CategoriesView.swift */; };
 		14B56B4A2793AAEB0018720C /* CategoriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B56B482793AAEB0018720C /* CategoriesView.xib */; };
 		14D1245F279AED1D005DBCA3 /* BannerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1245E279AED1D005DBCA3 /* BannerDetailView.swift */; };
+		14D12462279B03B8005DBCA3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D12461279B03B8005DBCA3 /* Strings.swift */; };
 		14FAAA36278F279F00904807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAAA35278F279F00904807 /* AppDelegate.swift */; };
 		14FAAA38278F279F00904807 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FAAA37278F279F00904807 /* SceneDelegate.swift */; };
 		14FAAA3F278F27A100904807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FAAA3E278F27A100904807 /* Assets.xcassets */; };
@@ -69,6 +72,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1403887C279B2BB60053F713 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		1403887E279B42660053F713 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		141C994E2791FF8900B90284 /* BannerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewCell.swift; sourceTree = "<group>"; };
 		141C994F2791FF8900B90284 /* BannerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerViewCell.xib; sourceTree = "<group>"; };
 		141C99522792038800B90284 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 		14B56B472793AAEB0018720C /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		14B56B482793AAEB0018720C /* CategoriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesView.xib; sourceTree = "<group>"; };
 		14D1245E279AED1D005DBCA3 /* BannerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerDetailView.swift; sourceTree = "<group>"; };
+		14D12461279B03B8005DBCA3 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		14FAAA32278F279F00904807 /* ALodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALodjinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FAAA35278F279F00904807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14FAAA37278F279F00904807 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 		141CD136278F7B6900613A4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				14D12460279B036E005DBCA3 /* Metrics, Styles and Strigns */,
 				14FAAA3E278F27A100904807 /* Assets.xcassets */,
 				14FAAA40278F27A100904807 /* LaunchScreen.storyboard */,
 				14FAAA43278F27A100904807 /* Info.plist */,
@@ -481,6 +488,16 @@
 			path = BannerDetail;
 			sourceTree = "<group>";
 		};
+		14D12460279B036E005DBCA3 /* Metrics, Styles and Strigns */ = {
+			isa = PBXGroup;
+			children = (
+				14D12461279B03B8005DBCA3 /* Strings.swift */,
+				1403887C279B2BB60053F713 /* Styles.swift */,
+				1403887E279B42660053F713 /* Metrics.swift */,
+			);
+			path = "Metrics, Styles and Strigns";
+			sourceTree = "<group>";
+		};
 		14FAAA29278F279F00904807 = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1473DA3B2790BD8600F268BB /* UIColor+Extension.swift in Sources */,
+				1403887D279B2BB60053F713 /* Styles.swift in Sources */,
 				1499608E2798CD2A00192689 /* ProductDetailsViewModelProtocol.swift in Sources */,
 				14D1245F279AED1D005DBCA3 /* BannerDetailView.swift in Sources */,
 				141CD13F278F88D200613A4A /* WindowFactory.swift in Sources */,
@@ -602,6 +620,7 @@
 				149EFEE927978948004DF61E /* AboutViewController.swift in Sources */,
 				149960972798E53C00192689 /* CategoryCollectionDTO.swift in Sources */,
 				14270C6A2796186B00F8C25A /* BannerViewModel.swift in Sources */,
+				1403887F279B42660053F713 /* Metrics.swift in Sources */,
 				14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */,
 				14996084279884AB00192689 /* HomeViewDelegate.swift in Sources */,
 				14298216279A320300C09E9B /* DataPost.swift in Sources */,
@@ -620,6 +639,7 @@
 				141C99532792038800B90284 /* UICollectionView+Extension.swift in Sources */,
 				1499609A2798E69200192689 /* ProductCellDTO.swift in Sources */,
 				1429DEC227985B2300890161 /* CategoryModel.swift in Sources */,
+				14D12462279B03B8005DBCA3 /* Strings.swift in Sources */,
 				14FAAA38278F279F00904807 /* SceneDelegate.swift in Sources */,
 				1499608A2798942800192689 /* ProductDetailsViewController.swift in Sources */,
 				1429DEC427985B3500890161 /* APIResponseModel.swift in Sources */,

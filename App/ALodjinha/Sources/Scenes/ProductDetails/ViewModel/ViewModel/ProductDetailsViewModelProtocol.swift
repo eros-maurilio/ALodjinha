@@ -4,3 +4,8 @@ protocol ProductDetailsViewModelProtocol: AnyObject {
     func dtoForViews() -> ProductDetailsDTO
     func booking()
 }
+
+protocol DetailsDelegate: SearchViewDelegate {
+    func didLoad()
+    func alertHandler(message: String)
+}
