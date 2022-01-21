@@ -6,9 +6,11 @@ final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     
     // MARK: - Attributes
     
-    private weak var delegate: SearchViewDelegate?
+    private weak var delegate: DetailsDelegate?
     private var productDetailsData: DataModel?
     private var dataLoader = DataLoader()
+    private var dataPost = DataPost()
+    private var productID = String()
     
     // MARK: - Computed Variable
     
@@ -16,14 +18,16 @@ final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     
     // MARK: - Dependencies
     
-    init(delegate: SearchViewDelegate) {
+    init(delegate: DetailsDelegate) {
         self.delegate = delegate
     }
     
     // MARK: - Public Methods
     
     func loadFromAPI(productID id: String) {
-        dataLoader.request(.getURLRequestWithPath(["produto"], id: id)) { [weak self] (result: ProductsDetailsResult) in
+        productID = id
+        
+        dataLoader.request(.getURLRequestWithPath(["produto"], id: productID)) { [weak self] (result: ProductsDetailsResult) in
             guard let self = self else { return }
             
             switch result {
@@ -47,7 +51,15 @@ final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     }
     
     func booking() {
-        
+        dataPost.makePostRequest(id: productID) { (result: Result<String, NSError>) in
+            switch result {
+            case let .success(response):
+                self.delegate?.alertHandler(message: response)
+                
+            case let .failure(error):
+                self.delegate?.alertHandler(message: error.localizedDescription)
+            }
+        }
     }
     
     // MARK: - Helper method
