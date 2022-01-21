@@ -42,18 +42,16 @@ class ProductCell: UITableViewCell {
 extension ProductCell: cellDelegate {
     func startLoad() {
         DispatchQueue.main.async { [weak self] in
-            self?.startLoad()
+            guard let self = self else { return }
+            self.startLoad()
         }
     }
     
     func stopLoad() {
         DispatchQueue.main.async { [weak self] in
-            self?.stopLoading()
-            
-            if self?.productImage == nil {
-                self?.productImage.image = Styles.Image.placeholder
-                
-            }
+            guard let self = self else { return }
+            self.stopLoading()
+
         }
     }
 }
