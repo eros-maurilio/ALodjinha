@@ -15,9 +15,9 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet private weak var newPrice: UILabel!
     @IBOutlet private weak var productDescription: UILabel!
     @IBOutlet private weak var bookingButton: UIButton!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var activityIndicatorLarge: UIActivityIndicatorView!
-    @IBOutlet weak var imageActivityindicator: UIActivityIndicatorView!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var activityIndicatorLarge: UIActivityIndicatorView!
+    @IBOutlet private weak var imageActivityindicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     

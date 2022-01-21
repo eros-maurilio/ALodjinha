@@ -14,14 +14,12 @@ class HomeViewController: UIViewController {
     @IBOutlet private var topSellersViewHolder: UIView!
     
     @IBOutlet private var homeContentView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: View's LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
     }
 }
@@ -57,7 +55,7 @@ private extension HomeViewController {
     
     func setupNavBar() {
         let logo = Styles.Image.logo
-        let frame = CGRect(x: 0, y: 0, width: 125, height: 33)
+        let frame = Metrics.Home.navIconFrame
         let imageView = UIImageView(image: logo)
         imageView.frame = frame
         
