@@ -26,7 +26,7 @@ class BannerView: UIView {
 
 private extension BannerView {
     
-    func registerCell() {
+    func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(BannerViewCell.self)
@@ -40,7 +40,7 @@ private extension BannerView {
     }
     
     func setupViewComponents() {
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 150)
+        layout.itemSize = Metrics.Banner.size
         pageControl.numberOfPages = viewModel.numberOfItems()
     }
     
@@ -97,22 +97,26 @@ extension BannerView: UICollectionViewDelegate {
     }
 }
 
-    // MARK: - SearchViewDelegateDelegate
+    // MARK: - BannerDetailDelegate
 
-extension BannerView: LoadContentable {
+extension BannerView: BannerDetailDelegate {
     
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.registerCell()
+            
+            self.setupCollectionView()
             self.collectionView.reloadData()
             self.setupViewComponents()
-
         }
     }
     
-    func showMore(id: String) {
+    func showMore() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+
             let viewController = BannerDetailView()
             self.sendView(viewController)
+        }
     }
 }

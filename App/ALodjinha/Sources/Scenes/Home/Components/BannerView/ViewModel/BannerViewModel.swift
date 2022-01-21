@@ -6,11 +6,11 @@ final class BannerViewModel: BannerViewModelProtocol {
     
     private var bannerData = [DataModel]()
     private var dataLoader = DataLoader()
-    private weak var delegate: LoadContentable?
+    private weak var delegate: BannerDetailDelegate?
     
     // MARK: - Dependencies
     
-    init(delegate: LoadContentable) {
+    init(delegate: BannerDetailDelegate) {
         self.delegate = delegate
     }
     
@@ -48,6 +48,6 @@ final class BannerViewModel: BannerViewModelProtocol {
     }
     
     func show() {
-        delegate?.showMore(id: "")
+        delegate?.showMore()
     }
 }

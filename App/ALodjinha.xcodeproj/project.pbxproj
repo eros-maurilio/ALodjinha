@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1403887D279B2BB60053F713 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1403887C279B2BB60053F713 /* Styles.swift */; };
+		1403887F279B42660053F713 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1403887E279B42660053F713 /* Metrics.swift */; };
 		141C99502791FF8900B90284 /* BannerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141C994E2791FF8900B90284 /* BannerViewCell.swift */; };
 		141C99512791FF8900B90284 /* BannerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141C994F2791FF8900B90284 /* BannerViewCell.xib */; };
 		141C99532792038800B90284 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141C99522792038800B90284 /* UICollectionView+Extension.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		1403887C279B2BB60053F713 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		1403887E279B42660053F713 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		141C994E2791FF8900B90284 /* BannerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewCell.swift; sourceTree = "<group>"; };
 		141C994F2791FF8900B90284 /* BannerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerViewCell.xib; sourceTree = "<group>"; };
 		141C99522792038800B90284 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 			children = (
 				14D12461279B03B8005DBCA3 /* Strings.swift */,
 				1403887C279B2BB60053F713 /* Styles.swift */,
+				1403887E279B42660053F713 /* Metrics.swift */,
 			);
 			path = "Metrics, Styles and Strigns";
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				149EFEE927978948004DF61E /* AboutViewController.swift in Sources */,
 				149960972798E53C00192689 /* CategoryCollectionDTO.swift in Sources */,
 				14270C6A2796186B00F8C25A /* BannerViewModel.swift in Sources */,
+				1403887F279B42660053F713 /* Metrics.swift in Sources */,
 				14B56B442793A6D60018720C /* CategoryViewCell.swift in Sources */,
 				14996084279884AB00192689 /* HomeViewDelegate.swift in Sources */,
 				14298216279A320300C09E9B /* DataPost.swift in Sources */,
