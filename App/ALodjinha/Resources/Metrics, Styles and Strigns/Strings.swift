@@ -26,5 +26,6 @@ enum Strings {
     enum Alert {
         static let title = "Mensagem"
         static let action = "OK"
+        static let error = "Não há nada para ser exibido aqui."
     }
 }

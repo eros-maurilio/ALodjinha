@@ -9,3 +9,8 @@ protocol CategoryViewModelProtocol: AnyObject {
     func showCategory(id: String)
     func transporter(_ indexPath: IndexPath) -> String
 }
+
+protocol CategoryDelegate: AnyObject {
+    func didLoad(success: Bool)
+    func showMore(id: String)
+}

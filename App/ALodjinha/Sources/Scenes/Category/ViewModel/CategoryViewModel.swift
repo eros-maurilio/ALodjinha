@@ -4,10 +4,11 @@ final class CategoryViewModel: CategoryViewModelProtocol {
     
     // MARK: - Attributes
     
-    private weak var delegate: LoadContentable?
+    private weak var delegate: CategoryDelegate?
     private var categoryData = [DataModel]()
     private var dataLoader = DataLoader()
     private var itemAtIndexPath = String()
+    
     
     // MARK: - Computed Variable
     
@@ -15,7 +16,7 @@ final class CategoryViewModel: CategoryViewModelProtocol {
     
     // MARK: - Dependencies
     
-    init(delegate: LoadContentable) {
+    init(delegate: CategoryDelegate) {
         self.delegate = delegate
     }
     
@@ -30,8 +31,15 @@ final class CategoryViewModel: CategoryViewModelProtocol {
                 
             case let .success(response):
                 self.categoryData = response.data
-                self.delegate?.didLoad()
+                
+                if !self.categoryData.isEmpty {
+                    self.delegate?.didLoad(success: true)
+                } else {
+                    self.delegate?.didLoad(success: false)
+                }
+                
             case let .failure(error):
+                self.delegate?.didLoad(success: false)
                 debugPrint(error)
             }
         }

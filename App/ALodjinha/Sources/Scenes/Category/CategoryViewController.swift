@@ -58,6 +58,18 @@ private extension CategoryViewController {
         activityIndicator.stopAnimating()
         tableView.isHidden = false
     }
+    
+    func setupAlert() {
+        let alert = UIAlertController(title: Strings.Alert.title, message: Strings.Alert.error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Strings.Alert.action, style: .default, handler: popView))
+        present(alert, animated: true)
+    }
+    
+    func popView(action: UIAlertAction? = nil) {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
 }
 
     // MARK: - UITableViewDataSouce
@@ -88,16 +100,23 @@ extension CategoryViewController: UITableViewDelegate {
 
     // MARK: - ViewDelegate
 
-extension CategoryViewController: LoadContentable {
+extension CategoryViewController: CategoryDelegate {
     
-    func didLoad() {
+    func didLoad(success: Bool) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.setupNavBar()
-            self.setupTableView()
-            self.tableView.reloadData()
-            self.rowSetup()
-            self.stopLoading()
+            
+            if success {
+                self.setupNavBar()
+                self.setupTableView()
+                self.tableView.reloadData()
+                self.rowSetup()
+                self.stopLoading()
+            } else {
+                self.tableView.isHidden = true
+                self.setupAlert()
+                self.stopLoading()
+            }
         }
     }
     
