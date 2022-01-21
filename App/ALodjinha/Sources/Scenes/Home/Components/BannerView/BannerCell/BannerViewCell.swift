@@ -31,6 +31,8 @@ class BannerViewCell: UICollectionViewCell {
     }
 }
 
+    // MARK: - ImageCacherDelegate
+
 extension BannerViewCell: ImageCacherDelegate {
     func startLoad() {
         DispatchQueue.main.async { [weak self] in
