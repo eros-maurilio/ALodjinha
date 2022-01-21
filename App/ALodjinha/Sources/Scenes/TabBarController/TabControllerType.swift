@@ -26,9 +26,9 @@ extension TabBarController {
         var icon: UIImage {
             switch self {
             case .home:
-                return UIImage(named: "home") ?? UIImage()
+                return Styles.Image.homeIcon ?? UIImage()
             case .about:
-                return UIImage(named: "tag") ?? UIImage()
+                return Styles.Image.aboutIcon ?? UIImage()
             }
         }
     }

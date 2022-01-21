@@ -51,7 +51,7 @@ extension ProductCell: cellDelegate {
             self?.stopLoading()
             
             if self?.productImage == nil {
-                self?.productImage.image = UIImage(named: "Placeholder")
+                self?.productImage.image = Styles.Image.placeholder
                 
             }
         }

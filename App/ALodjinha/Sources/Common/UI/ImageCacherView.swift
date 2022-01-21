@@ -33,7 +33,7 @@ class ImageCacherView: UIImageView {
                 debugPrint(error)
                 self.delegate?.stopLoad()
                 DispatchQueue.main.async {
-                    self.image = UIImage(named: "Placeholder")
+                    self.image = Styles.Image.placeholder
                 }
                 return
             }
@@ -51,7 +51,7 @@ class ImageCacherView: UIImageView {
                     self.imageCache.setObject(image, forKey: NSString(string: urlString))
                     self.delegate?.stopLoad()
                 } else {
-                    self.image = UIImage(named: "Placeholder")
+                    self.image = Styles.Image.placeholder
                     self.delegate?.stopLoad()
                     
                 }
