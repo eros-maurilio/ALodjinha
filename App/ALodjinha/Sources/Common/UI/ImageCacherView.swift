@@ -52,6 +52,7 @@ class ImageCacherView: UIImageView {
                     self.delegate?.stopLoad()
                 } else {
                     self.image = UIImage(named: "Placeholder")
+                    self.delegate?.stopLoad()
                     
                 }
             }

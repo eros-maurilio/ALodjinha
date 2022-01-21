@@ -1,5 +1,10 @@
 import UIKit
 
+protocol DetailsDelegate: SearchViewDelegate {
+    func didLoad()
+    func alertHandler(message: String)
+}
+
 class ProductDetailsViewController: UIViewController {
     
     // MARK: - IBOutlets
@@ -31,6 +36,8 @@ class ProductDetailsViewController: UIViewController {
 extension ProductDetailsViewController {
     func setupView(productID: String) {
         viewModel.loadFromAPI(productID: productID)
+        
+        
     }
 }
 
@@ -84,16 +91,50 @@ private extension ProductDetailsViewController {
         }
         return newAttributedString
     }
+    
+    func buttonShadow() {
+        bookingButton.layer.shadowColor = UIColor.darkGray.cgColor
+        bookingButton.layer.shadowRadius = 5
+        bookingButton.layer.shadowOpacity = 0.5
+        bookingButton.layer.shadowOffset = CGSize(width: 0, height: 5)
+        bookingButton.layer.shadowPath = UIBezierPath(rect: bookingButton.bounds).cgPath
+    }
+    
+    func setupAlert(message: String) {
+        let alert = UIAlertController(title: "Mensagem", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: popView))
+        self.present(alert, animated: true)
+    }
+    
+    func popView(action: UIAlertAction? = nil) {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    @IBAction func buttonTapped(_ sender: Any) {
+        bookingButton.backgroundColor = UIColor.gray
+        bookingButton.isEnabled = false
+        viewModel.booking()
+    }
 }
 
     // MARK: - SearchViewDelegate
 
-extension ProductDetailsViewController: SearchViewDelegate {
+extension ProductDetailsViewController: DetailsDelegate {
+    func alertHandler(message: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.setupAlert(message: message)
+            
+        }
+    }
+    
     func didLoad() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.fillOutlets(dto: self.viewModel.dtoForViews())
             self.setupNavigationBar()
+            self.buttonShadow()
             self.stopLoading()
         }
     }
