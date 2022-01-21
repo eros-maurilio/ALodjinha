@@ -12,4 +12,8 @@ enum Metrics {
     enum Home {
         static let navIconFrame = CGRect(x: 0, y: 0, width: 125, height: 33)
     }
+    
+    enum TabController {
+        static let iconSize = CGSize(width: 24, height: 21)
+    }
 }
