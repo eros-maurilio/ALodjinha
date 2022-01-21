@@ -1,6 +1,6 @@
 import UIKit
 
-protocol cellDelegate: AnyObject {
+protocol ImageCacherDelegate: AnyObject {
     func startLoad()
     func stopLoad()
 }
@@ -17,7 +17,7 @@ class CategoryViewCell: UICollectionViewCell {
     // MARK: - Public Method
     
     override func prepareForReuse() {
-        cellView.cancel()
+        cellView.taskCanceller()
         cellView.image = nil
     }
     
@@ -40,7 +40,7 @@ class CategoryViewCell: UICollectionViewCell {
     }
 }
 
-extension CategoryViewCell: cellDelegate {
+extension CategoryViewCell: ImageCacherDelegate {
     func startLoad() {
         DispatchQueue.main.async { [weak self] in
             self?.startLoad()

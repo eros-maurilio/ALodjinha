@@ -23,7 +23,7 @@ class ProductDetailsViewController: UIViewController {
     
     private lazy var viewModel: ProductDetailsViewModelProtocol = ProductDetailsViewModel(delegate: self)
     
-    weak var delegate: cellDelegate?
+    weak var delegate: ImageCacherDelegate?
     
     // MARK: - View's Life Cycle
     override func viewDidLoad() {
@@ -139,7 +139,7 @@ extension ProductDetailsViewController: DetailsDelegate {
     }
 }
 
-extension ProductDetailsViewController: cellDelegate {
+extension ProductDetailsViewController: ImageCacherDelegate {
     
     func startLoad() {
         productImage.isHidden = true
