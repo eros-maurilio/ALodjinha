@@ -1,10 +1,5 @@
 import UIKit
 
-protocol DetailsDelegate: SearchViewDelegate {
-    func didLoad()
-    func alertHandler(message: String)
-}
-
 class ProductDetailsViewController: UIViewController {
     
     // MARK: - IBOutlets
@@ -22,10 +17,10 @@ class ProductDetailsViewController: UIViewController {
     // MARK: - Properties
     
     private lazy var viewModel: ProductDetailsViewModelProtocol = ProductDetailsViewModel(delegate: self)
-    
     weak var delegate: ImageCacherDelegate?
     
     // MARK: - View's Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -34,10 +29,9 @@ class ProductDetailsViewController: UIViewController {
     // MARK: - Public Methods
 
 extension ProductDetailsViewController {
+    
     func setupView(productID: String) {
         viewModel.loadFromAPI(productID: productID)
-        
-        
     }
 }
 
@@ -85,7 +79,7 @@ private extension ProductDetailsViewController {
             let fontDescriptor = currentFont.fontDescriptor.addingAttributes([.family: Strings.Font.helvetica])
             
             if let newFontDescriptor = fontDescriptor.matchingFontDescriptors(withMandatoryKeys: [UIFontDescriptor.AttributeName.family]).first {
-                 let newFont = UIFont(descriptor: newFontDescriptor, size: 16)
+                let newFont = UIFont(descriptor: newFontDescriptor, size: Metrics.ProductDetails.bodyFontSize)
                 newAttributedString.addAttributes([NSAttributedString.Key.font: newFont], range: range)
              }
         }
@@ -101,8 +95,8 @@ private extension ProductDetailsViewController {
     }
     
     func setupAlert(message: String) {
-        let alert = UIAlertController(title: "Mensagem", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: popView))
+        let alert = UIAlertController(title: Strings.Alert.title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Strings.Alert.action, style: .default, handler: popView))
         self.present(alert, animated: true)
     }
     
@@ -119,7 +113,7 @@ private extension ProductDetailsViewController {
     }
 }
 
-    // MARK: - SearchViewDelegate
+    // MARK: - DetailsDelegate
 
 extension ProductDetailsViewController: DetailsDelegate {
     func alertHandler(message: String) {
@@ -138,6 +132,9 @@ extension ProductDetailsViewController: DetailsDelegate {
         }
     }
 }
+
+    // MARK: - ImageCacherDelegate
+
 
 extension ProductDetailsViewController: ImageCacherDelegate {
     
