@@ -93,11 +93,11 @@ private extension ProductDetailsViewController {
     }
     
     func buttonShadow() {
-        bookingButton.layer.shadowColor = UIColor.darkGray.cgColor
-        bookingButton.layer.shadowRadius = 5
-        bookingButton.layer.shadowOpacity = 0.5
-        bookingButton.layer.shadowOffset = CGSize(width: 0, height: 5)
-        bookingButton.layer.shadowPath = UIBezierPath(rect: bookingButton.bounds).cgPath
+        Styles.makeShadowFor(bookingButton,
+                             color: .gray,
+                             radius: 5,
+                             opacity: 0.5,
+                             offSet: CGSize(width: 0, height: 5))
     }
     
     func setupAlert(message: String) {

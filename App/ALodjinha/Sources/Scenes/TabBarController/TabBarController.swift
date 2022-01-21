@@ -65,10 +65,7 @@ private extension TabBarController {
             UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         }
         
-        navigationController.navigationBar.layer.shadowColor = UIColor.black.cgColor
-        navigationController.navigationBar.layer.shadowRadius = 20
-        navigationController.navigationBar.layer.shadowOpacity = 1
-        navigationController.navigationBar.layer.shadowPath = UIBezierPath(rect: navigationController.navigationBar.bounds).cgPath
+        Styles.makeShadowFor(navigationController.navigationBar, color: .black, radius: 20, opacity: 1, offSet: .zero)
         
         return navigationController
     }

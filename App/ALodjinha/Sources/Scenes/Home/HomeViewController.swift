@@ -34,10 +34,11 @@ private extension HomeViewController {
         setupNavBar()
         setupSubviewComponents()
         
-        bannerViewHolder.layer.shadowColor = UIColor.black.cgColor
-        bannerViewHolder.layer.shadowRadius = 10
-        bannerViewHolder.layer.shadowOpacity = 1
-        bannerViewHolder.layer.shadowPath = UIBezierPath(rect: bannerViewHolder.bounds).cgPath
+        Styles.makeShadowFor(bannerViewHolder,
+                             color: .black,
+                             radius: 10,
+                             opacity: 1,
+                             offSet: .zero)
     }
     
     func setupSubviewComponents() {
@@ -55,7 +56,7 @@ private extension HomeViewController {
     }
     
     func setupNavBar() {
-        let logo = UIImage(named: "NavBar")
+        let logo = Styles.Image.logo
         let frame = CGRect(x: 0, y: 0, width: 125, height: 33)
         let imageView = UIImageView(image: logo)
         imageView.frame = frame
