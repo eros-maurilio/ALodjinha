@@ -78,6 +78,7 @@ extension CategoriesView: LoadContentable {
             guard let self = self else { return }
             self.setupCollectionView()
             self.collectionView.reloadData()
+            self.delegate?.didLoad()
         }
     }
     

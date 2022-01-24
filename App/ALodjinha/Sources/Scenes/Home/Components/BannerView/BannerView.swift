@@ -107,6 +107,7 @@ extension BannerView: BannerDetailDelegate {
             
             self.setupCollectionView()
             self.collectionView.reloadData()
+            self.delegate?.didLoad()
             self.setupViewComponents()
         }
     }
