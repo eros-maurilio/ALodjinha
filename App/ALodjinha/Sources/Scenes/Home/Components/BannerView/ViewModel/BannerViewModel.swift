@@ -10,7 +10,7 @@ final class BannerViewModel: BannerViewModelProtocol {
     
     // MARK: - Dependencies
     
-    init(delegate: BannerDetailDelegate) {
+    init(delegate: BannerDetailDelegate?) {
         self.delegate = delegate
     }
     
@@ -30,6 +30,10 @@ final class BannerViewModel: BannerViewModelProtocol {
                 debugPrint(error.localizedDescription)
             }
         }
+    }
+    
+    func setBanner(_ dataModel: [DataModel]) {
+        self.bannerData = dataModel
     }
     
     func numberOfSections() -> Int {

@@ -6,6 +6,7 @@ protocol BannerViewModelProtocol {
     func numberOfItems() -> Int
     func dtoForItems(indexPath: IndexPath) -> BannerCollectionCellDTO
     func show()
+    func setBanner(_ dataModel: [DataModel])
 }
 
 protocol BannerDetailDelegate: SearchViewDelegate {
