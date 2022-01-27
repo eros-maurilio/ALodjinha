@@ -29,6 +29,8 @@
 		1431F2312793592800201858 /* NibWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431F2302793592800201858 /* NibWrapperView.swift */; };
 		1431F23727935F1E00201858 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1431F23627935F1E00201858 /* BannerView.xib */; };
 		1431F23927935F6D00201858 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431F23827935F6D00201858 /* BannerView.swift */; };
+		144E1DDA27A1FA4100CFC826 /* BannerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E1DD927A1FA4100CFC826 /* BannerViewModelTests.swift */; };
+		144E1DDC27A1FA6300CFC826 /* BannerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E1DDB27A1FA6300CFC826 /* BannerMock.swift */; };
 		1473DA3B2790BD8600F268BB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1473DA3A2790BD8600F268BB /* UIColor+Extension.swift */; };
 		1473DA3D2791092500F268BB /* TabControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1473DA3C2791092500F268BB /* TabControllerType.swift */; };
 		14826C3127945D94003714CB /* TopSellersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14826C2F27945D94003714CB /* TopSellersView.swift */; };
@@ -71,6 +73,16 @@
 		14FAAA42278F27A100904807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FAAA40278F27A100904807 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		144E1DD327A1F99E00CFC826 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14FAAA2A278F279F00904807 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14FAAA31278F279F00904807;
+			remoteInfo = ALodjinha;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1403887C279B2BB60053F713 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		1403887E279B42660053F713 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
@@ -94,6 +106,9 @@
 		1431F2302793592800201858 /* NibWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibWrapperView.swift; sourceTree = "<group>"; };
 		1431F23627935F1E00201858 /* BannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
 		1431F23827935F6D00201858 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		144E1DCF27A1F99E00CFC826 /* ALodjinhaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALodjinhaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		144E1DD927A1FA4100CFC826 /* BannerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModelTests.swift; sourceTree = "<group>"; };
+		144E1DDB27A1FA6300CFC826 /* BannerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerMock.swift; sourceTree = "<group>"; };
 		1473DA3A2790BD8600F268BB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1473DA3C2791092500F268BB /* TabControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControllerType.swift; sourceTree = "<group>"; };
 		14826C2F27945D94003714CB /* TopSellersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSellersView.swift; sourceTree = "<group>"; };
@@ -139,6 +154,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		144E1DCC27A1F99E00CFC826 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14FAAA2F278F279F00904807 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,6 +299,47 @@
 				14B56B3D2793994E0018720C /* NibWrapp */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		144E1DD027A1F99E00CFC826 /* ALodjinhaTests */ = {
+			isa = PBXGroup;
+			children = (
+				144E1DDD27A2120700CFC826 /* Scenes */,
+			);
+			path = ALodjinhaTests;
+			sourceTree = "<group>";
+		};
+		144E1DD827A1FA2200CFC826 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				144E1DDE27A218D400CFC826 /* Mock */,
+				144E1DDF27A218DE00CFC826 /* ViewModel */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		144E1DDD27A2120700CFC826 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				144E1DD827A1FA2200CFC826 /* Banner */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		144E1DDE27A218D400CFC826 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				144E1DD927A1FA4100CFC826 /* BannerViewModelTests.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		144E1DDF27A218DE00CFC826 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				144E1DDB27A1FA6300CFC826 /* BannerMock.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1473DA392790BD7300F268BB /* Extensions */ = {
@@ -502,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				14FAAA34278F279F00904807 /* ALodjinha */,
+				144E1DD027A1F99E00CFC826 /* ALodjinhaTests */,
 				14FAAA33278F279F00904807 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -510,6 +574,7 @@
 			isa = PBXGroup;
 			children = (
 				14FAAA32278F279F00904807 /* ALodjinha.app */,
+				144E1DCF27A1F99E00CFC826 /* ALodjinhaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -526,6 +591,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		144E1DCE27A1F99E00CFC826 /* ALodjinhaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 144E1DD527A1F99E00CFC826 /* Build configuration list for PBXNativeTarget "ALodjinhaTests" */;
+			buildPhases = (
+				144E1DCB27A1F99E00CFC826 /* Sources */,
+				144E1DCC27A1F99E00CFC826 /* Frameworks */,
+				144E1DCD27A1F99E00CFC826 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				144E1DD427A1F99E00CFC826 /* PBXTargetDependency */,
+			);
+			name = ALodjinhaTests;
+			productName = ALodjinhaTests;
+			productReference = 144E1DCF27A1F99E00CFC826 /* ALodjinhaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		14FAAA31278F279F00904807 /* ALodjinha */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14FAAA46278F27A100904807 /* Build configuration list for PBXNativeTarget "ALodjinha" */;
@@ -553,6 +636,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					144E1DCE27A1F99E00CFC826 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 14FAAA31278F279F00904807;
+					};
 					14FAAA31278F279F00904807 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -572,11 +659,19 @@
 			projectRoot = "";
 			targets = (
 				14FAAA31278F279F00904807 /* ALodjinha */,
+				144E1DCE27A1F99E00CFC826 /* ALodjinhaTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		144E1DCD27A1F99E00CFC826 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14FAAA30278F279F00904807 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -599,6 +694,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		144E1DCB27A1F99E00CFC826 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				144E1DDA27A1FA4100CFC826 /* BannerViewModelTests.swift in Sources */,
+				144E1DDC27A1FA6300CFC826 /* BannerMock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14FAAA2E278F279F00904807 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -658,6 +762,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		144E1DD427A1F99E00CFC826 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14FAAA31278F279F00904807 /* ALodjinha */;
+			targetProxy = 144E1DD327A1F99E00CFC826 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		14FAAA40278F27A100904807 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -670,6 +782,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		144E1DD627A1F99E00CFC826 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4957F54262;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erosLerningAcademy.ALodjinhaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ALodjinha.app/ALodjinha";
+			};
+			name = Debug;
+		};
+		144E1DD727A1F99E00CFC826 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4957F54262;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erosLerningAcademy.ALodjinhaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ALodjinha.app/ALodjinha";
+			};
+			name = Release;
+		};
 		14FAAA44278F27A100904807 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -847,6 +997,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		144E1DD527A1F99E00CFC826 /* Build configuration list for PBXNativeTarget "ALodjinhaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				144E1DD627A1F99E00CFC826 /* Debug */,
+				144E1DD727A1F99E00CFC826 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		14FAAA2D278F279F00904807 /* Build configuration list for PBXProject "ALodjinha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
