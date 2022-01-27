@@ -13,13 +13,13 @@ class BannerViewModelMock: BannerViewModelProtocol {
                                        linkUrl: nil)]
         
     private let viewModel = BannerViewModel(delegate: nil)
-    var callingLoadFromAPI = false
+    var isLoading = false
     var isShowing = false
     
     
     func loadFromAPI() {
         viewModel.loadFromAPI()
-        callingLoadFromAPI = true
+        isLoading = true
     }
     
     func numberOfSections() -> Int {

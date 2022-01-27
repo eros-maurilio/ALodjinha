@@ -11,7 +11,7 @@ class BannerViewModelTests: XCTestCase {
     
     func testLoadData() {
         mock.loadFromAPI()
-        XCTAssertTrue(mock.callingLoadFromAPI)
+        XCTAssertTrue(mock.isLoading)
     }
     
     func testNumberOfSections() {
