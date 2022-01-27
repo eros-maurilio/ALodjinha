@@ -10,7 +10,7 @@ final class CategoriesViewModel: CategoriesViewModelProtocol {
    
     // MARK: - Dependencies
     
-    init(delegate: LoadContentable) {
+    init(delegate: LoadContentable?) {
         self.delegate = delegate
     }
     
@@ -22,7 +22,7 @@ final class CategoriesViewModel: CategoriesViewModelProtocol {
             
             switch result {
             case let .success(response):
-                self.categoriesData = response.data
+                self.injectDataModel(response.data)
                 self.delegate?.didLoad()
             case let .failure(error):
                 debugPrint(error)
@@ -52,5 +52,9 @@ final class CategoriesViewModel: CategoriesViewModelProtocol {
     
     func transporter(_ indexPath: IndexPath) -> String {
         return String(categoriesData[indexPath.row].id)
+    }
+    
+    func injectDataModel(_ dataModel: [DataModel]) {
+        self.categoriesData = dataModel
     }
 }
