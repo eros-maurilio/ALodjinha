@@ -10,12 +10,16 @@ final class TopSellersViewModel: TopSellersViewModelProtocol {
     
     // MARK: - Dependencies
     
-    init(delegate: LoadContentable) {
+    init(delegate: LoadContentable?) {
         self.delegate = delegate
     }
 
     // MARK: - Public Methods
 
+    func injectDataModel(_ dataModel: [DataModel]) {
+        self.topSellersData = dataModel
+    }
+    
     func loadFromAPI() {
         dataLoader.make(.urlRequestWithPath([Strings.URL.productPath, Strings.URL.topSellersPath])) { [weak self] (result: APIResult) in
             guard let self = self else { return }
@@ -23,7 +27,7 @@ final class TopSellersViewModel: TopSellersViewModelProtocol {
             switch result {
                 
             case let .success(response):
-                self.topSellersData = response.data
+                self.injectDataModel(response.data)
                 self.delegate?.didLoad()
             case let .failure(error):
                 debugPrint(error)
