@@ -1,4 +1,4 @@
-struct CategoryTableCellDTO {
+struct CategoryTableCellDTO: Equatable {
     let imageURL: String
     let name: String
     let oldPrice: Float
