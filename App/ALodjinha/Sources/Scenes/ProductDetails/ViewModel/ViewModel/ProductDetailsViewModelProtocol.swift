@@ -3,6 +3,7 @@ protocol ProductDetailsViewModelProtocol: AnyObject {
     func loadFromAPI(productID id: String)
     func dtoForViews() -> ProductDetailsDTO
     func booking()
+    func injectDataModel(_ dataModel: DataModel)
 }
 
 protocol DetailsDelegate: SearchViewDelegate {

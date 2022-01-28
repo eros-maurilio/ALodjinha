@@ -18,11 +18,15 @@ final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     
     // MARK: - Dependencies
     
-    init(delegate: DetailsDelegate) {
+    init(delegate: DetailsDelegate?) {
         self.delegate = delegate
     }
     
     // MARK: - Public Methods
+    
+    func injectDataModel(_ dataModel: DataModel) {
+        self.productDetailsData = dataModel
+    }
     
     func loadFromAPI(productID id: String) {
         productID = id
@@ -32,7 +36,7 @@ final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
             
             switch result {
             case let .success(response):
-                self.productDetailsData = response
+                self.injectDataModel(response)
                 self.delegate?.didLoad()
             case let .failure(error):
                 debugPrint(error)
