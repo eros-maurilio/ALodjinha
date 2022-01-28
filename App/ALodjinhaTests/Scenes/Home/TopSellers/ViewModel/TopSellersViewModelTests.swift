@@ -3,11 +3,17 @@ import XCTest
 
 class TopSellersViewModelTests: XCTestCase {
 
+    // MARK: - Properties
+    
     var mock: TopSellersViewModelMock!
+    
+    // MARK: - Test Setup
     
     override func setUp() {
         mock = TopSellersViewModelMock()
     }
+    
+    // MARK: - Test Methods
     
     func testLoadFromAPI(){
         mock.loadFromAPI()

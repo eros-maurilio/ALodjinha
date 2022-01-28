@@ -3,6 +3,8 @@ import UIKit
 
 final class TopSellersViewModelMock: TopSellersViewModelProtocol {
     
+    // MARK: - Model
+    
     let topSellerData = [DataModel(id: 7,
                                            productName: "Fifa 17",
                                            urlImage: "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
@@ -14,10 +16,14 @@ final class TopSellersViewModelMock: TopSellersViewModelProtocol {
                                                                    imageURL: "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png"),
                                            linkUrl: nil)]
     
+    // MARK: - Attributes
+    
     private let viewModel: TopSellersViewModelProtocol = TopSellersViewModel(delegate: nil)
     var isLoading = false
     var isInjecting = false
     var isShowing = false
+    
+    // MARK: - Methods
     
     func injectDataModel(_ dataModel: [DataModel]) {
         isInjecting = true

@@ -3,6 +3,8 @@ import UIKit
 
 final class CategoryViewModelMock: CategoryViewModelProtocol {
     
+    // MARK: - Model
+
     let categoryData = [DataModel(id: 7,
                                          productName: "Fifa 17",
                                          urlImage: "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
@@ -14,13 +16,16 @@ final class CategoryViewModelMock: CategoryViewModelProtocol {
                                                                  imageURL: "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png"),
                                          linkUrl: nil)]
     
+    // MARK: - Attributes
+
     var isInjecting = false
     var isShowing = false
     var isLoading = false
     private var viewModel: CategoryViewModelProtocol = CategoryViewModel(delegate: nil)
-    
     var navTitle: String { navigationTitle() }
     
+    // MARK: - Methods
+
     func injectDataModel(_ dataModel: [DataModel]) {
         isInjecting = true
         viewModel.injectDataModel(dataModel)
@@ -55,6 +60,8 @@ final class CategoryViewModelMock: CategoryViewModelProtocol {
         injectDataModel(categoryData)
         return viewModel.transporter(indexPath)
     }
+    
+    // MARK: - Helper Func
     
     private func navigationTitle() -> String {
         categoryData.first?.category?.categoryName ?? ""

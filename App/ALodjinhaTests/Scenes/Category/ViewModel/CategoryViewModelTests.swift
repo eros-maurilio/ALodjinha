@@ -3,12 +3,18 @@ import XCTest
 
 class CategoryViewModelTests: XCTestCase {
 
+    // MARK: - Properties
+
     var mock: CategoryViewModelMock!
     
+    // MARK: - Test Setup
+
     override func setUp() {
         mock = CategoryViewModelMock()
     }
     
+    // MARK: - Test Methods
+
     func testInjectDataModel() {
         mock.injectDataModel(mock.categoryData)
         XCTAssertTrue(mock.isInjecting)

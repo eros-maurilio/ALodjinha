@@ -2,7 +2,9 @@ import UIKit
 @testable import ALodjinha
 
 final class ProductDetailViewModelMock: ProductDetailsViewModelProtocol {
-    
+
+    // MARK: - Model
+
     let productData = DataModel(id: 7,
                                                          productName: "Fifa 17",
                                                          urlImage: "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
@@ -14,13 +16,16 @@ final class ProductDetailViewModelMock: ProductDetailsViewModelProtocol {
                                                                                  imageURL: "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png"),
                                                          linkUrl: nil)
     
+    // MARK: - Attributes
+    
     var isBooking = false
     var isLoading = false
     var isInjecting = false
     let viewModel: ProductDetailsViewModelProtocol = ProductDetailsViewModel(delegate: nil)
-    
     var navTitle: String { "" }
   
+    // MARK: - Methods
+
     func injectDataModel(_ dataModel: DataModel) {
         isInjecting = true
         viewModel.injectDataModel(dataModel)
@@ -40,5 +45,4 @@ final class ProductDetailViewModelMock: ProductDetailsViewModelProtocol {
         isBooking = true
         viewModel.booking()
     }
-
 }

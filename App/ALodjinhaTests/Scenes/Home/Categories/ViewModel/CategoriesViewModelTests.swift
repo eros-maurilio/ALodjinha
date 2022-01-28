@@ -3,12 +3,18 @@ import XCTest
 
 class CategoriesViewModelTests: XCTestCase {
     
+    // MARK: - Properties
+
     var mock: CategoriesViewModelMock!
+    
+    // MARK: - Test Setup
     
     override func setUp() {
         mock = CategoriesViewModelMock()
     }
     
+    // MARK: - Test Methods
+
     func testLoadFromAPI() {
         mock.loadFromAPI()
         XCTAssertTrue(mock.isLoading)

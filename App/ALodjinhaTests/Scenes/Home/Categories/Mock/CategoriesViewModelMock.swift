@@ -3,6 +3,8 @@ import Foundation
 
 final class CategoriesViewModelMock: CategoriesViewModelProtocol {
     
+    // MARK: - Model
+
     let categoriesData = [DataModel(id: 4,
                                     productName: nil,
                                     urlImage: "http://portal.ifrn.edu.br/campus/ceara-mirim/noticias/ifrn-oferece-curso-de-informatica-basica-para-pais-dos-estudantes/image_preview",
@@ -12,11 +14,14 @@ final class CategoriesViewModelMock: CategoriesViewModelProtocol {
                                     category: nil,
                                     linkUrl: nil)]
     
+    // MARK: - Attributes
+
     private let viewModel = CategoriesViewModel(delegate: nil)
     var isInjecting = false
     var isShowing = false
     var isLoading = false
     
+    // MARK: - Methods
     
     func injectDataModel(_ dataModel: [DataModel]) {
         viewModel.injectDataModel(categoriesData)

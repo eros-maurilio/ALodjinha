@@ -3,6 +3,8 @@ import Foundation
 
 class BannerViewModelMock: BannerViewModelProtocol {
     
+    // MARK: - Model
+
     private let bannerData: [DataModel] = [DataModel(id: 1,
                                        productName: nil,
                                        urlImage: "https://images-submarino.b2w.io/spacey/2017/02/06/MainTop_GAMES_FEV17.png",
@@ -12,10 +14,13 @@ class BannerViewModelMock: BannerViewModelProtocol {
                                        category: nil,
                                        linkUrl: nil)]
         
+    // MARK: - Attributes
+
     private let viewModel = BannerViewModel(delegate: nil)
     var isLoading = false
     var isShowing = false
     
+    // MARK: - Methods
     
     func loadFromAPI() {
         viewModel.loadFromAPI()

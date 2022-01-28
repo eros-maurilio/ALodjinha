@@ -3,11 +3,17 @@ import XCTest
 
 class BannerViewModelTests: XCTestCase {
 
+    // MARK: - Properties
+
     var mock: BannerViewModelMock!
     
+    // MARK: - Test Setup
+
     override func setUp() {
         mock = BannerViewModelMock()
     }
+    
+    // MARK: - Test Methods
     
     func testLoadData() {
         mock.loadFromAPI()

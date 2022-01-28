@@ -3,12 +3,18 @@ import XCTest
 
 class ProductDetailViewModelTests: XCTestCase {
 
+    // MARK: - Properties
+
     var mock: ProductDetailViewModelMock!
     
+    // MARK: - Test Setup
+
     override func setUp() {
         mock = ProductDetailViewModelMock()
     }
     
+    // MARK: - Test Methods
+
     func testInjectData() {
         mock.injectDataModel(mock.productData)
         XCTAssertTrue(mock.isInjecting)
