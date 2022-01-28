@@ -23,10 +23,10 @@ class CategoriesViewModelTests: XCTestCase {
     }
     
     func testDtoFotItems() {
-        let item = mock.dtoForItems(indexPath: IndexPath(row: 0, section: 1))
+        let dto = mock.dtoForItems(indexPath: IndexPath(row: 0, section: 1))
         
-        XCTAssertEqual(CategoryCollectionDTO(imageURL: item.imageURL,
-                                             name: item.name),
+        XCTAssertEqual(CategoryCollectionDTO(imageURL: dto.imageURL,
+                                             name: dto.name),
                        CategoryCollectionDTO(imageURL: "http://portal.ifrn.edu.br/campus/ceara-mirim/noticias/ifrn-oferece-curso-de-informatica-basica-para-pais-dos-estudantes/image_preview",
                                              name: "Informática"))
     }

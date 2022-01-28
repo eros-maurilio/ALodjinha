@@ -38,7 +38,6 @@ class CategoryViewModelTests: XCTestCase {
                                             name: "Fifa 17",
                                             oldPrice: 299,
                                             newPrice: 119.99))
-        
     }
     
     func testShowCategory() {
