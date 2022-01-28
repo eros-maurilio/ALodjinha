@@ -16,11 +16,15 @@ final class CategoryViewModel: CategoryViewModelProtocol {
     
     // MARK: - Dependencies
     
-    init(delegate: CategoryDelegate) {
+    init(delegate: CategoryDelegate?) {
         self.delegate = delegate
     }
     
     // MARK: - Public Methods
+    
+    func injectDataModel(_ dataModel: [DataModel]) {
+        self.categoryData = dataModel
+    }
     
     func loadFromAPI(id: String) {
         dataLoader.make(.urlRequestWithQuery(path: Strings.URL.productPath, query: id)) { [weak self] (result: APIResult) in
@@ -30,7 +34,7 @@ final class CategoryViewModel: CategoryViewModelProtocol {
             switch result {
                 
             case let .success(response):
-                self.categoryData = response.data
+                self.injectDataModel(response.data)
                 
                 if !self.categoryData.isEmpty {
                     self.delegate?.didLoad(success: true)
