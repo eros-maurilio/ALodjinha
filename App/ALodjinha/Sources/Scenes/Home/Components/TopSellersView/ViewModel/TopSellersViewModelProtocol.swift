@@ -1,6 +1,7 @@
 import Foundation
 
 protocol TopSellersViewModelProtocol {
+    func injectDataModel(_ dataModel: [DataModel])
     func loadFromAPI()
     func numberOfSections() -> Int
     func numberOfItems() -> Int

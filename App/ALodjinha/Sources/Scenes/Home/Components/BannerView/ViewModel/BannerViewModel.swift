@@ -1,7 +1,7 @@
 import UIKit
 
 final class BannerViewModel: BannerViewModelProtocol {
-    
+
     // MARK: - Private Attributes
     
     private var bannerData = [DataModel]()
@@ -10,7 +10,7 @@ final class BannerViewModel: BannerViewModelProtocol {
     
     // MARK: - Dependencies
     
-    init(delegate: BannerDetailDelegate) {
+    init(delegate: BannerDetailDelegate?) {
         self.delegate = delegate
     }
     
@@ -23,7 +23,7 @@ final class BannerViewModel: BannerViewModelProtocol {
             
             switch result {
             case let .success(response):
-                self.bannerData = response.data
+                self.injectDataModel(response.data)
                 self.delegate?.didLoad()
                 
             case let .failure(error):
@@ -45,6 +45,10 @@ final class BannerViewModel: BannerViewModelProtocol {
         let imageURL = itemAtIndexPath.urlImage
         
         return BannerCollectionCellDTO(imageURL: imageURL)
+    }
+    
+    func injectDataModel(_ dataModel: [DataModel]) {
+        bannerData = dataModel
     }
     
     func show() {
