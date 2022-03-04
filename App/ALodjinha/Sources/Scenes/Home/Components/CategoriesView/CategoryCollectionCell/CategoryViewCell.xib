@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryViewCell" customModule="ALodjinha" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="164" height="149"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="164" height="149"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eH2-sK-52q">
+                        <rect key="frame" x="0.0" y="0.0" width="164" height="149"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVe-ET-VHI" customClass="ImageCacherView" customModule="ALodjinha" customModuleProvider="target">
+                                <rect key="frame" x="42" y="5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="8A2-me-r1r"/>
+                                    <constraint firstAttribute="width" constant="80" id="PdJ-XV-XjO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eletrodomésticos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FK-7d-wnT">
+                                <rect key="frame" x="0.0" y="85" width="164" height="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.36078431372549019" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3FK-7d-wnT" firstAttribute="top" secondItem="uVe-ET-VHI" secondAttribute="bottom" id="4dH-Vk-5f7"/>
+                            <constraint firstItem="uVe-ET-VHI" firstAttribute="centerX" secondItem="eH2-sK-52q" secondAttribute="centerX" id="C7h-30-JFm"/>
+                            <constraint firstItem="uVe-ET-VHI" firstAttribute="top" secondItem="eH2-sK-52q" secondAttribute="top" constant="5" id="JYm-df-dtU"/>
+                            <constraint firstItem="3FK-7d-wnT" firstAttribute="leading" secondItem="eH2-sK-52q" secondAttribute="leading" id="O4t-XL-8qX"/>
+                            <constraint firstAttribute="bottom" secondItem="3FK-7d-wnT" secondAttribute="bottom" id="aVM-iU-yyG"/>
+                            <constraint firstAttribute="trailing" secondItem="3FK-7d-wnT" secondAttribute="trailing" id="fCU-ZI-oMN"/>
+                        </constraints>
+                    </view>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="n5L-eE-7Sb">
+                        <rect key="frame" x="72" y="64.5" width="20" height="20"/>
+                        <color key="color" red="0.38823529410000002" green="0.25882352939999997" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </activityIndicatorView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="eH2-sK-52q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="J99-9i-Dua"/>
+                <constraint firstAttribute="bottom" secondItem="eH2-sK-52q" secondAttribute="bottom" id="KQh-TM-DXp"/>
+                <constraint firstItem="eH2-sK-52q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WTx-0Z-9KU"/>
+                <constraint firstAttribute="trailing" secondItem="eH2-sK-52q" secondAttribute="trailing" id="kTt-rt-tQj"/>
+                <constraint firstItem="n5L-eE-7Sb" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="ksJ-rc-6Zy"/>
+                <constraint firstItem="n5L-eE-7Sb" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="uSZ-oH-Kp5"/>
+            </constraints>
+            <size key="customSize" width="164" height="149"/>
+            <connections>
+                <outlet property="activityIndicator" destination="n5L-eE-7Sb" id="B25-Ai-TTh"/>
+                <outlet property="categoryImage" destination="uVe-ET-VHI" id="QiP-p6-kZ2"/>
+                <outlet property="categoryName" destination="3FK-7d-wnT" id="8Hx-xI-eaD"/>
+                <outlet property="cellView" destination="eH2-sK-52q" id="7hI-Bz-Hln"/>
+            </connections>
+            <point key="canvasLocation" x="-104.34782608695653" y="81.361607142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
