@@ -1,6 +1,10 @@
 import Foundation
 
-final class DataLoader {
+protocol DataLoaderProtocol {
+    func  make<T: Decodable>(_ endPoint: EndPoint, completion: @escaping(Result<T, NSError>) -> Void)
+}
+
+final class DataLoader: DataLoaderProtocol {
     
     // MARK: - SharedSession
     

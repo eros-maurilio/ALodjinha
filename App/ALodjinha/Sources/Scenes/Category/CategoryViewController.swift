@@ -9,7 +9,7 @@ class CategoryViewController: UIViewController {
     
     // MARK: - Properties
     
-    private lazy var viewModel: CategoryViewModelProtocol = CategoryViewModel(delegate: self)
+    private lazy var viewModel: CategoryViewModelProtocol = CategoryViewModel(dataLoader: DataLoader(), delegate: self)
     
     // MARK: - View's Life Cycle
     

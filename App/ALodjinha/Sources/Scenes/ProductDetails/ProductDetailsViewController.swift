@@ -87,7 +87,7 @@ private extension ProductDetailsViewController {
     }
     
     func buttonShadow() {
-        Styles.makeShadowFor(bookingButton,
+        bookingButton.makeShadow(
                              color: .gray,
                              radius: 5,
                              opacity: 0.5,

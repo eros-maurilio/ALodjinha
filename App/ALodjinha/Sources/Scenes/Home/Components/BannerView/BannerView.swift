@@ -35,7 +35,6 @@ private extension BannerView {
     func collectionCell(_ collectionView: UICollectionView, at indexPath: IndexPath, forACellDTO aCellDTO: BannerCollectionCellDTO) -> BannerViewCell {
         let cell = collectionView.dequeueCell(BannerViewCell.self, indexPath)
         cell.fillCell(dto: aCellDTO)
-        
         return cell
     }
     

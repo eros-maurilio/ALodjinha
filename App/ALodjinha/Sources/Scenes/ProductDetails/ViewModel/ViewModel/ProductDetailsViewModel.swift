@@ -55,13 +55,12 @@ final class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     }
     
     func booking() {
-        dataPost.make(.postRequest(for: productID)) { (result: Result<String, NSError>) in
-            switch result {
+        dataPost.make(.postRequest(for: productID)) { [weak self] in
+            switch $0 {
             case let .success(response):
-                self.delegate?.alertHandler(message: response)
-                
+                self?.delegate?.alertHandler(message: response)
             case let .failure(error):
-                self.delegate?.alertHandler(message: error.localizedDescription)
+                self?.delegate?.alertHandler(message: error.localizedDescription)
             }
         }
     }

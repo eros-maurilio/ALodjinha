@@ -51,7 +51,7 @@ extension EndPoint {
         return EndPoint(path: currentPath)
     }
     
-    static func urlRequestWithQuery(path: String, query: String) -> EndPoint {
+    static func urlRequestWithQuery(path: String, query: String) -> EndPoint { // Witness oriented programming
         var currentPath = String()
         currentPath = path.insertSlash(in: path)
         

@@ -1,12 +1,11 @@
 import Foundation
 
 final class CategoryViewModel: CategoryViewModelProtocol {
-    
     // MARK: - Attributes
     
     private weak var delegate: CategoryDelegate?
     private var categoryData = [DataModel]()
-    private var dataLoader = DataLoader()
+    private let dataLoader: DataLoaderProtocol
     private var itemAtIndexPath = String()
     
     
@@ -16,15 +15,12 @@ final class CategoryViewModel: CategoryViewModelProtocol {
     
     // MARK: - Dependencies
     
-    init(delegate: CategoryDelegate?) {
+    init(dataLoader: DataLoaderProtocol, delegate: CategoryDelegate?) {
+        self.dataLoader = dataLoader
         self.delegate = delegate
     }
     
     // MARK: - Public Methods
-    
-    func injectDataModel(_ dataModel: [DataModel]) {
-        self.categoryData = dataModel
-    }
     
     func loadFromAPI(id: String) {
         dataLoader.make(.urlRequestWithQuery(path: Strings.URL.productPath, query: id)) { [weak self] (result: APIResult) in
@@ -34,8 +30,7 @@ final class CategoryViewModel: CategoryViewModelProtocol {
             switch result {
                 
             case let .success(response):
-                self.injectDataModel(response.data)
-                
+                self.categoryData = response.data
                 if !self.categoryData.isEmpty {
                     self.delegate?.didLoad(success: true)
                 } else {
@@ -49,13 +44,9 @@ final class CategoryViewModel: CategoryViewModelProtocol {
         }
     }
     
-    func numberOfSections() -> Int {
-        return [categoryData].count
-    }
+    func numberOfSections() -> Int { 1 }
     
-    func numberOfItems() -> Int {
-        return categoryData.count
-    }
+    func numberOfItems() -> Int { categoryData.count }
     
     func dtoForItems(indexPath: IndexPath) -> CategoryTableCellDTO {
         let itemAtIndexPath = categoryData[indexPath.row]

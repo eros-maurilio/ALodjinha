@@ -1,6 +1,7 @@
 import UIKit
 
-@propertyWrapper public struct NibWrapped<T: UIView> {
+@propertyWrapper
+public struct NibWrapped<T: UIView> {
     
     public init(_ : T.Type) { }
     

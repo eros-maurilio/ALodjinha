@@ -21,14 +21,13 @@ final class CategoryViewModelMock: CategoryViewModelProtocol {
     var isInjecting = false
     var isShowing = false
     var isLoading = false
-    private var viewModel: CategoryViewModelProtocol = CategoryViewModel(delegate: nil)
+    private var viewModel: CategoryViewModelProtocol = CategoryViewModel(dataLoader: DataLoaderStub(), delegate: nil)
     var navTitle: String { navigationTitle() }
     
     // MARK: - Methods
 
     func injectDataModel(_ dataModel: [DataModel]) {
         isInjecting = true
-        viewModel.injectDataModel(dataModel)
     }
     
     func loadFromAPI(id: String) {
