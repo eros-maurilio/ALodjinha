@@ -4,13 +4,51 @@ import XCTest
 class CategoryViewModelTests: XCTestCase {
 
     // MARK: - Properties
-    private let fakeDelegate = CategoryDelegateFake()
+    private let delegateSpy = CategoryDelegateSpy()
     private let dataLoaderStub = DataLoaderStub()
-    private lazy var sut = CategoryViewModel(dataLoader: dataLoaderStub, delegate: fakeDelegate)
+    private lazy var sut = CategoryViewModel(dataLoader: dataLoaderStub, delegate: delegateSpy)
     private let mock: CategoryViewModelMock = CategoryViewModelMock()
     
     // MARK: - Test Methods
+    
+    func test_loadFromApi_whenDataloaderFails_itShouldLoadDelegateWithoutSuccess() {
+        // Given
+        dataLoaderStub.resultToUse = .failure(.fixture())
+        
+        // When
+        sut.loadFromAPI(id: UUID().uuidString)
+        
+        // Then
+        XCTAssertEqual(1, delegateSpy.didLoadCallCount)
+        XCTAssert(delegateSpy.didLoadSuccess == false)
+    }
+    
+    func test_loadFromApi_whenDataloaderSucceeds_andDataIsEmpty_itShouldLoadDelegateWithError() {
+        // Given
+        dataLoaderStub.resultToUse = .success(.init(data: []))
+        
+        // When
+        sut.loadFromAPI(id: UUID().uuidString)
+        
+        // Then
+        XCTAssertEqual(1, delegateSpy.didLoadCallCount)
+        XCTAssert(delegateSpy.didLoadSuccess == false)
+    }
 
+    
+    func test_loadFromApi_whenDataloaderSucceeds_andHasData_itShouldLoadDelegateWithSuccess() {
+        // Given
+        dataLoaderStub.resultToUse = .success(.init(data: [.fixture()]))
+        
+        // When
+        sut.loadFromAPI(id: UUID().uuidString)
+        
+        // Then
+        XCTAssertEqual(1, delegateSpy.didLoadCallCount)
+        XCTAssert(delegateSpy.didLoadSuccess == true)
+    }
+
+    
     func test_numberOfSections() {
         // Given
         let expecetedSectionCount = 1
@@ -33,6 +71,7 @@ class CategoryViewModelTests: XCTestCase {
         
         // Then
         XCTAssertEqual(actualItemCount, expectedItemCount)
+        
     }
     
     func testDtoForItems() throws {
@@ -95,13 +134,21 @@ final class DataLoaderStub: DataLoaderProtocol {
     }
 }
 
-final class CategoryDelegateFake: CategoryDelegate {
-    var expectation: XCTestExpectation?
+final class CategoryDelegateSpy: CategoryDelegate {
+    var didLoadCallCount = 0
+    var didLoadSuccess: Bool?
     func didLoad(success: Bool) {
-        expectation?.fulfill()
+        didLoadCallCount += 1
+        didLoadSuccess = success
     }
     
     func showMore(id: String) {
-        expectation?.fulfill()
+        fatalError("NYI")
+    }
+}
+
+extension NSError {
+    static func fixture(domain: String = "dummy") -> NSError {
+        .init(domain: domain, code: 1, userInfo: nil)
     }
 }
